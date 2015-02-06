@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   	push = Parse::Push.new(data, "Giants")
   	push.type = "android"
   	push.save
-
   	redirect_to root_path
   end
 end
