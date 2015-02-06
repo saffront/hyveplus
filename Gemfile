@@ -16,15 +16,17 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'parse-ruby-client'
 
 group :development do
+  gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'guard-rspec', require: false
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'spring'
-
+  gem 'heroku_san'
   gem 'rb-readline'
   gem 'rb-inotify', require: false
   gem 'rb-fsevent', require: false
@@ -38,6 +40,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'codeclimate-test-reporter', require: false
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'

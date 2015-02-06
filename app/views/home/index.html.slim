@@ -1,6 +1,9 @@
 .container
   .starter-template
     h1 Bootstrap starter template
+    = form_tag("/push", method: :post) do
+      .field
+        = submit_tag 'Push notification', class: "btn btn-primary"
     p.lead
       | Use this document as a way to quickly start any new project.
       br/
