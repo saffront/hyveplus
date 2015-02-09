@@ -1,0 +1,2 @@
+module HyveletsHelper
+end

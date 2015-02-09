@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong User:
+  = @hyvelet.user
+p
+  strong Name:
+  = @hyvelet.name
+p
+  strong Pin:
+  = @hyvelet.pin
+p
+  strong Lat:
+  = @hyvelet.lat
+p
+  strong Lng:
+  = @hyvelet.lng
+
+= link_to 'Edit', edit_hyvelet_path(@hyvelet)
+'|
+= link_to 'Back', hyvelets_path

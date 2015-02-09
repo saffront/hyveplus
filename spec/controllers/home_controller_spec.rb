@@ -7,5 +7,10 @@ RSpec.describe HomeController, :type => :controller do
 	  # it{ expect(response).to be_success }
 	  # it{ expect(assigns(:a)).to eq 1}
 	end
+
+	describe "POST index" do
+		before{ post :index }
+        it{ expect(redirect_to root_path) }
+  	end
   
 end

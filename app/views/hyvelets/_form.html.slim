@@ -1,0 +1,24 @@
+= form_for @hyvelet do |f|
+  - if @hyvelet.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@hyvelet.errors.count, "error")} prohibited this hyvelet from being saved:"
+      ul
+        - @hyvelet.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :user
+    = f.number_field :user
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :pin
+    = f.text_field :pin
+  .field
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :lng
+    = f.text_field :lng
+  .actions = f.submit
