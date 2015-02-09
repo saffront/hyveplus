@@ -5,7 +5,6 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'unicorn-rails'
 gem 'pg'
-gem 'sorcery'
 gem 'cancancan'
 gem 'role_model'
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -17,6 +16,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'parse-ruby-client'
+
+#Omniauth and Sorcery
+gem 'sorcery'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-gplus'
 
 group :development do
   gem 'pry'

@@ -10,5 +10,6 @@ html
 
   body  
     = render partial: "layouts/header", locals: { page: "#{controller.controller_name} #{controller.action_name}" }
+    = render 'shared/flash'
     = yield
     = render "layouts/footer"

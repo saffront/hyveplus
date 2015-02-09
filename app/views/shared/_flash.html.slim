@@ -1,0 +1,12 @@
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: name
+  
+/ - flash.each do |name, msg|
+/   = content_tag :div, content_tag(:div, msg, class: "close"), class: "ui #{name} message"
+
+
+/ javascript:
+
+/   $('.message .close').on('click', function() {
+/     $(this).closest('.message').hide();
+/   });

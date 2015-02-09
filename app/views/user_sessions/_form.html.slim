@@ -1,0 +1,7 @@
+= form_for :user_sessions, url: user_sessions_path , method: :post do |f|
+  .field
+    = f.text_field :email, placeholder: 'youremail@example.com', required: true
+  .field
+    = f.text_field :password, placeholder: 'Password', required: true
+  .field
+    = f.submit "Log In"
