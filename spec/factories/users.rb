@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    first_name 'Bob'
-    last_name 'Smith'
     email { Faker::Internet.email }
     password 'rootroot'
     
@@ -10,7 +8,7 @@ FactoryGirl.define do
     end
 
     
-    after(:create) { |user| user.confirm! }
+    # after(:create) { |user| user.confirm! }
   end
 
 end
