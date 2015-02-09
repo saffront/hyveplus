@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    email { Faker::Internet.email }
+    email 'bob@gmail.com'
     password 'rootroot'
     
     trait :invalid do
-      email nil
+      email ''
     end
 
     

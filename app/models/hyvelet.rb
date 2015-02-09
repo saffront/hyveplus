@@ -1,25 +1,23 @@
 class Hyvelet < ActiveRecord::Base
 	belongs_to :user
-	before_save :default_values
+	after_create :default_values
 	acts_as_mappable
 
-	EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-	
-	validates :email, :pin, presence: true
-	validates_format_of :email, with: EMAIL_REGEX, on: [:create, :update]
 
 	def default_values
-		self.name = self.pin
+		if self.name.nil?
+			self.name = self.pin
+		end
 		self.ismissing = false
 		self.isdestroyed = false
 	end
 
 	def toggle_missing
-		self.ismissing = !self.ismissing
+		self.toggle! :ismissing
 	end
 
 	def toggle_destroyed
-		self.isdestroyed = !self.isdestroyed
+		self.toggle! :isdestroyed
 	end
 
 	def self.get_missing
@@ -38,12 +36,4 @@ class Hyvelet < ActiveRecord::Base
 		Hyvelet.where( isdestroyed: true, user: user )
 	end
 
-	def update_location(lat, lng)
-		self.lat = lat
-		self.lng = lng
-	end
-
-	def update_name(name)
-		self.name = name
-	end
 end

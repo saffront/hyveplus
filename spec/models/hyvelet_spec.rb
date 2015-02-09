@@ -31,37 +31,25 @@ RSpec.describe Hyvelet, :type => :model do
 
   describe '#get missing' do
     it {
-      expect(Hyvelet.get_missing).to eq 1
+      expect(Hyvelet.get_missing.size).to eq 1
     }
   end
 
   describe '#get destroyed' do
     it {
-      expect(Hyvelet.get_destroyed).to eq 1
+      expect(Hyvelet.get_destroyed.size).to eq 1
     }
   end
 
   describe '#get my missing' do
     it {
-      expect(Hyvelet.get_my_missing(user)).to eq 1
+      expect(Hyvelet.get_my_missing(hyvelet.user).size).to eq 1
     }
   end
 
   describe '#get my destroyed' do
     it {
-      expect(Hyvelet.get_my_destroyed(user)).to eq 1
-    }
-  end
-
-  describe '#update lat lng' do
-    it {
-      expect(hyvelet.update_location(0.0, 0.0)).to eq 0.0, 0.0
-    }
-  end
-
-  describe '#update name' do
-    it {
-      expect(hyvelet.update_name("Jim")).to eq "Jim"
+      expect(Hyvelet.get_my_destroyed(hyvelet.user).size).to eq 1
     }
   end
 
