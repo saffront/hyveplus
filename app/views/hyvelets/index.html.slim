@@ -1,0 +1,29 @@
+h1 Listing hyvelets
+
+table
+  thead
+    tr
+      th User
+      th Name
+      th Pin
+      th Lat
+      th Lng
+      th
+      th
+      th
+
+  tbody
+    - @hyvelets.each do |hyvelet|
+      tr
+        td = hyvelet.user
+        td = hyvelet.name
+        td = hyvelet.pin
+        td = hyvelet.lat
+        td = hyvelet.lng
+        td = link_to 'Show', hyvelet
+        td = link_to 'Edit', edit_hyvelet_path(hyvelet)
+        td = link_to 'Destroy', hyvelet, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Hyvelet', new_hyvelet_path
