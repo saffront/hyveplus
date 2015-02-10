@@ -1,39 +1,41 @@
 class Hyvelet < ActiveRecord::Base
+	extend Enumerize
+	enumerize :status, in: [:missing, :destroyed]
+
 	belongs_to :user
 	after_create :default_values
 	acts_as_mappable
+
 
 
 	def default_values
 		if self.name.nil?
 			self.name = self.pin
 		end
-		self.ismissing = false
-		self.isdestroyed = false
 	end
 
 	def toggle_missing
-		self.toggle! :ismissing
+		self.update(status: :missing)
 	end
 
 	def toggle_destroyed
-		self.toggle! :isdestroyed
+		self.update(status: :destroyed)
 	end
 
 	def self.get_missing
-		Hyvelet.where( ismissing: true )
+		Hyvelet.where( status: :missing)
 	end
 
 	def self.get_destroyed
-		Hyvelet.where( isdestroyed: true )
+		Hyvelet.where( status: :destroyed)
 	end
 
 	def self.get_my_missing(user)
-		Hyvelet.where( ismissing: true, user: user )
+		Hyvelet.where( status: :missing, user: user )
 	end
 
 	def self.get_my_destroyed(user)
-		Hyvelet.where( isdestroyed: true, user: user )
+		Hyvelet.where( status: :destroyed, user: user )
 	end
 
 end

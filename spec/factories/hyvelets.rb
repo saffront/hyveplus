@@ -5,8 +5,6 @@ FactoryGirl.define do
 		pin "A123145190909"
 		lat 0.000000
 		lng 0.000000
-		ismissing false
-		isdestroyed false
   end
   
   trait :invalid do

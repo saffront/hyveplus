@@ -98,6 +98,8 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
+    enumerize (0.9.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     excon (0.44.1)
     execjs (2.2.2)
@@ -344,6 +346,7 @@ DEPENDENCIES
   compass-rails
   database_cleaner
   dotenv-rails
+  enumerize
   factory_girl_rails
   faker
   geokit-rails
