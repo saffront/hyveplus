@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  #Omniauth
+  post 'oauth/callback', to: 'oauth#callback'
+  get 'oauth/callback', to: 'oauth#callback' #for use with Facebook
+  get 'oauth/:provider', to: 'oauth#oauth', as: :auth_at_provider
+
   resources :users
   resources :user_sessions
   resources :hyvelets
