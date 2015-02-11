@@ -12,6 +12,7 @@ class OauthController < ApplicationController
     else
       # begin
         @user = create_and_validate_from(provider)
+        @user.activate!
         reset_session
         auto_login(@user)
         redirect_to root_path, notice: "Logged in from #{provider.titleize}"

@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:reset_password, :external]
+Rails.application.config.sorcery.submodules = [:reset_password, :external, :session_timeout, :user_activation]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -37,13 +37,13 @@ Rails.application.config.sorcery.configure do |config|
   # How long in seconds to keep the session alive.
   # Default: `3600`
   #
-  # config.session_timeout =
+  config.session_timeout = 600
 
 
   # Use the last action as the beginning of session timeout.
   # Default: `false`
   #
-  # config.session_timeout_from_last_action =
+  config.session_timeout_from_last_action = true
 
 
   # -- http_basic_auth --
@@ -280,7 +280,7 @@ Rails.application.config.sorcery.configure do |config|
     # your mailer class. Required.
     # Default: `nil`
     #
-    # user.user_activation_mailer =
+    user.user_activation_mailer = UserMailer
 
 
     # when true sorcery will not automatically
@@ -351,13 +351,13 @@ Rails.application.config.sorcery.configure do |config|
     # how many seconds before the reset request expires. nil for never expires.
     # Default: `nil`
     #
-    # user.reset_password_expiration_period =
+    # user.reset_password_expiration_period = 
 
 
     # hammering protection, how long in seconds to wait before allowing another email to be sent.
     # Default: `5 * 60`
     #
-    # user.reset_password_time_between_emails =
+    user.reset_password_time_between_emails = 0
 
 
     # -- brute_force_protection --

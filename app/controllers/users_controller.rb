@@ -62,6 +62,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.activate!
+      redirect_to(login_path, notice: 'User was succesfully activated!')
+    else
+      not_authenticated #by default redirects to root path
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
