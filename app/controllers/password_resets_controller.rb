@@ -1,4 +1,6 @@
 class PasswordResetsController < ApplicationController
+  skip_before_action :require_login
+
   def create
     @user = User.find_by_email(params[:email])
     @user.deliver_reset_password_instructions! if @user
@@ -7,14 +9,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
-    @token = params[:id]
-    @user = User.load_from_reset_password_token(params[:id])
-    if @user.blank?
-      not_authenticated
-      return
-    end
-
-   # reset_password
+    reset_password
   end
 
   def update
