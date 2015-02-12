@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211040439) do
+ActiveRecord::Schema.define(version: 20150212095349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20150211040439) do
     t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
+    t.string   "secret"
   end
 
   create_table "hyvelets", force: :cascade do |t|
@@ -45,8 +47,8 @@ ActiveRecord::Schema.define(version: 20150211040439) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                       null: false
-    t.string   "crypted_password"
-    t.string   "salt"
+    t.string   "crypted_password",                            null: false
+    t.string   "salt",                                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
@@ -60,6 +62,9 @@ ActiveRecord::Schema.define(version: 20150211040439) do
     t.string   "activation_state"
     t.string   "activation_token"
     t.datetime "activation_token_expires_at"
+    t.string   "username"
+    t.string   "name"
+    t.string   "avatar"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

@@ -13,10 +13,18 @@ class User < ActiveRecord::Base
 
   after_initialize :set_default_password, if: :new_record?
   before_validation :set_default_email, if: :new_record?
-  validates :password, length: { minimum: 5 }
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password, length: { minimum: 5 }, if: :password
+  validates :password, confirmation: true, if: :password
+  validates :password_confirmation, presence: true, if: :password
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+
+  #Carrierwave
+  mount_uploader :avatar, AvatarUploader
+  
+  def set_access_token(token, secret, provider)
+    auth = self.authentications.find_by(provider: provider)
+    auth.update(token: token, secret: secret)
+  end
 
   private
 

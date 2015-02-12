@@ -19,11 +19,20 @@ gem 'parse-ruby-client'
 gem 'geokit-rails'
 gem 'enumerize'
 
-#Omniauth and Sorcery
+#Authentication and authorisation
 gem 'sorcery'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-gplus'
+gem 'pundit'
+#gem 'cancancan'
+#
+#Social Media API Wrapper
+gem 'fb_graph'
+gem 'twitter'
+gem 'gplus'
+
+#Image Uploaders
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development do
   gem 'pry'

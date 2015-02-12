@@ -20,8 +20,8 @@ table
         td = link_to 'Edit |', edit_user_path(user)
         td = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-p = link_to "Login with Twitter", auth_at_provider_path(provider: :twitter)
 p = link_to "Login with Facebook", auth_at_provider_path(provider: :facebook)
+p = link_to "Login with Twitter", auth_at_provider_path(provider: :twitter)
 p = link_to "Login with Google", auth_at_provider_path(provider: :google)
 
 br
