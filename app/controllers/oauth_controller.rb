@@ -29,7 +29,6 @@ class OauthController < ApplicationController
                                             
       if logged_in?
         link_account(provider)
-        binding.pry
       else
         register_new_user(provider)
       end
@@ -46,7 +45,6 @@ class OauthController < ApplicationController
     # begin
       @user = create_and_validate_from(provider)
       reset_session
-      binding.pry
 
       case provider
       when "twitter"

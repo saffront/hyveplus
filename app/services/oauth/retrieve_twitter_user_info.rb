@@ -16,13 +16,12 @@ class Oauth::RetrieveTwitterUserInfo
 
     @user.update(name: twitter_user.name,
                  username: twitter_user.username)
-    binding.pry
   end
 
   private
 
   def upload_profile_image(user)
-    avatar_extract = user.profile_image_url_https.to_str.split("_n")
-    @user.remote_avatar_url = "#{avatar_extract[0]}_400x400.jpg"
+    avatar_extract = user.profile_image_url_https.to_str.gsub!("normal", "400x400")
+    @user.remote_avatar_url = avatar_extract
   end
 end

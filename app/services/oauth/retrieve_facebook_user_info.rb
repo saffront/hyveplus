@@ -8,11 +8,10 @@ class Oauth::RetrieveFacebookUserInfo
 
   def save
     fb_user = FbGraph::User.fetch("me?access_token=#{@token}")
-    @user.remote_image_url = "#{fb_user.picture}?redirect=1&height=300&type=normal&width=300"
-    location_array = fb_user.location.name.split(', ')
+    @user.remote_avatar_url = "#{fb_user.picture}?redirect=1&height=300&type=normal&width=300"
 
     @user.update(name: fb_user.name,
                  avatar: fb_user.picture,
-                 username: fb_user.name)
+                 username: fb_user.username)
   end
 end
