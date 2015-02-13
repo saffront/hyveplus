@@ -13,12 +13,13 @@ table
   tbody
     - @users.each do |user|
       tr
-        td  
+        td
           - user.authentications.each do |a|
             strong = a.provider.capitalize!
         td = user.email
         td = link_to 'Show |', user
         td = link_to 'Edit |', edit_user_path(user)
+        /td = link_to 'Change Password |', edit_password_reset_path(user) 
         td = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 p = link_to "Login with Facebook", auth_at_provider_path(provider: :facebook)

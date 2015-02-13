@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   #Home
   root 'users#index'
   post 'push' => 'home#push'
+
+  #Mailing
+  post 'subscribe', to: 'mailings#sub'
+
 end

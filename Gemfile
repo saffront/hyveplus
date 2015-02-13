@@ -5,7 +5,6 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'unicorn-rails'
 gem 'pg'
-gem 'cancancan'
 gem 'role_model'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
@@ -22,12 +21,15 @@ gem 'enumerize'
 #Authentication and authorisation
 gem 'sorcery'
 gem 'pundit'
-#gem 'cancancan'
-#
+gem 'cancancan'
+
 #Social Media API Wrapper
 gem 'fb_graph'
 gem 'twitter'
 gem 'google_plus'
+
+#Mail Chimp API Wrapper
+gem 'gibbon'
 
 #Image Uploaders
 gem 'carrierwave'

@@ -12,3 +12,7 @@
       .alert.alert-warning
         button.close data-dismiss="alert" type="button"  &times;
         = flash[:alert] 
+    - if flash[:success]
+      .alert.alert-warning
+        button.close data-dismiss="alert" type="button"  &times;
+        = flash[:success] 

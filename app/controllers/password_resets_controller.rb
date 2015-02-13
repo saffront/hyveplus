@@ -27,6 +27,7 @@ class PasswordResetsController < ApplicationController
   def reset_password
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
+    binding.pry
     if @user.blank?
       not_authenticated
       return
