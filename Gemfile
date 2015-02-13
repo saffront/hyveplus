@@ -27,7 +27,7 @@ gem 'pundit'
 #Social Media API Wrapper
 gem 'fb_graph'
 gem 'twitter'
-gem 'gplus'
+gem 'google_plus'
 
 #Image Uploaders
 gem 'carrierwave'

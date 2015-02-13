@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     auth.update(token: token, secret: secret)
   end
 
+  def full_name
+    self.first_name + ' ' + self.last_name
+  end
+
   private
 
   def set_default_email

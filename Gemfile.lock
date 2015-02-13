@@ -214,7 +214,9 @@ GEM
       rails (>= 3.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
-    gplus (0.0.1)
+    google_plus (0.2.3)
+      json
+      rest-client (~> 1.6.1)
     guard (2.11.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -348,6 +350,8 @@ GEM
     rb-readline (0.5.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     role_model (0.8.1)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
@@ -478,7 +482,7 @@ DEPENDENCIES
   fb_graph
   fog
   geokit-rails
-  gplus
+  google_plus
   guard-rspec
   heroku_san
   jbuilder (~> 2.0)

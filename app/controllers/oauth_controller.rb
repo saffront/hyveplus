@@ -4,19 +4,7 @@ class OauthController < ApplicationController
   def oauth
     login_at(auth_params[:provider])
   end
-
-  #def callback
-    #provider = auth_params[:provider]
-    #if @user = login_from(provider)
-      #redirect_to root_path, notice: "Logged in from #{provider.titleize}"
-    #else
-      #@user = create_and_validate_from(provider)
-      #@user.activate!
-      #reset_session
-      #auto_login(@user)
-      #redirect_to root_path, notice: "Logged in from #{provider.titleize}"
-    #end
-  #end
+  
   def callback
     provider = auth_params[:provider]
 
@@ -26,7 +14,6 @@ class OauthController < ApplicationController
       flash[:success] = "You're logged in from #{provider.titleize}!"
       redirect_to user_path(@user)
     else
-                                            
       if logged_in?
         link_account(provider)
       else
@@ -51,8 +38,10 @@ class OauthController < ApplicationController
         save_twitter_info
       when "facebook"
         save_facebook_info
+      when "google"
+        save_google_info
       end
-
+    
         auto_login(@user)
         flash[:notice] = "You've registered through #{provider.titleize}!"
         redirect_to edit_user_path(current_user)
@@ -71,6 +60,11 @@ class OauthController < ApplicationController
   def save_facebook_info
     set_access_token(@user)
     Oauth::RetrieveFacebookUserInfo.new(@access_token.token, @user).save
+  end
+
+  def save_google_info
+    set_access_token(@user)
+    Oauth::RetrieveGoogleUserInfo.new(@access_token.token, @user).save
   end
 
   def link_account(provider)

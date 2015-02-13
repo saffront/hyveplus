@@ -4,15 +4,25 @@ class Oauth::RetrieveGoogleUserInfo
   def initialize(token, user)
     @token = token
     @user = user
+
+    @client_id = ENV['GOOGLE_API_KEY']
+    @client_secret = ENV['GOOGLE_API_SECRET']
   end
 
   def save
-    #google_user =  
-    #fb_user = FbGraph::User.fetch("me?access_token=#{@token}")
-    @user.remote_image_url = "#{fb_user.picture}?redirect=1&height=300&type=normal&width=300"
-    location_array = fb_user.location.name.split(', ')
+    GooglePlus.access_token = @token
 
-    @user.update(name: fb_user.name,
-                 username: fb_user.name)
+    @gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
+    upload_profile_image(@gplus_user)
+    @user.update(first_name: @gplus_user.name.given_name,
+                 last_name: @gplus_user.name.family_name,
+                 username: @gplus_user.display_name)
+  end
+
+  private
+
+  def upload_profile_image(user)
+    avatar_extract = user.image.url
+    @user.remote_avatar_url = avatar_extract
   end
 end
