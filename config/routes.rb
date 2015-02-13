@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :users do 
     get :activate, on: :member
+    post :subscribe, on: :member, to: 'mailings#sub'
+    post :unsubscribe, on: :member, to: 'mailings#unsub'
   end
   resources :password_resets
   resources :user_sessions
@@ -20,6 +22,6 @@ Rails.application.routes.draw do
   post 'push' => 'home#push'
 
   #Mailing
-  post 'subscribe', to: 'mailings#sub'
-
+  #post 'subscribe', to: 'mailings#sub'
+  #post '/users/:id/unsubscribe', to: 'mailings#unsub'
 end

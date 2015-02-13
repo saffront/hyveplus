@@ -14,6 +14,14 @@ p
   = @user.last_name
 p
   = image_tag "#{@user.avatar}"
+p
+  = form_tag(subscribe_user_path) do
+    = email_field_tag :email, @user.email
+    = submit_tag "Subscribe"
+
+  = form_tag(unsubscribe_user_path) do
+    = hidden_field_tag :email, @user.email
+    = submit_tag "Unsubscribe"
 
 = link_to 'Edit ', edit_user_path(@user)
 '|
