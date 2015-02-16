@@ -5,7 +5,6 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'unicorn-rails'
 gem 'pg'
-gem 'cancancan'
 gem 'role_model'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
@@ -20,11 +19,23 @@ gem 'geokit-rails'
 gem 'enumerize'
 gem 'rails_admin'
 
-#Omniauth and Sorcery
+#Authentication and authorisation
 gem 'sorcery'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-gplus'
+gem 'cancancan'
+#gem 'pundit'
+
+#Social Media API Wrapper
+gem 'fb_graph'
+gem 'twitter'
+gem 'google_plus'
+
+#Mail Chimp API Wrapper
+gem 'gibbon'
+
+#Image Uploaders
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development do
   gem 'pry'
