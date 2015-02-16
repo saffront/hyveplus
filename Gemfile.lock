@@ -129,10 +129,8 @@ GEM
       rack-oauth2 (>= 0.14.4)
       tzinfo
     ffi (1.9.6)
-<<<<<<< HEAD
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
-=======
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.27.0)
@@ -210,7 +208,6 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
->>>>>>> 1330b628228cdc181c49efa069d3be1be2d4aa1c
     formatador (0.2.5)
     geokit (1.9.0)
       multi_json (>= 1.3.2)
@@ -239,15 +236,9 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-<<<<<<< HEAD
-<<<<<<< HEAD
     haml (4.0.6)
       tilt
-=======
     hashie (3.4.0)
->>>>>>> 937fcee9bb1ba46e2dd68d0ead8d66f21943bc41
-=======
->>>>>>> 1330b628228cdc181c49efa069d3be1be2d4aa1c
     heroku-api (0.3.22)
       excon (~> 0.38)
       multi_json (~> 1.8)
@@ -303,13 +294,10 @@ GEM
     multipart-post (2.0.0)
     naught (1.0.0)
     nenv (0.2.0)
-<<<<<<< HEAD
     nested_form (0.3.2)
-=======
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
->>>>>>> 1330b628228cdc181c49efa069d3be1be2d4aa1c
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     notiffany (0.0.3)
@@ -335,18 +323,15 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
-<<<<<<< HEAD
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
-=======
     rack-oauth2 (1.0.10)
       activesupport (>= 2.3)
       attr_required (>= 0.0.5)
       httpclient (>= 2.4)
       multi_json (>= 1.3.6)
       rack (>= 1.1)
->>>>>>> 1330b628228cdc181c49efa069d3be1be2d4aa1c
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -397,12 +382,9 @@ GEM
     rb-readline (0.5.2)
     rdoc (4.2.0)
       json (~> 1.4)
-<<<<<<< HEAD
     remotipart (1.2.1)
-=======
     rest-client (1.6.7)
       mime-types (>= 1.16)
->>>>>>> 1330b628228cdc181c49efa069d3be1be2d4aa1c
     role_model (0.8.1)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
