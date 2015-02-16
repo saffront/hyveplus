@@ -20,8 +20,8 @@ gem 'enumerize'
 
 #Authentication and authorisation
 gem 'sorcery'
-gem 'pundit'
 gem 'cancancan'
+#gem 'pundit'
 
 #Social Media API Wrapper
 gem 'fb_graph'

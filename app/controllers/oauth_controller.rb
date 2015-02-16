@@ -31,6 +31,7 @@ class OauthController < ApplicationController
   def register_new_user(provider)
     # begin
       @user = create_and_validate_from(provider)
+      @user.activate!
       reset_session
 
       case provider
