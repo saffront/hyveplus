@@ -30,3 +30,8 @@ config/secrets.yml
 *.bowerrc
 bower.json
 
+# Ignore env file
+.env
+
+#Pivotal Tracker
+.pt

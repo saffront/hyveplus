@@ -6,6 +6,31 @@ Rails.application.config.sorcery.submodules = [:remember_me, :reset_password]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+  config.session_timeout = 10.minutes
+  config.session_timeout_from_last_action = false
+  config.external_providers = [:twitter, :facebook, :gplus]
+
+  config.twitter.key = ENV['TWITTER_API_KEY']
+  config.twitter.secret = ENV['TWITTER_API_SECRET']
+  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+  config.twitter.user_info_mapping = {:username => "screen_name"}
+
+  config.facebook.key = ENV['FACEBOOK_APP_KEY']
+  config.facebook.secret = ENV['FACEBOOK_APP_SECRET']
+  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = {:email => "name"}
+  # config.facebook.user_info_mapping = {:email => "email", :name => "name", :username => "username", :hometown => "hometown/name"} #etc
+  # config.facebook.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
+  # config.facebook.display = "popup"
+
+  config.gplus.key = ENV['GPLUS_API_KEY']
+  config.gplus.secret = ENV['GPLUS_API_SECRET']
+  config.gplus.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=gplus"
+  config.gplus.user_info_mapping = {:email => "name"}
+  # config.gplus.user_info_mapping = {:email => "email", :name => "name", :username => "username", :hometown => "hometown/name"} #etc
+  # config.gplus.scope = "email,offline_access,user_hometown,user_interests,user_likes" #etc
+  # config.gplus.display = "popup"
+
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -177,7 +202,6 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `[:email]`
     #
     # user.username_attribute_names =
-
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
