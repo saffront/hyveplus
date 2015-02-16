@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :hyvelet_missing_locations
 
   resources :master_pins
-
-=======
 
   #Omniauth
   post 'oauth/callback', to: 'oauth#callback'
@@ -18,7 +15,6 @@ Rails.application.routes.draw do
   end
   resources :password_resets
   resources :user_sessions
->>>>>>> 937fcee9bb1ba46e2dd68d0ead8d66f21943bc41
   resources :hyvelets
 
   get 'login', to: 'user_sessions#new', as: 'login'
