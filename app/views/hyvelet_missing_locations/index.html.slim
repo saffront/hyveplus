@@ -1,0 +1,27 @@
+h1 Listing hyvelet_missing_locations
+
+table
+  thead
+    tr
+      th Deviceid
+      th Lat
+      th Lng
+      th Hyvelet
+      th
+      th
+      th
+
+  tbody
+    - @hyvelet_missing_locations.each do |hyvelet_missing_location|
+      tr
+        td = hyvelet_missing_location.deviceid
+        td = hyvelet_missing_location.lat
+        td = hyvelet_missing_location.lng
+        td = hyvelet_missing_location.hyvelet_id
+        td = link_to 'Show', hyvelet_missing_location
+        td = link_to 'Edit', edit_hyvelet_missing_location_path(hyvelet_missing_location)
+        td = link_to 'Destroy', hyvelet_missing_location, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Hyvelet missing location', new_hyvelet_missing_location_path

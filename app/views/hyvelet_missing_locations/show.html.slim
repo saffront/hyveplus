@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Deviceid:
+  = @hyvelet_missing_location.deviceid
+p
+  strong Lat:
+  = @hyvelet_missing_location.lat
+p
+  strong Lng:
+  = @hyvelet_missing_location.lng
+p
+  strong Hyvelet:
+  = @hyvelet_missing_location.hyvelet_id
+
+= link_to 'Edit', edit_hyvelet_missing_location_path(@hyvelet_missing_location)
+'|
+= link_to 'Back', hyvelet_missing_locations_path

@@ -5,7 +5,7 @@ class Hyvelet < ActiveRecord::Base
 	belongs_to :user
 	after_create :default_values
 	acts_as_mappable
-
+	has_many :hyvelet_missing_locations
 
 
 	def default_values

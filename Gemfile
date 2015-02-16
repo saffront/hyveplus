@@ -19,6 +19,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'parse-ruby-client'
 gem 'geokit-rails'
 gem 'enumerize'
+gem 'rails_admin'
 
 group :development do
   gem 'pry'

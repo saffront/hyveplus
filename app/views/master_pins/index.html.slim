@@ -1,0 +1,25 @@
+h1 Listing master_pins
+
+table
+  thead
+    tr
+      th Manufacturer
+      th Serialnumber
+      th Pin
+      th
+      th
+      th
+
+  tbody
+    - @master_pins.each do |master_pin|
+      tr
+        td = master_pin.manufacturer
+        td = master_pin.serialnumber
+        td = master_pin.pin
+        td = link_to 'Show', master_pin
+        td = link_to 'Edit', edit_master_pin_path(master_pin)
+        td = link_to 'Destroy', master_pin, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Master pin', new_master_pin_path

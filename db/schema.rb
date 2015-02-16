@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210064522) do
+ActiveRecord::Schema.define(version: 20150210081611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hyvelet_missing_locations", force: :cascade do |t|
+    t.string   "deviceid"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "hyvelet_id"
+  end
+
+  add_index "hyvelet_missing_locations", ["hyvelet_id"], name: "index_hyvelet_missing_locations_on_hyvelet_id", using: :btree
 
   create_table "hyvelets", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +36,14 @@ ActiveRecord::Schema.define(version: 20150210064522) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "status"
+  end
+
+  create_table "master_pins", force: :cascade do |t|
+    t.string   "manufacturer"
+    t.string   "serialnumber"
+    t.string   "pin"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "stories", force: :cascade do |t|
@@ -52,4 +71,5 @@ ActiveRecord::Schema.define(version: 20150210064522) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
+  add_foreign_key "hyvelet_missing_locations", "hyvelets"
 end
