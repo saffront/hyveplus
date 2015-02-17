@@ -30,6 +30,14 @@ class User < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
+  #def update_password_and_email(current_password, new_email, new_password, new_password_confirmation)
+    #if User.authenticate(self.email, current_password).present?
+      #self.password_confirmation = new_password_confirmation
+      #self.update(email: new_email)
+      #self.change_password!(new_password)
+    #end
+  #end
+
   private
 
   def set_default_email

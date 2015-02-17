@@ -5,27 +5,40 @@
       ul
         - @user.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :username
-    = f.text_field :username
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .field
-    = f.label :password
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-  .field
-    label for="chooseFiles" Avatar
-    = f.file_field :avatar, type: 'file'
-  .actions 
-    = f.submit
+  table
+    tr
+      td width="200px"
+        = f.label :email
+      td
+        = f.text_field :email, placeholder: "example@hyve.com"
+    tr
+      td
+        = f.label :username
+      td
+        = f.text_field :username
+    tr
+      td
+        = f.label :first_name
+      td
+        = f.text_field :first_name
+    tr
+      td
+        = f.label :last_name
+      td
+        = f.text_field :last_name
+    /tr
+      /td
+        /= f.label :password
+      /td
+        /= f.password_field :password, placeholder: "Minimum 8 characters long"
+    /tr
+      /td
+        /= f.label :password_confirmation
+      /td
+        /= f.password_field :password_confirmation
+    tr
+      td
+        = f.label :avatar
+      td
+        = f.file_field :avatar, type: 'file'
+  = f.submit

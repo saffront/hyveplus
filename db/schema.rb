@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20150216085107) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-# These are extensions that must be enabled in order to support this database
-enable_extension "plpgsql"
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "token"
+    t.string   "secret"
+  end
 
   create_table "hyvelet_missing_locations", force: :cascade do |t|
     t.string   "deviceid"
@@ -26,16 +36,6 @@ enable_extension "plpgsql"
   end
 
   add_index "hyvelet_missing_locations", ["hyvelet_id"], name: "index_hyvelet_missing_locations_on_hyvelet_id", using: :btree
-
-  create_table "authentications", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.string   "provider",   null: false
-    t.string   "uid",        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "token"
-    t.string   "secret"
-  end
 
   create_table "hyvelets", force: :cascade do |t|
     t.string   "name"
@@ -65,9 +65,9 @@ enable_extension "plpgsql"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                                       null: false
-    t.string   "crypted_password",                            null: false
-    t.string   "salt",                                        null: false
+    t.string   "email",                                           null: false
+    t.string   "crypted_password",                                null: false
+    t.string   "salt",                                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"
@@ -85,6 +85,7 @@ enable_extension "plpgsql"
     t.string   "avatar"
     t.string   "first_name"
     t.string   "last_name"
+    t.boolean  "admin",                           default: false
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

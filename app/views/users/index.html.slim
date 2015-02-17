@@ -1,31 +1,20 @@
-h1 Listing users
+h1 Users
+
+= link_to 'Create New User', new_user_path, class: "btn btn-default"
 
 table
   thead
     tr
+      th width="100px" Provider
       th Email
-      / th Crypted password
-      / th Salt
-      th
-      th
-      th
-
   tbody
-    - @users.each do |user|
-      tr
-        td
-          - user.authentications.each do |a|
-            strong = a.provider.capitalize!
-        td = user.email
-        td = link_to 'Show |', user
-        td = link_to 'Edit |', edit_user_path(user)
-        /td = link_to 'Change Password |', edit_password_reset_path(user) 
-        td = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+  - @users.each do |user|
+    tr
+     td
+      - user.authentications.each do |a|
+        strong = a.provider.capitalize!
+      td width="200px" = user.email
+      td width="50px" = link_to 'Show', user
+      /td width="50px" = link_to 'Edit', edit_user_path(user)
+      /td width="50px" = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-p = link_to "Login with Facebook", auth_at_provider_path(provider: :facebook)
-p = link_to "Login with Twitter", auth_at_provider_path(provider: :twitter)
-p = link_to "Login with Google", auth_at_provider_path(provider: :google)
-
-br
-
-= link_to 'New User', new_user_path
