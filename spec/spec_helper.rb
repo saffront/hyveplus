@@ -25,7 +25,8 @@ RSpec.configure do |config|
   config.tty = true
 
 # Use the specified formatter
-  config.formatter = :documentation # :progress, :html, :textmate
+  #I don't like documentation format, if you want said format define it in .rspec file in your project's root directory-TC WUUUUU
+  #config.formatter = :documentation # :progress, :html, :textmate
 
 =begin
   # These two settings work together to allow you to limit a spec run
