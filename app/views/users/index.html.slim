@@ -1,12 +1,18 @@
 h1 Users
-
 = link_to 'Create New User', new_user_path, class: "btn btn-default"
+
+- if current_user
+  h2 Current User info
+  h4 Name: #{current_user.full_name}
+  h4 ID: #{current_user.id}
 
 table
   thead
     tr
       th width="100px" Provider
       th Email
+      th ID
+      th Name
   tbody
   - @users.each do |user|
     tr
@@ -14,7 +20,14 @@ table
       - user.authentications.each do |a|
         strong = a.provider.capitalize!
       td width="200px" = user.email
-      td width="50px" = link_to 'Show', user
-      /td width="50px" = link_to 'Edit', edit_user_path(user)
-      /td width="50px" = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
-
+      td width="50px" = user.id
+      td width="200px" = user.full_name
+      td width="50px"
+        -if can? :show, user
+          = link_to 'Show', user
+      td width="50px"
+        -if can? :update, user
+          = link_to 'Edit', edit_user_path(user)
+      td width="50px"
+        -if can? :destroy, user
+          = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
