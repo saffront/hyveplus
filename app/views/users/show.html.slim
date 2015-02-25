@@ -24,7 +24,7 @@ p
   = form_tag(unsubscribe_user_path) do
     = hidden_field_tag :email, @user.email
     = submit_tag "Unsubscribe"
-
-= link_to 'Edit ', edit_user_path(@user)
-'|
-= link_to 'Back', users_path
+br
+p = link_to 'Edit Profile', edit_user_path(@user)
+p = link_to 'Change Password', edit_password_path(@user)
+p = link_to 'Back', users_path

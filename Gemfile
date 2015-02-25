@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
+#Bug with font-awesome, sprockets-rails v2.2.4 fixes this
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'unicorn-rails'
 gem 'pg'
 gem 'role_model'
+gem 'font-awesome-rails'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 5.0'
 gem 'compass-rails'

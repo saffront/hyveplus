@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_password]
   skip_before_action :require_login, except: [:destroy]
+  load_and_authorize_resource
   
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    respond_to :html, :json
   end
 
   # GET /users/1
@@ -61,6 +63,9 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def edit_password
   end
 
   def activate
