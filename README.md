@@ -1,5 +1,5 @@
-# hive
-Hive Website
+# Hive
+Hive Web App
 
 source 'https://rubygems.org'
 
