@@ -18,13 +18,21 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, if: :password
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
+  #Username does not starting with a digit
+  validates_format_of :username, without: /\A\d/, message: "cannot start with number"
+
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
 
-  #def to_param
-    #name_id.parameterize
-  #end
-  
+  def to_param
+    username.parameterize
+  end
+
+  def self.find(input)
+    #ruby converts strings starting with letter to 0
+    input.to_i == 0 ? find_by_username(input) : super
+  end
+
   def set_access_token(token, secret, provider)
     auth = self.authentications.find_by(provider: provider)
     auth.update(token: token, secret: secret)

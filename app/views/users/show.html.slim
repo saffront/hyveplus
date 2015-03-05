@@ -13,7 +13,10 @@ p
   strong Last Name:
   = @user.last_name
 p
-  = image_tag "#{@user.avatar}", size: "200"
+  - if @user.avatar_url.nil?
+    p No Avatar
+  - else
+    = image_tag "#{@user.avatar}"
 
 - if logged_in? && current_user == @user
   /= form_tag(subscribe_user_path) do
