@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
- 
+
   authenticates_with_sorcery!
 
   authenticates_with_sorcery! do |config|
@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
 
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
+
+  #def to_param
+    #name_id.parameterize
+  #end
   
   def set_access_token(token, secret, provider)
     auth = self.authentications.find_by(provider: provider)

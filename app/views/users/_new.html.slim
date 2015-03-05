@@ -15,27 +15,27 @@
       td
         = f.label :username
       td
-        = f.text_field :username
+        = f.text_field :username, placeholder: "hyve_user"
     tr
       td
         = f.label :first_name
       td
-        = f.text_field :first_name
+        = f.text_field :first_name, placeholder: "Bob"
     tr
       td
         = f.label :last_name
       td
-        = f.text_field :last_name
-    /tr
-      /td
-        /= f.label :password
-      /td
-        /= f.password_field :password, placeholder: "Minimum 8 characters long"
-    /tr
-      /td
-        /= f.label :password_confirmation
-      /td
-        /= f.password_field :password_confirmation
+        = f.text_field :last_name, placeholder: "Dylan"
+    tr
+      td
+        = f.label :password
+      td
+        = f.password_field :password, placeholder: "Minimum 8 characters"
+    tr
+      td
+        = f.label :password_confirmation, "Confirm Password"
+      td
+        = f.password_field :password_confirmation
     tr
       td
         = f.label :avatar

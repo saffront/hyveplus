@@ -9,25 +9,18 @@ h1 Users
 table
   thead
     tr
-      th width="100px" Provider
-      th Email
-      th ID
-      th Name
+      th width="200px" Provider
+      th width="200px" Email
+      th width="200px" ID
+      th width="200px" Name
+      th width="200px" Action
   tbody
   - @users.each do |user|
     tr
      td
       - user.authentications.each do |a|
         strong = a.provider.capitalize!
-      td width="200px" = user.email
-      td width="50px" = user.id
-      td width="200px" = user.full_name
-      td width="50px"
-        -if can? :show, user
-          = link_to 'Show', user
-      td width="50px"
-        -if can? :update, user
-          = link_to 'Edit', edit_user_path(user)
-      td width="50px"
-        -if can? :destroy, user
-          = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+      td = user.email
+      td = user.id
+      td = user.full_name
+      td = link_to 'Show', user

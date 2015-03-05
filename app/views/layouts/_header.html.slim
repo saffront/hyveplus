@@ -13,13 +13,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           a href="#"  Home
         - if current_user
           li
-            = link_to "Edit Profile", edit_user_path(current_user.id)
+            = link_to "Edit Profile", my_account_path
           li
             = link_to "Logout", logout_path, method: :post
-          li
-            = current_user.username
-          li
-            = current_user.email
         - else
           li
             = link_to "Register", new_user_path

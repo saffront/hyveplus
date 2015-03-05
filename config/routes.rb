@@ -8,16 +8,25 @@ Rails.application.routes.draw do
   get 'oauth/callback', to: 'oauth#callback' #for use with Facebook
   get 'oauth/:provider', to: 'oauth#oauth', as: :auth_at_provider
 
-  resources :users do 
-    get :activate, on: :member
-    post :subscribe, on: :member, to: 'mailings#sub'
-    post :unsubscribe, on: :member, to: 'mailings#unsub'
+  namespace :my do
+    resource :account, only: [:show, :destroy] do
+      post :subscribe, to: 'mailings#sub'
+      post :unsubscribe, to: 'mailings#unsub'
+      get :edit_profile
+      patch :update_profile, to: 'accounts#update_profile'
+      get :edit_password
+      patch :update_password, to: 'accounts#update_password'
+    end
   end
+
+  resources :users, except: [:edit, :update, :destroy] do 
+    get :activate, on: :member
+  end
+
   resources :password_resets
-  resources :user_sessions
+  resources :user_sessions, only: [:new, :create, :destroy]
   resources :hyvelets
 
-  get 'users/:id/edit_password', to: 'users#edit_password', as: 'edit_password'
   get 'login', to: 'user_sessions#new', as: 'login'
   post 'logout', to: 'user_sessions#destroy', as: 'logout'
   
