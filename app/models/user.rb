@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   #Username does not starting with a digit
+  validates :username, uniqueness: true
   validates_format_of :username, without: /\A\d/, message: "cannot start with number"
 
   #Carrierwave

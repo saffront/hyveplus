@@ -34,4 +34,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   post 'push' => 'home#push'
 
+  #Static Pages
+  get '/press', to: 'pages#press', as: 'press'
+
 end

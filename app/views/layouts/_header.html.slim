@@ -11,6 +11,8 @@ nav.navbar.navbar-inverse.navbar-fixed-top
       ul.nav.navbar-nav
         li.active
           a href="#"  Home
+        li.active
+          = link_to "Press", press_path 
         - if current_user
           li
             = link_to "Edit Profile", my_account_path
