@@ -29,18 +29,30 @@ html {
   padding: 1.5rem;
 }
 
-.padded-top {
+.padded-top-5 {
   padding-top: 5rem;
 }
 
-.padded-btm {
+.padded-btm-5 {
   padding-bottom: 5rem;
+}
+
+.padded-top-2 {
+  padding-top: 2rem;
+}
+
+.padded-btm-2 {
+  padding-bottom: 2rem;
 }
 
 .margin-1 {
   margin: 1rem;
 }
 
+.margin-2 {
+  margin: 2rem;
+
+}
 .col-centered {
   float: none;
   margin: 0 auto;

@@ -1,0 +1,31 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+// Base styles
+@import "base/grids";
+@import "base/helpers";
+@import "base/mixins";
+@import "base/reset";
+@import "base/spaces";
+
+//Shared
+@import "shared/*";
+
+//Layout specific styles
+@import "main/layout";
+@import "main/typography";
+
+// Need to move to elsewhere
+@import "main/scaffolds";
+
+// Objects or components
+@import "main/components/buttons";
+@import "main/components/inputs";
+
+// Responsive
+@import "main/responsive/mobile";
+@import "main/responsive/tablet";
+
+//Views or static pages
+@import "main/views/**/*"
