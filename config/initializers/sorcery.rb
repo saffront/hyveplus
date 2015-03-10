@@ -85,6 +85,29 @@ Rails.application.config.sorcery.configure do |config|
   #
   # config.ca_file =
 
+  config.twitter.key = ENV["TWITTER_API_KEY"]
+  config.twitter.secret = ENV["TWITTER_API_SECRET"]
+  #config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+
+  config.facebook.key = ENV["FACEBOOK_APP_KEY"]
+  config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
+  #config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  config.facebook.user_info_mapping = { email: "email" }
+
+  config.google.key = ENV["GOOGLE_API_KEY"]
+  config.google.secret = ENV["GOOGLE_API_SECRET"]
+  #config.google.callback_url = "http://127.0.0.1:3000/oauth/callback?provider=google"
+  config.google.user_info_mapping = { email: "email" }
+
+  if Rails.env.staging? || Rails.env.development?
+    config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+    config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
+    config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
+  else Rails.env.production?
+    config.twitter.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=twitter"
+    config.facebook.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=facebook"
+    config.google.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=google"
+  end
 
   # For information about LinkedIn API:
   # - user info fields go to https://developer.linkedin.com/documents/profile-fields
@@ -110,15 +133,15 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  config.twitter.key = ENV["TWITTER_API_KEY"]
-  config.twitter.secret = ENV["TWITTER_API_SECRET"]
-  config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
+  #config.twitter.key = ENV["TWITTER_API_KEY"]
+  #config.twitter.secret = ENV["TWITTER_API_SECRET"]
+  #config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   # config.twitter.user_info_mapping = { email: "email" }
   #
-  config.facebook.key = ENV["FACEBOOK_APP_KEY"]
-  config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
-  config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
-  config.facebook.user_info_mapping = { email: "email" }
+  #config.facebook.key = ENV["FACEBOOK_APP_KEY"]
+  #config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
+  #config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+  #config.facebook.user_info_mapping = { email: "email" }
   # config.facebook.access_permissions = ["email", "publish_stream"] 
   # config.facebook.display = "page"
   #
@@ -127,10 +150,10 @@ Rails.application.config.sorcery.configure do |config|
   # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
   # config.github.user_info_mapping = {:email => "name"}
   #
-  config.google.key = ENV["GOOGLE_API_KEY"]
-  config.google.secret = ENV["GOOGLE_API_SECRET"]
-  config.google.callback_url = "http://127.0.0.1:3000/oauth/callback?provider=google"
-  config.google.user_info_mapping = { email: "email" }
+  #config.google.key = ENV["GOOGLE_API_KEY"]
+  #config.google.secret = ENV["GOOGLE_API_SECRET"]
+  #config.google.callback_url = "http://127.0.0.1:3000/oauth/callback?provider=google"
+  #config.google.user_info_mapping = { email: "email" }
   #
   # config.vk.key = ""
   # config.vk.secret = ""

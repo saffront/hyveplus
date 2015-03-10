@@ -19,14 +19,20 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   #Username does not starting with a digit
-  validates :username, uniqueness: true
+  validates_uniqueness_of :username, case_sensitive: false
+  validates :username, length: { minimum: 4 }, if: :username
+  validates_format_of :username, with: /\A[a-zA-Z0-9-_]+\z/, message: "can only have alphanumeric, - or _ characters"
   validates_format_of :username, without: /\A\d/, message: "cannot start with number"
 
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
 
   def to_param
-    username.parameterize
+    if username
+      username.parameterize
+    else
+      super
+    end
   end
 
   def self.find(input)

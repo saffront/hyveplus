@@ -9,7 +9,7 @@ class OauthController < ApplicationController
     provider = auth_params[:provider]
 
     if @user = login_from(provider)
-
+      
       set_access_token(@user)
       flash[:success] = "You're logged in from #{provider.titleize}!"
       redirect_to user_path(@user)
@@ -45,7 +45,7 @@ class OauthController < ApplicationController
     
         auto_login(@user)
         flash[:notice] = "You've registered through #{provider.titleize}!"
-        redirect_to edit_user_path(current_user)
+        redirect_to edit_profile_my_account_path(current_user)
     # rescue => e
     #   logger.info "[ERROR]: #{e.inspect}"
     #   flash[:alert] = "Failed to login from #{provider.titleize}"
