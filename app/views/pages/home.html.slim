@@ -1,9 +1,15 @@
-h1 Welcome to Hive
+.container
+  h1 Welcome to Hive
+  
+  .row
+    p = link_to raw("#{fa_icon 'key', text: 'Login with Email'}"), login_path, class: "btn btn-block btn-social btn-reddit"
+    p = link_to raw("#{fa_icon 'envelope-o', text: 'Sign Up with Email'}"), new_user_path, class: "btn btn-block btn-social btn-yahoo"
 
-p = link_to "All Users", users_path
-p = link_to raw("#{fa_icon 'bookmark-o', text: 'Login with Email'}"), login_path, class: "btn btn-block btn-social btn-reddit"
-p = link_to raw("#{fa_icon 'twitter', text: 'Login with Twitter'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
-p = link_to raw("#{fa_icon 'facebook', text: 'Login with Facebook'}"), auth_at_provider_path(provider: :twitter), class: "btn btn-block btn-social btn-twitter"
-p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"
+  .row
+    p 
+      strong or 
 
-p = link_to raw("#{fa_icon 'key', text: 'Sign Up with Email'}"), new_user_path, class: "btn btn-block btn-social btn-yahoo"
+  .row
+    p = link_to raw("#{fa_icon 'twitter', text: 'Login with Twitter'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
+    p = link_to raw("#{fa_icon 'facebook', text: 'Login with Facebook'}"), auth_at_provider_path(provider: :twitter), class: "btn btn-block btn-social btn-twitter"
+    p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"

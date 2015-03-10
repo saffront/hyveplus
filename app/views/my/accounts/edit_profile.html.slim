@@ -1,34 +1,35 @@
-= form_for @user, url: update_profile_my_account_path, method: :patch do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      ul
-        - @user.errors.full_messages.each do |message|
-          li = message
-  table
-    tr
-      td width="200px"
-        = f.label :email
-      td
-        = f.text_field :email, placeholder: "example@hyve.com"
-    tr
-      td
-        = f.label :username
-      td
-        = f.text_field :username, placeholder: "hyve_user"
-    tr
-      td
-        = f.label :first_name
-      td
-        = f.text_field :first_name, placeholder: "Bob"
-    tr
-      td
-        = f.label :last_name
-      td
-        = f.text_field :last_name, placeholder: "Dylan"
-    tr
-      td
-        = f.label :avatar
-      td
-        = f.file_field :avatar, type: 'file'
-  = f.submit "Update Profile"
+.container
+  = form_for @user, url: update_profile_my_account_path, method: :patch do |f|
+    - if @user.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        ul
+          - @user.errors.full_messages.each do |message|
+            li = message
+    table
+      tr
+        td width="200px"
+          = f.label :email
+        td
+          = f.text_field :email, placeholder: "example@hyve.com"
+      tr
+        td
+          = f.label :username
+        td
+          = f.text_field :username, placeholder: "hyve_user"
+      tr
+        td
+          = f.label :first_name
+        td
+          = f.text_field :first_name, placeholder: "Bob"
+      tr
+        td
+          = f.label :last_name
+        td
+          = f.text_field :last_name, placeholder: "Dylan"
+      tr
+        td
+          = f.label :avatar
+        td
+          = f.file_field :avatar, type: 'file'
+    = f.submit "Update Profile"

@@ -1,28 +1,33 @@
-h1 Users
-= link_to 'Create New User', new_user_path, class: "btn btn-default"
+.container
 
-- if current_user
-  h2 Current User info
-  h4 Name: #{current_user.full_name}
-  h4 ID: #{current_user.id}
+  - if current_user
+    .jumbotron
+      h3 Current User Info
+      h5 ID: #{current_user.id}
+      h5 Name: #{current_user.full_name}
+      h5 Username: #{current_user.username} 
+      = link_to 'Show My User Info', user_path(current_user), class: "btn btn-lg btn-primary" 
 
-table
-  thead
-    tr
-      th width="200px" Provider
-      th width="200px" Email
-      th width="200px" ID
-      th width="200px" Name
-      th width="200px" Username
-      th width="200px" Action
-  tbody
-  - @users.each do |user|
-    tr
-     td
-      - user.authentications.each do |a|
-        strong = a.provider.capitalize!
-      td = user.email
-      td = user.id
-      td = user.full_name
-      td = user.username
-      td = link_to 'Show', user
+  = link_to 'Create New User', new_user_path, class: "btn btn-default"
+
+  h1 All Users
+  table
+    thead
+      tr
+        th width="200px" Provider
+        th width="200px" Email
+        th width="200px" ID
+        th width="200px" Name
+        th width="200px" Username
+        th width="200px" Action
+    tbody
+    - @users.each do |user|
+      tr
+       td
+        - user.authentications.each do |a|
+          strong = a.provider.capitalize!
+        td = user.email
+        td = user.id
+        td = user.full_name
+        td = user.username
+        td = link_to 'Show', user

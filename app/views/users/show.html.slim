@@ -1,32 +1,33 @@
-p#notice = notice
+.container
+  p#notice = notice
 
-p
-  strong Email:
-  = @user.email
-p
-  strong Username:
-  = @user.username
-p
-  strong First Name:
-  = @user.first_name
-p
-  strong Last Name:
-  = @user.last_name
-p
-  - if @user.avatar_url.nil?
-    p No Avatar
-  - else
-    = image_tag "#{@user.avatar}"
+  p
+    strong Email:
+    = @user.email
+  p
+    strong Username:
+    = @user.username
+  p
+    strong First Name:
+    = @user.first_name
+  p
+    strong Last Name:
+    = @user.last_name
+  p
+    - if @user.avatar_url.nil?
+      p No Avatar
+    - else
+      = image_tag "#{@user.avatar}"
 
-- if logged_in? && current_user == @user
-  /= form_tag(subscribe_user_path) do
-      /= email_field_tag :email, @user.email
-      /= submit_tag "Subscribe"
+  - if logged_in? && current_user == @user
+    /= form_tag(subscribe_user_path) do
+        /= email_field_tag :email, @user.email
+        /= submit_tag "Subscribe"
 
-  /= form_tag(unsubscribe_user_path) do
-    /= hidden_field_tag :email, @user.email
-    /= submit_tag "Unsubscribe"
-  p 
-    = link_to 'Edit Profile', my_account_path
+    /= form_tag(unsubscribe_user_path) do
+      /= hidden_field_tag :email, @user.email
+      /= submit_tag "Unsubscribe"
+    p 
+      = link_to 'Edit Profile', my_account_path
 
-p = link_to 'Back', users_path
+  p = link_to 'Back', users_path
