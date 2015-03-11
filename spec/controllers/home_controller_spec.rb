@@ -12,5 +12,4 @@ RSpec.describe HomeController, :type => :controller do
 		before{ post :index }
         it{ expect(redirect_to root_path) }
   	end
-  
 end

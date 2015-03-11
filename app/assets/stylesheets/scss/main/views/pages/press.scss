@@ -1,9 +1,13 @@
+$blue: rgba(66,161,201,100);
+$orange: #E2642A;
+$grey: rgba(140,140,140,100);
+
 .blue {
-  color: rgba(66,161,201,100);
+  color: $blue; 
 }
 
 .orange {
-  color: #E2642A;
+  color: $orange;
 }
 
 .white {
@@ -11,6 +15,5 @@
 }
 
 .grey {
-  color: rgba(140,140,140,100);
+  color: $grey;
 }
-

@@ -1,0 +1,24 @@
+ol.carousel-indicators > li.active {
+  background-color: $orange;
+} 
+
+ol.carousel-indicators > li {
+  background-color: white;
+} 
+
+/*#first_slide {*/
+  /*background-image: image_url("timeline/brainstorm.jpg"); */
+  /*background-repeat: no-repeat;*/
+  /*background-position: center center;*/
+/*}*/
+
+.carousel-inner > .item > .container > .carousel-caption {
+  text-shadow: none;
+  p {
+    color: $grey;
+  }
+} 
+
+.left.carousel-control > .glyphicon-chevron-left, .right.carousel-control > .glyphicon-chevron-right {
+  color: $blue;
+}
