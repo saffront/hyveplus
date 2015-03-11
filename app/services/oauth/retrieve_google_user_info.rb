@@ -20,7 +20,7 @@ class Oauth::RetrieveGoogleUserInfo
       @username = @username + "-" + "#{SecureRandom.hex(3)}"
     end
 
-    @user.update!(first_name: @gplus_user.name.given_name,
+    @user.update(first_name: @gplus_user.name.given_name,
                  last_name: @gplus_user.name.family_name,
                  username: @username)
   end
