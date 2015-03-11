@@ -1,4 +1,13 @@
 .container
-  h1 Login 
-  = render 'form'
-  = link_to 'Back', users_path
+  .row
+    .col-md-6
+      h1 Login with Email 
+      = render 'form'
+      = link_to 'Back', users_path
+
+    .col-md-6
+      h1 Social Medias 
+      p = link_to raw("#{fa_icon 'facebook', text: 'Login with Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
+      p = link_to raw("#{fa_icon 'twitter', text: 'Login with Twitter'}"), auth_at_provider_path(provider: :twitter), class: "btn btn-block btn-social btn-twitter"
+      p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"
+  

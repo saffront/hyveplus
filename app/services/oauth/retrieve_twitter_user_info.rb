@@ -14,8 +14,14 @@ class Oauth::RetrieveTwitterUserInfo
     twitter_user = @twitter.client.user(@screen_name)
     upload_profile_image(twitter_user)
 
+    @username = twitter_user.screen_name.parameterize
+
+    if User.where(username: @username).exists?
+      @username = @username + "-" + "#{SecureRandom.hex(3)}"
+    end
+
     @user.update(first_name: twitter_user.name,
-                 username: twitter_user.screen_name)
+                 username: @username)
   end
 
   private

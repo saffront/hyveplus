@@ -13,14 +13,17 @@ class User < ActiveRecord::Base
 
   after_initialize :set_default_password, if: :new_record?
   before_validation :set_default_email, if: :new_record?
-  validates :password, length: { minimum: 5 }, if: :password
+
+  validates :password, length: { minimum: 8 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
+
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
-  #Username does not starting with a digit
+  validates_presence_of :first_name
+  #validates_presence_of :email
+
   validates_uniqueness_of :username, case_sensitive: false
-  validates :username, length: { minimum: 4 }, if: :username
   validates_format_of :username, with: /\A[a-zA-Z0-9-_]+\z/, message: "can only have alphanumeric, - or _ characters"
   validates_format_of :username, without: /\A\d/, message: "cannot start with number"
 
@@ -49,20 +52,12 @@ class User < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
-  #def update_password_and_email(current_password, new_email, new_password, new_password_confirmation)
-    #if User.authenticate(self.email, current_password).present?
-      #self.password_confirmation = new_password_confirmation
-      #self.update(email: new_email)
-      #self.change_password!(new_password)
-    #end
-  #end
-
   private
 
   def set_default_email
     return unless self.email.nil?
     self.email = loop do
-      email = "#{SecureRandom.urlsafe_base64}@changeme.com"
+      email = "#{SecureRandom.urlsafe_base64(n=10)}@changeme.com"
       break email unless User.where(email: email).exists?
     end
   end

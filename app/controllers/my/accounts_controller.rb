@@ -11,7 +11,7 @@ class My::AccountsController < My::BaseController
   end
 
   def update_profile
-    update(user_params, "profile", "show")
+    update(user_params, "profile", "edit_profile")
   end
 
   #def update
