@@ -28,28 +28,22 @@ class OauthController < ApplicationController
   end
 
   def register_new_user(provider)
-    # begin
-      @user = create_and_validate_from(provider)
-      @user.activate!
-      reset_session
+    @user = create_and_validate_from(provider)
+    @user.activate!
+    reset_session
 
-      case provider
-      when "twitter"
-        save_twitter_info
-      when "facebook"
-        save_facebook_info
-      when "google"
-        save_google_info
-      end
-    
-        auto_login(@user)
-        flash[:notice] = "You've registered through #{provider.titleize}!"
-        redirect_to edit_profile_my_account_path(current_user)
-    # rescue => e
-    #   logger.info "[ERROR]: #{e.inspect}"
-    #   flash[:alert] = "Failed to login from #{provider.titleize}"
-    #   redirect_to root_path
-    # end
+    case provider
+    when "twitter"
+      save_twitter_info
+    when "facebook"
+      save_facebook_info
+    when "google"
+      save_google_info
+    end
+  
+      auto_login(@user)
+      flash[:notice] = "You've registered through #{provider.titleize}!"
+      redirect_to edit_profile_my_account_path(current_user)
   end
 
   def save_twitter_info

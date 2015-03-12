@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   validates_presence_of :first_name
-  validates_presence_of :email
+  #validates_presence_of :email
 
   validates_uniqueness_of :username, case_sensitive: false
   validates_format_of :username, with: /\A[a-zA-Z0-9-_]+\z/, message: "can only have alphanumeric, - or _ characters"
@@ -46,10 +46,6 @@ class User < ActiveRecord::Base
   def set_access_token(token, secret, provider)
     auth = self.authentications.find_by(provider: provider)
     auth.update(token: token, secret: secret)
-  end
-
-  def full_name
-    self.first_name + ' ' + self.last_name
   end
 
   private
