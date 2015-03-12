@@ -14,30 +14,14 @@ class My::AccountsController < My::BaseController
     update(user_params, "profile", "edit_profile")
   end
 
-  #def update
-    #if @user.update(user_params)
-      #redirect_to my_account_path, notice: 'Your profile was successfully updated.'
-    #else
-      #render :show
-    #end
-  #end
-
   def update_password
     update(password_params, "password", "edit_password")
   end
 
-  #def update_password
-    #if @user.update(password_params)
-      #redirect_to my_account_path, notice: 'Your password was successfully updated.'
-    #else
-      #render :edit_password
-    #end
+  #def destroy
+    #@user.destroy
+    #redirect_to root_url
   #end
-
-  def destroy
-    @user.destroy
-    redirect_to root_url
-  end
 
   private
 
