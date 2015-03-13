@@ -12,16 +12,16 @@ class Oauth::RetrieveGoogleUserInfo
   def save
     GooglePlus.access_token = @token
 
-    @gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
-    upload_profile_image(@gplus_user)
+    gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
+    upload_profile_image(gplus_user)
 
-    @username = @gplus_user.display_name.parameterize
+    @username = gplus_user.display_name.parameterize
     if User.where(username: @username).exists?
       @username = @username + "-" + "#{SecureRandom.hex(3)}"
     end
 
-    @user.update(first_name: @gplus_user.name.given_name,
-                 last_name: @gplus_user.name.family_name,
+    @user.update(first_name: gplus_user.name.given_name,
+                 last_name: gplus_user.name.family_name,
                  username: @username)
   end
 

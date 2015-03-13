@@ -7,6 +7,8 @@ class Hyvelet < ActiveRecord::Base
 	acts_as_mappable
 	has_many :hyvelet_missing_locations
 
+  #Carrierwave
+  mount_uploader :image, AvatarUploader
 
 	def default_values
 		if self.name.nil?
