@@ -36,6 +36,9 @@ gem 'google_plus'
 #Mail Chimp API Wrapper
 gem 'gibbon'
 
+#Mobile APP api
+gem 'active_model_serializers'
+
 #Image Uploaders
 gem 'carrierwave'
 gem 'mini_magick'

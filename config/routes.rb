@@ -37,4 +37,14 @@ Rails.application.routes.draw do
   #Static Pages
   get '/press', to: 'pages#press', as: 'press'
 
+
+  #API for Mobile App
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:show]
+      resources :hyvelets, only: [:show]
+      resources :user_sessions, only: [:create, :destroy]
+    end
+  end
+
 end

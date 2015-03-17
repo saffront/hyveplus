@@ -21,10 +21,10 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   validates_presence_of :first_name
-  #validates_presence_of :email
 
   validates_uniqueness_of :username, case_sensitive: false
-  validates_format_of :username, with: /\A[a-zA-Z0-9-_]+\z/, message: "can only have alphanumeric, - or _ characters"
+  #Regex for friendly ID and parameterize
+  validates_format_of :username, with: /\A[a-zA-Z0-9_ -]+\z/, message: "can only have alphanumeric, - or _ characters"
   validates_format_of :username, without: /\A\d/, message: "cannot start with number"
 
   #Carrierwave
@@ -48,6 +48,11 @@ class User < ActiveRecord::Base
     auth.update(token: token, secret: secret)
   end
 
+  #Mobile App API
+  def generate_api_token!
+    generate_token(:api_token)
+  end
+
   private
 
   def set_default_email
@@ -63,5 +68,11 @@ class User < ActiveRecord::Base
     password = SecureRandom.hex
     self.password = password
     self.password_confirmation = password
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
   end
 end
