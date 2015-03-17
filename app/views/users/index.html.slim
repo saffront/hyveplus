@@ -22,6 +22,7 @@
         th width="200px" First Name
         th width="200px" Last Name
         th width="200px" Username
+        th width='100px' Role
         th width="200px" Activation State
         th width="200px" Action
     tbody
@@ -35,5 +36,6 @@
         td = user.first_name
         td = user.last_name
         td = user.username
+        td = user.role
         td = user.activation_state.capitalize!
         td = link_to 'Show', user_path(user)

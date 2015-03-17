@@ -54,6 +54,7 @@ group :development do
   gem 'spring'
   gem 'heroku_san'
   gem 'rb-readline'
+  gem 'letter_opener'
   gem 'rb-inotify', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-fchange', require: false

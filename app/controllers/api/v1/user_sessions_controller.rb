@@ -10,9 +10,8 @@ class Api::V1::UserSessionsController < Api::ApiController
     else
       @user = User.new do |user|
         user.email = info_params[:email]
-        @password = SecureRandom.urlsafe_base64(15)
-        user.password = @password 
-        user.password_confirmation = @password 
+        user.password = info_params[:password]
+        user.password_confirmation = info_params[:password_confirmation]
         user.username = info_params[:username]
         user.avatar = info_params[:avatar]
         user.first_name = info_params[:first_name]

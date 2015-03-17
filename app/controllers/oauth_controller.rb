@@ -41,9 +41,10 @@ class OauthController < ApplicationController
       save_google_info
     end
   
-      auto_login(@user)
-      flash[:notice] = "You've registered through #{provider.titleize}!"
-      redirect_to edit_profile_my_account_path(current_user)
+    @user.activate!
+    auto_login(@user)
+    flash[:notice] = "You've registered through #{provider.titleize}!"
+    redirect_to edit_profile_my_account_path(current_user)
   end
 
   def save_twitter_info
