@@ -2,9 +2,11 @@ class Api::V1::UserSessionsController < Api::ApiController
   skip_before_action :authenticate_token
 
   def create
-    @user = User.find_by_email(info_params[:email])
+    @user = User.find_by(email: info_params[:email])
+    @auth = @user.authentications.find_by(uid: info_params[:uid])
+    #@provider = @user.authentications.find_by(provider: info_params[:provider])
 
-    if @user
+    if @user && @auth
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
     else
@@ -47,6 +49,6 @@ class Api::V1::UserSessionsController < Api::ApiController
   private
 
   def info_params
-    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :role, :api_token, authentication_attributes: [:uid, :provider] )
+    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :role, :api_token, :uid, :provider)
   end
 end
