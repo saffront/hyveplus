@@ -1,7 +1,24 @@
- $blue: rgba(66,161,201,100);
+@mixin btn-basic {
+  border-width: 3px;
+  border-color: white;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
 
 .btn-blue {
-  border-width: 3px;
-  border-color: $blue;
+  @include btn-basic;
+  background-color: $blue;
+  color: white;
+}
+
+.btn-press-kit {
+  @include btn-basic;
+  background-color: white;
   color: $blue;
+}
+
+.btn-video {
+  @include btn-basic;
+  color: white;
 }

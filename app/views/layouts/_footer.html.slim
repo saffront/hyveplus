@@ -1,6 +1,17 @@
-/footer.footer
-  /.container
-    /p.text-muted Place sticky footer content here.
-    /= form_tag(subscribe_path) do
-      /= email_field_tag :email, nil, placeholder: "email@example.com"
-      /= submit_tag "Subscribe"
+footer.footer
+  .container
+    #footer.row.vertical-align
+      .col-md-10.col-centered
+        .row
+          .col-md-2.text-centered
+            p.white &copy Hyve 2015
+          .col-md-4.text-centered
+            p.white Email: hyvemalaysia@gmail.com
+          .col-md-4.text-centered
+            p.white Phone + 603 - 42575510
+          .col-md-1.text-centered
+            = link_to root_path
+              = image_tag 'footer/facebook.png' 
+          .col-md-1.text-centered
+            = link_to root_path
+              = image_tag 'footer/twitter.png' 

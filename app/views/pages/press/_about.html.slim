@@ -1,42 +1,5 @@
-.container.orange-btm-border
-  .row
-    iframe.center-block allowfullscreen="" frameborder="0" height="658" mozallowfullscreen="" src="https://player.vimeo.com/video/42854894?color=ffffff&title=0&byline=0&portrait=0" webkitallowfullscreen="" width="1170" 
-
-  .row.padded-row.margin-1
-    .col.md-12.col-centered
-      #sponsors.row.row-eq-height
-        .col-md-3.text-centered
-          p.grey.margin-2 Hyve is backed by
-        .col-md-3.text-centered
-          = image_tag 'about/microsoft.png'
-        .col-md-3.text-centered
-          = image_tag 'about/skype.png'
-        .col-md-3.text-centered
-          = image_tag 'about/magic.png'
-
-  .row.orange-background
-    .col-md-6.text-centered
-      = image_tag 'about/hyve.png'
-    #hyve-description.col-md-6
-      p.white Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea. Vitae docendi persequeris ex sea. Congue scripta aliquam ei quo, mel adhuc aliquip ex. Ad has vero senserit, timeam maiorum dolores ad per, ferri verear offendit ut eam. Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea. Vitae docendi persequeris ex sea.
-
-  .row.grey-background.padded-top-5.padded-btm-5
-    .col-md-10.col-centered
-      .row
-        .col-md-4.text-centered
-          = image_tag 'about/proximity_detector.png'
-          h2.orange Proximity Detector
-          p.grey Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea.
-        .col-md-4.text-centered
-          = image_tag 'about/reverse_finder.png'
-          h2.orange Reverse Finder
-          p.grey Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea.
-
-        .col-md-4.text-centered
-          = image_tag 'about/finder.png'
-          h2.orange Finder
-          p.grey Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea.
-
-  .row.grey-background.padded-btm-5
-    .col-md-4.col-centered.text-centered
-      .btn.btn-default.btn-blue Download Press Kit
+.container
+  = render 'pages/press/about/banner'
+  = render 'pages/press/about/sponsors'
+  = render 'pages/press/about/hyve_info'
+  = render 'pages/press/about/hyve_features'

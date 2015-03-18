@@ -1,5 +1,13 @@
+#banner {
+  height: 550px;
+  background-image: image-url('about/banner.png');
+  background-size: 1170px 550px;
+  background-repeat: no-repeat;
+}
+
 .orange-background {
-  background-color: #E2642A;
+  /*background-color: #E2642A;*/
+  background-color: $orange;
 }
 
 #sponsors {
@@ -7,7 +15,6 @@
   vertical-align: middle;
 }
 
-#hyve-description {
-  margin-top: 9rem;
-  padding-right: 7rem;
+#hyve {
+  height: 30rem;
 }

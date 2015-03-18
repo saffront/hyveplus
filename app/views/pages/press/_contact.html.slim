@@ -1,15 +1,13 @@
-#contact.container
-  .row.padded-row.padded-btm-2
-    .col-md-4.col-md-offset-4
-      h1.padded-btm-2 Contact Us
-      p Lorem ipsum dolor sit amet, in vis nobis ocurreret deseruisse. No altera adolescens vim. Unum omnes consequat ad sea, vim graeci evertitur ea. 
-      p jiasherntan@gmail.com
-  .row.padded-btm-5
-    .col-md-5
-    .col-md-1
-      = link_to root_path
-        = image_tag 'contact/twitter.png'
-    .col-md-1
-      = link_to root_path
-        = image_tag 'contact/facebook.png'
-    .col-md-5
+#contact.container.padded-btm-5
+  .row.margin-2
+    .col-md-6.col-centered
+      h1.margin-2.padded-top-2.padded-btm-2 Contact Us
+      p If you have any questions regarding Hyve, our support team is more than happy to help. You can reach us by filling out the form below.
+  .row.margin-2
+    .col-md-5.col-centered
+      form role="form" 
+        .form-group
+          input#email.form-control placeholder=("Your email here") type="email"
+        .form-group
+          textarea#message.form-control placeholder=("Your message here") rows="10"
+        button.btn.btn-blue type="submit"  Send Message

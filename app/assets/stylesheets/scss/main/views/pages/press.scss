@@ -1,7 +1,3 @@
-$blue: rgba(66,161,201,100);
-$orange: #E2642A;
-$grey: rgba(140,140,140,100);
-
 .blue {
   color: $blue; 
 }
@@ -16,4 +12,12 @@ $grey: rgba(140,140,140,100);
 
 .grey {
   color: $grey;
+}
+
+.grey-background {
+  background-color: rgba(233,233,233,100);
+}
+
+.black-background {
+   background-color: black;
 }
