@@ -95,7 +95,7 @@ Rails.application.config.sorcery.configure do |config|
 
   config.google.key = ENV["GOOGLE_API_KEY"]
   config.google.secret = ENV["GOOGLE_API_SECRET"]
-  config.google.user_info_mapping = { email: "email", username: "display_name", first_name: "first_name" }
+  config.google.user_info_mapping = { email: "email", username: "name", first_name: "name" }
 
   if Rails.env.staging? || Rails.env.development?
     config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"

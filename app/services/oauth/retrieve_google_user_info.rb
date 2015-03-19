@@ -16,9 +16,9 @@ class Oauth::RetrieveGoogleUserInfo
     upload_profile_image(gplus_user)
 
     @username = gplus_user.display_name.parameterize
-    if User.where(username: @username).exists?
+    begin
       @username = @username + "-" + "#{SecureRandom.hex(3)}"
-    end
+    end while User.exists?(username: @username)
 
     @user.update(first_name: gplus_user.name.given_name,
                  last_name: gplus_user.name.family_name,

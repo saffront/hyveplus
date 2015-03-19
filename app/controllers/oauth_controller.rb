@@ -8,6 +8,7 @@ class OauthController < ApplicationController
   def callback
     provider = auth_params[:provider]
 
+    binding.pry
     if @user = login_from(provider)
       set_access_token(@user)
       flash[:success] = "You're logged in from #{provider.titleize}!"
@@ -29,6 +30,7 @@ class OauthController < ApplicationController
 
   def register_new_user(provider)
     @user = create_and_validate_from(provider)
+    binding.pry
     reset_session
 
     case provider
@@ -43,8 +45,9 @@ class OauthController < ApplicationController
     @user.activate!
     auto_login(@user)
     flash[:notice] = "You've registered through #{provider.titleize}!"
-    if provider = "twitter"
-     flash[:error] = "Please change your email for Twitter."
+    binding.pry
+    if provider == "twitter"
+      flash[:error] = "Please change your email for Twitter."
     end
     redirect_to edit_profile_my_account_path(current_user)
   end

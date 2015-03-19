@@ -1,4 +1,4 @@
-class Initializer::GplusClienti
+class Initializer::GplusClient
   attr_accessor :token, :secret, :client
 
   def initialize(token)
