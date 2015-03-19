@@ -74,5 +74,6 @@ class User < ActiveRecord::Base
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
+    save!
   end
 end

@@ -4,7 +4,6 @@ class Api::V1::UserSessionsController < Api::ApiController
   def create
     @user = User.find_by(email: info_params[:email])
     @auth = @user.authentications.find_by(uid: info_params[:uid])
-    #@provider = @user.authentications.find_by(provider: info_params[:provider])
 
     if @user && @auth
       @user.generate_api_token!

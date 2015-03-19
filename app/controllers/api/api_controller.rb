@@ -9,7 +9,7 @@ class Api::ApiController < ActionController::Base
     user = User.find_by_api_token(api_token)
 
     if api_token.present? && user
-      sign_in(:user, user) 
+      auto_login(user)
     else
       render json: { status: :unauthorized }
     end
