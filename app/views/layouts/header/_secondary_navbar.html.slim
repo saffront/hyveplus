@@ -1,0 +1,15 @@
+#secondary.container
+  .navbar-header
+    button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+  .collapse.navbar-collapse
+    ul#secondary-navbar.nav.navbar-nav
+      li
+        = link_to "Company", root_path
+      li
+        = link_to "Product", root_path
+      li
+        = link_to "Press", press_path

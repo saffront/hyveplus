@@ -3,7 +3,6 @@
     .col-md-6
       h1 Login with Email 
       = render 'form'
-      = link_to 'Back', users_path
 
     .col-md-6
       h1 Social Medias 
@@ -11,3 +10,7 @@
       p = link_to raw("#{fa_icon 'twitter', text: 'Login with Twitter'}"), auth_at_provider_path(provider: :twitter), class: "btn btn-block btn-social btn-twitter"
       p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"
   
+  .row
+    .col-md-6
+      h1 Create User Account
+      = link_to 'Register', new_user_path, class: 'btn btn-default'

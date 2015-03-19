@@ -9,7 +9,7 @@ html
   meta content="width=device-width, initial-scale=1.0" name="viewport"
 
   body class="#{controller_name}##{action_name}"
-    = render partial: "layouts/header", locals: { page: "#{controller.controller_name} #{controller.action_name}" }
+    = render partial: "layouts/header", locals: { view: "#{controller_name}##{action_name}" }
     = render 'shared/flash'
     = yield
     = render "layouts/footer"
