@@ -43,6 +43,9 @@ class OauthController < ApplicationController
     @user.activate!
     auto_login(@user)
     flash[:notice] = "You've registered through #{provider.titleize}!"
+    if provider = "twitter"
+     flash[:error] = "Please change your email for Twitter."
+    end
     redirect_to edit_profile_my_account_path(current_user)
   end
 

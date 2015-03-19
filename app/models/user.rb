@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   def set_default_email
     return unless self.email.nil?
     self.email = loop do
-      email = "#{SecureRandom.urlsafe_base64(n=10)}@changeme.com"
+      email = "#{SecureRandom.urlsafe_base64(6)}@changeme.com"
       break email unless User.where(email: email).exists?
     end
   end

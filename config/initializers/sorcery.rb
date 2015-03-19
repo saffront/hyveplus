@@ -87,15 +87,15 @@ Rails.application.config.sorcery.configure do |config|
 
   config.twitter.key = ENV["TWITTER_API_KEY"]
   config.twitter.secret = ENV["TWITTER_API_SECRET"]
-  config.twitter.user_info_mapping = { email: "email", username: "screen_name" }
+  config.twitter.user_info_mapping = { email: "email", username: "screen_name", first_name: "screen_name" }
 
   config.facebook.key = ENV["FACEBOOK_APP_KEY"]
   config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
-  config.facebook.user_info_mapping = { email: "email", username: "last_name" }
+  config.facebook.user_info_mapping = { email: "email", username: "last_name", first_name: "first_name" }
 
   config.google.key = ENV["GOOGLE_API_KEY"]
   config.google.secret = ENV["GOOGLE_API_SECRET"]
-  config.google.user_info_mapping = { email: "email", username: "display_name" }
+  config.google.user_info_mapping = { email: "email", username: "display_name", first_name: "first_name" }
 
   if Rails.env.staging? || Rails.env.development?
     config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
