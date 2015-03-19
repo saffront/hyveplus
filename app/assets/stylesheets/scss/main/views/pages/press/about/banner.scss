@@ -1,0 +1,19 @@
+@mixin open-sans($weight, $size) {
+  font-family: "Open Sans";
+  font-weight: $weight;
+  font-size: $size;
+}
+
+#banner {
+  height: 550px;
+  background-image: image-url('about/banner.png');
+  background-size: 1170px 550px;
+  background-repeat: no-repeat;
+  h1 {
+    @include open-sans(700, 50px);
+  }
+  h2 {
+    @include open-sans(600, 20px);
+  }
+}
+
