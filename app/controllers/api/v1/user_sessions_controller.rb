@@ -3,7 +3,8 @@ class Api::V1::UserSessionsController < Api::ApiController
 
   def create
     @user = User.find_by(email: info_params[:email])
-    @auth = @user.authentications.find_by(uid: info_params[:uid])
+    #returns nil rather than raising an exception
+    @auth = @user.try(:authentications).try(:find_by_uid, info_params[:uid])
 
     if @user && @auth
       @user.generate_api_token!

@@ -15,7 +15,6 @@ class Oauth::RetrieveGoogleUserInfo
     gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
     upload_profile_image(gplus_user)
 
-    binding.pry
     @username = gplus_user.display_name.parameterize
     if User.exists?(username: @username)
       begin
