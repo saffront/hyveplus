@@ -1,4 +1,13 @@
-.timeline-table {
-  width: 50%;
+table.timeline-table {
+  /*width: 40%;*/
   margin: 0 auto;
+
+  tr > td > h4 {
+    &.orange {
+      @include avenir(heavy, 20px);
+    }
+    &.blue {
+      @include avenir(roman, 18px);
+    }
+  }
 }

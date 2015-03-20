@@ -1,0 +1,4 @@
+@mixin avenir($weight, $size) {
+  font-family: avenir- + $weight, sans-serif;
+  font-size: $size
+}

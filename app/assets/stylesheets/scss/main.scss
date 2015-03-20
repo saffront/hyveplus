@@ -14,11 +14,12 @@
 // Shared
 @import "shared/*";
 
+//Fonts
+@import "main/typography";
+
 // Layout specific styles
 @import "main/layout";
 
-//Fonts
-@import "main/typography";
 
 // Need to move to elsewhere
 @import "main/scaffolds";

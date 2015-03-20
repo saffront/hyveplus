@@ -1,11 +1,50 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600);
+/*opensans-bold*/
+/*opensans-semibold*/
+/*avenir-heavy*/
+/*avenir-roman*/
 
-/*@font-face {*/
-  /*font-family: Avenir;*/
-  /*src: url("fonts/AvenirLTStd-Roman.otf");*/
-/*}*/
+@font-face {
+  font-family: 'opensans-bold';
+  src: asset-url(font-path('OpenSans-Bold.eot'));
+  src: asset-url(font-path('OpenSans-Bold.eot') + '?#iefix') format('embedded-opentype'),
+       asset-url(font-path('OpenSans-Bold.woff2')) format('woff2'),
+       asset-url(font-path('OpenSans-Bold.woff')) format('woff'),
+       asset-url(font-path('OpenSans-Bold.ttf')) format('truetype'),
+       asset-url(font-path('OpenSans-Bold.svg#open_sansbold')) format('svg');
+}
 
-/*@font-face {*/
-  /*font-family: Open-Sans;*/
-  /*src: url("fonts/OpenSans-Bold.ttf");*/
-/*}*/
+@font-face {
+  font-family: 'opensans-semibold';
+  src: asset-url(font-path('OpenSans-Semibold.eot'));
+  src: asset-url(font-path('OpenSans-Semibold.eot?#iefix')) format('embedded-opentype'),
+       asset-url(font-path('OpenSans-Semibold.woff2')) format('woff2'),
+       asset-url(font-path('OpenSans-Semibold.woff')) format('woff'),
+       asset-url(font-path('OpenSans-Semibold.ttf')) format('truetype'),
+       asset-url(font-path('OpenSans-Semibold.svg#open_sanssemibold')) format('svg');
+}
+
+@font-face {
+  font-family: 'avenir-heavy';
+  src: asset-url(font-path('AvenirLTStd-Heavy.eot'));
+  src: asset-url(font-path('AvenirLTStd-Heavy.eot?#iefix')) format('embedded-opentype'),
+       asset-url(font-path('AvenirLTStd-Heavy.woff2')) format('woff2'),
+       asset-url(font-path('AvenirLTStd-Heavy.woff')) format('woff'),
+       asset-url(font-path('AvenirLTStd-Heavy.ttf')) format('truetype'),
+       asset-url(font-path('AvenirLTStd-Heavy.svg#open_sanssemibold')) format('svg');
+}
+
+@font-face {
+  font-family: 'avenir-roman';
+  src: asset-url(font-path('AvenirLTStd-Roman.eot'));
+  src: asset-url(font-path('AvenirLTStd-Roman.eot?#iefix')) format('embedded-opentype'),
+       asset-url(font-path('AvenirLTStd-Roman.woff2')) format('woff2'),
+       asset-url(font-path('AvenirLTStd-Roman.woff')) format('woff'),
+       asset-url(font-path('AvenirLTStd-Roman.ttf')) format('truetype'),
+       asset-url(font-path('AvenirLTStd-Roman.svg#open_sanssemibold')) format('svg');
+}
+
+body {
+  font-family: avenir-roman;
+  font-size: 14px;
+  line-height: 18px;
+}

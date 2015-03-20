@@ -2,4 +2,7 @@
   background-color: $blue;
   color: white;
   text-align: center;
+  h1 {
+    @include avenir(heavy, 20px);
+  }
 }

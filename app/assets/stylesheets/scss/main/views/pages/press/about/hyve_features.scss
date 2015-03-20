@@ -1,0 +1,6 @@
+#hyve-features {
+  height: 35rem;
+  h4 {
+    @include avenir(heavy, 20px);
+  }
+}

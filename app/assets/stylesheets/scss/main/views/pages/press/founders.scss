@@ -1,0 +1,8 @@
+#founder {
+  h1.orange {
+    @include avenir(heavy, 20px);
+  }
+  h2.orange {
+    @include avenir(heavy, 18px);
+  }
+}

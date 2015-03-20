@@ -49,6 +49,7 @@ class Api::V1::UserSessionsController < Api::ApiController
   private
 
   def info_params
-    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :role, :api_token, :uid, :provider)
+    #:email, :username, :first_name, :uid, :provider
+    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :api_token, :uid, :provider)
   end
 end
