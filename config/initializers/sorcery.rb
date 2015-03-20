@@ -76,18 +76,13 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-  config.external_providers = [:twitter, :google, :facebook]
-
+  config.external_providers = [:google, :facebook]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
   # Default: `'path/to/ca_file'`
   #
   # config.ca_file =
-
-  config.twitter.key = ENV["TWITTER_API_KEY"]
-  config.twitter.secret = ENV["TWITTER_API_SECRET"]
-  config.twitter.user_info_mapping = { email: "email", username: "screen_name", first_name: "screen_name" }
 
   config.facebook.key = ENV["FACEBOOK_APP_KEY"]
   config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
@@ -98,11 +93,9 @@ Rails.application.config.sorcery.configure do |config|
   config.google.user_info_mapping = { email: "email", username: "name", first_name: "name" }
 
   if Rails.env.staging? || Rails.env.development?
-    config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
     config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
     config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
   else Rails.env.production?
-    config.twitter.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=twitter"
     config.facebook.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=facebook"
     config.google.callback_url = "http://hyve-staging.herokuapp.com/oauth/callback?provider=google"
   end

@@ -15,10 +15,13 @@ class Oauth::RetrieveGoogleUserInfo
     gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
     upload_profile_image(gplus_user)
 
+    binding.pry
     @username = gplus_user.display_name.parameterize
-    begin
-      @username = @username + "-" + "#{SecureRandom.hex(3)}"
-    end while User.exists?(username: @username)
+    if User.exists?(username: @username)
+      begin
+        @username = @username + "-" + SecureRandom.hex(3)
+      end while User.exists?(username: @username)
+    end
 
     @user.update(first_name: gplus_user.name.given_name,
                  last_name: gplus_user.name.family_name,

@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :authentications
 
   after_initialize :set_default_password, if: :new_record?
-  before_validation :set_default_email, if: :new_record?
+  #before_validation :set_default_email, if: :new_record?
 
   validates :password, length: { minimum: 8 }, if: :password
   validates :password, confirmation: true, if: :password
@@ -55,13 +55,13 @@ class User < ActiveRecord::Base
 
   private
 
-  def set_default_email
-    return unless self.email.nil?
-    self.email = loop do
-      email = "#{SecureRandom.urlsafe_base64(6)}@changeme.com"
-      break email unless User.where(email: email).exists?
-    end
-  end
+  #def set_default_email
+    #return unless self.email.nil?
+    #self.email = loop do
+      #email = "#{SecureRandom.urlsafe_base64(6)}@changeme.com"
+      #break email unless User.where(email: email).exists?
+    #end
+  #end
 
   def set_default_password
     return unless self.password.nil?

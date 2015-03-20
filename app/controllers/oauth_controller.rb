@@ -32,8 +32,6 @@ class OauthController < ApplicationController
     reset_session
 
     case provider
-    when "twitter"
-      save_twitter_info
     when "facebook"
       save_facebook_info
     when "google"
@@ -43,15 +41,7 @@ class OauthController < ApplicationController
     @user.activate!
     auto_login(@user)
     flash[:notice] = "You've registered through #{provider.titleize}!"
-    if provider == "twitter"
-      flash[:error] = "Please change your email for Twitter."
-    end
     redirect_to edit_profile_my_account_path(current_user)
-  end
-
-  def save_twitter_info
-    set_access_token(@user)
-    Oauth::RetrieveTwitterUserInfo.new(@access_token.token, @access_token.secret, @user, @access_token.params[:screen_name]).save
   end
 
   def save_facebook_info
@@ -79,8 +69,6 @@ class OauthController < ApplicationController
     case params[:provider]
     when "facebook"
       user.set_access_token(@access_token.token, nil, params[:provider])
-    when "twitter"
-      user.set_access_token(@access_token.params[:oauth_token], @access_token.params[:oauth_token_secret], params[:provider])
     when "google"
       user.set_access_token(@access_token.token, nil, params[:provider])
     end
