@@ -46,6 +46,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
+gem 'newrelic_rpm'
+
 group :production do
   gem 'rails_12factor'
 end
