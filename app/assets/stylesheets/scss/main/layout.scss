@@ -1,11 +1,6 @@
 body {
-  padding-top: 144px;
-  margin-bottom: 60px;
-}
-
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+  padding-top: 7rem;
+  padding-bottom: 25rem;
 }
 
 html {
@@ -53,18 +48,10 @@ html {
   margin: 2rem;
 }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
-
 .text-centered {
   text-align: center;
 }
 
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+.text-right {
+  text-align: right;
 }

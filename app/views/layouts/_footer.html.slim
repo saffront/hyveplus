@@ -1,17 +1,36 @@
-.footer.footer
+footer.footer
   .container
-    .row.vertical-align
+    .row
       .col-md-10.col-centered
-        .row
-          .col-md-2.text-centered
-            p.white &copy Hyve 2015
-          .col-md-4.text-centered
-            p.white Email: hyvemalaysia@gmail.com
-          .col-md-4.text-centered
-            p.white Phone + 603 - 42575510
-          .col-md-1.text-centered
-            = link_to root_path
-              = image_tag 'footer/facebook.png' 
-          .col-md-1.text-centered
-            = link_to root_path
-              = image_tag 'footer/twitter.png' 
+        .row.row-eq-height.vertical-align
+          #footer-links.col-md-4
+            .row
+              = link_to "FAQ", root_path, class: "white"
+            .row
+              = link_to "Contact Us", root_path, class: "white"
+            .row
+              = link_to "Download App", root_path, class: "white"
+            .row
+              = link_to "Terms & Condition", root_path, class: "white"
+
+          #copyright.col-md-4.text-centered
+            .row.padded-row
+              = link_to root_path
+                = image_tag 'footer/hyve_logo_white.png' 
+            .row.padded-row
+              p.white &copy Hyve 2015
+              p.white All Rights Reserved
+          #footer-newsletter.col-md-4.text-right
+            .row.padded-btm-2
+              .col-md-2.col-md-offset-8
+                = link_to root_path
+                  = image_tag 'footer/facebook.png' 
+              .col-md-2
+                = link_to root_path
+                  = image_tag 'footer/twitter.png' 
+            .row
+              p.white Subscribe to our newsletter
+
+              = form_tag(subscribe_path) do
+                = email_field_tag :email, nil, placeholder: 'email@example.com', class: "form-control form-newsletter"
+                = submit_tag "Subscribe Now", class: 'btn btn-subscribe'

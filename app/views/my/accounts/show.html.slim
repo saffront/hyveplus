@@ -6,11 +6,11 @@
     = link_to 'Change Password', edit_password_my_account_path, class: 'btn btn-primary'
   p
     - if @user.subscription
-      = form_tag(unsubscribe_my_account_path) do
+      = form_tag(unsubscribe_path) do
         = hidden_field_tag :email, @user.email 
         = submit_tag "Unsubscribe from Mailing List", class: 'btn btn-danger'
     - else
-      = form_tag(subscribe_my_account_path) do
+      = form_tag(subscribe_path) do
         = hidden_field_tag :email, @user.email 
         = submit_tag "Subscribe from Mailing List", class: 'btn btn-success'
   p

@@ -8,12 +8,6 @@
   font-size: 14px;
 }
 
-.btn-blue {
-  @include btn-basic;
-  background-color: $blue;
-  color: white;
-}
-
 .btn-press-kit {
   @include btn-basic;
   //Proper left alignment
@@ -25,4 +19,15 @@
 .btn-video {
   @include btn-basic;
   color: white;
+}
+
+.btn-subscribe {
+  margin: 2rem 0.5rem;
+  font-family: avenir-roman;
+  font-size: 10px;
+  background-color: white;
+  color: $orange;
+  //No floating elements allowed on left and right side of a specfied p element
+  clear: both;
+  float: right;
 }

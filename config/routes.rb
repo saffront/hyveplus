@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :hyvelet_missing_locations
 
   resources :master_pins
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
 
   namespace :my do
     resource :account, only: [:show, :destroy] do
-      post :subscribe, to: 'mailings#sub'
-      post :unsubscribe, to: 'mailings#unsub'
       get :edit_profile
       patch :update_profile, to: 'accounts#update_profile'
       get :edit_password
@@ -30,6 +29,10 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new', as: 'login'
   post 'logout', to: 'user_sessions#destroy', as: 'logout'
   
+  #Mailchimp subscription
+  post :subscribe, to: 'mailings#sub'
+  post :unsubscribe, to: 'mailings#unsub'
+
   #Home
   root 'pages#home'
   post 'push' => 'home#push'
