@@ -7,6 +7,8 @@
       h5 Username: #{current_user.username} 
       - current_user.authentications.each do |a|
         h5 Provider: #{a.provider.capitalize!}
+      h5 Role: #{current_user.role}
+
       = link_to 'Show My User Info', user_path(current_user), class: "btn btn-lg btn-primary" 
 
   = link_to 'Create New User', new_user_path, class: "btn btn-default"

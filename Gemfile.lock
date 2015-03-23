@@ -56,7 +56,6 @@ GEM
       sass (>= 3.2.19)
     buftok (0.2.0)
     builder (3.2.2)
-    cancancan (1.10.1)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -326,6 +325,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -513,7 +514,6 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.3.3)
-  cancancan
   capybara
   carrierwave
   codeclimate-test-reporter
@@ -541,6 +541,7 @@ DEPENDENCIES
   pg
   pry
   pry-rails
+  pundit
   quiet_assets
   rails (= 4.2.0)
   rails_12factor

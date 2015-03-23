@@ -27,8 +27,7 @@ gem 'rails_admin'
 
 #Authentication and authorisation
 gem 'sorcery'
-gem 'cancancan'
-#gem 'pundit'
+gem 'pundit'
 
 #Social Media API Wrapper
 gem 'fb_graph'

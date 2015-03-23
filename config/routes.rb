@@ -17,8 +17,12 @@ Rails.application.routes.draw do
       patch :update_password, to: 'accounts#update_password'
     end
   end
+  
+  namespace :admin do
+    resources :users, only: [:index]
+  end
 
-  resources :users, except: [:edit, :update, :destroy] do 
+  resources :users, except: [:index, :edit, :update, :destroy] do 
     get :activate, on: :member
   end
 

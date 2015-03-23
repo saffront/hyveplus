@@ -16,6 +16,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to :users, notice: "Logged out"
+    flash[:notice] = "Logged out"
+    redirect_to(request.referrer || root_path)
   end
 end

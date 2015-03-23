@@ -1,8 +1,6 @@
 class HyveletMissingLocationsController < ApplicationController
   before_action :set_hyvelet_missing_location, only: [:show, :edit, :update, :destroy]
 
-  
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hyvelet_missing_location
