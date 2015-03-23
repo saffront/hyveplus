@@ -39,24 +39,9 @@ class Api::V1::UserSessionsController < Api::ApiController
       user.first_name = info_params[:first_name]
       user.last_name = info_params[:last_name]
       user.role = 'user'
-
-      #Authentication
-      @authentication = user.authentications.new do |auth|
-        if info_params[:provider].nil?
-          auth.provider = "email" 
-        else
-          auth.provider = info_params[:provider]
-        end
-        if info_params[:uid].nil?
-          begin
-            #Addition because SecureRandom may output 0
-            auth[:uid] = ( (SecureRandom.random_number)*1234567890 + 1234567890 ).to_i 
-          end while Authentication.exists?(uid: auth[:uid])
-        else
-          auth.uid = info_params[:uid]
-        end
-      end
+      set_authentication(user)
     end
+
     if @user.save
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
@@ -65,4 +50,29 @@ class Api::V1::UserSessionsController < Api::ApiController
     end
   end
 
+  def set_authentication(user)
+    @authentication = user.authentications.new do |auth|
+      set_provider(auth)
+      set_uid(auth)
+    end
+  end
+
+  def set_provider(auth)
+    if info_params[:provider].nil?
+      auth.provider = "email" 
+    else
+      auth.provider = info_params[:provider]
+    end
+  end
+
+  def set_uid(auth)
+    if info_params[:uid].nil?
+      begin
+        #Addition because SecureRandom may output 0
+        auth[:uid] = ( (SecureRandom.random_number)*1234567890 + 1234567890 ).to_i 
+      end while Authentication.exists?(uid: auth[:uid])
+    else
+      auth.uid = info_params[:uid]
+    end
+  end
 end
