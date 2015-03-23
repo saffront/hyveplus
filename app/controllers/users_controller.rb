@@ -18,7 +18,9 @@ class UsersController < ApplicationController
     end while Authentication.exists?(uid: @auth[:uid])
     @auth[:provider] =  "email"
     if @user.save
-      redirect_to @user
+      auto_login(@user)
+      flash[:notice] = "Please activate your account to login in the future."
+      redirect_to @user 
     else
       render :new
     end
