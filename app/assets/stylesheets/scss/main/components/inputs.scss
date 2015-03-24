@@ -1,5 +1,16 @@
-.form-newsletter {
+//Home banner
+.form-newsletter-home {
   width: 70%;  
-  font-size: 12px;
+  font-size: 1.8rem;
+  text-align: center;
+  height: 4rem;
+  background-color: rgba(219,216,212,100);
+  margin: auto;
+}
+
+//Footer
+.form-newsletter-footer {
+  width: 70%;  
+  font-size: 1.2rem;
   float: right;
 }

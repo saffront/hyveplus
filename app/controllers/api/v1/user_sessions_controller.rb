@@ -35,7 +35,7 @@ class Api::V1::UserSessionsController < Api::ApiController
       user.password = info_params[:password]
       user.password_confirmation = info_params[:password_confirmation]
       user.username = info_params[:username]
-      user.avatar = info_params[:avatar]
+      user.remote_avatar_url = info_params[:avatar]
       user.first_name = info_params[:first_name]
       user.last_name = info_params[:last_name]
       user.role = 'user'
@@ -53,7 +53,6 @@ class Api::V1::UserSessionsController < Api::ApiController
       #Activate users who register via external providers
       @user.activate!
     end
-    binding.pry
   end
 
   def set_authentication(user)

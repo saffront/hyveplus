@@ -1,0 +1,20 @@
+#banner-home {
+  height: 95rem;
+  background-image: image-url('home/banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: -3rem;
+
+  h1 {
+    @include opensans(semibold, 3.6rem);
+  }
+
+  h2 {
+    @include opensans(regular, 2.5rem);
+  }
+}
+
+#subscribe_home {
+  display: inline-flex;
+  width: 45rem;
+}

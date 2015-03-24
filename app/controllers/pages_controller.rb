@@ -1,10 +1,21 @@
 class PagesController < ApplicationController
   skip_before_action :require_login
 
-  def home
+  ###About###
+  def company
+  end
+
+  def product
   end
 
   def press
+  end
+  ###End###
+
+  def home
+  end
+
+  def order
   end
 
 end

@@ -10,14 +10,14 @@
   .collapse.navbar-collapse
     ul#primary-navbar.nav.navbar-nav
       li
-        = link_to "About", root_path
-      li
         = link_to "Home", root_path
+      li
+        = link_to "About", root_path
       li
         = link_to root_path
           = image_tag 'header/hyve_logo.png', id: 'hyve-logo'
       li
-        = link_to "Order", root_path
+        = link_to "Order", order_path
       - if current_user
         li.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 

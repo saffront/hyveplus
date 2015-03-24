@@ -1,15 +1,2 @@
-.container
-  .row
-    h1 Welcome to Hyve
-  
-  .row
-    p = link_to raw("#{fa_icon 'key', text: 'Login with Email'}"), login_path, class: "btn btn-block btn-social btn-reddit"
-    p = link_to raw("#{fa_icon 'envelope-o', text: 'Sign Up with Email'}"), new_user_path, class: "btn btn-block btn-social btn-yahoo"
-
-  .row
-    p 
-      strong or 
-
-  .row
-    p = link_to raw("#{fa_icon 'facebook', text: 'Login with Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
-    p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"
+= render 'pages/home/about'
+= render 'pages/home/buy'

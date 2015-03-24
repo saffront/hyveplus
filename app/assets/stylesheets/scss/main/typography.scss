@@ -1,7 +1,9 @@
-/*opensans-bold*/
-/*opensans-semibold*/
-/*avenir-heavy*/
-/*avenir-roman*/
+//Available fonts
+//opensans-bold
+//opensans-semibold
+//opensans-regular
+//avenir-heavy
+//avenir-roman
 
 @font-face {
   font-family: 'opensans-bold';
@@ -21,6 +23,16 @@
        asset-url(font-path('OpenSans-Semibold.woff')) format('woff'),
        asset-url(font-path('OpenSans-Semibold.ttf')) format('truetype'),
        asset-url(font-path('OpenSans-Semibold.svg#open_sanssemibold')) format('svg');
+}
+
+@font-face {
+  font-family: 'opensans-regular';
+  src: asset-url(font-path('OpenSans-Regular.eot'));
+  src: asset-url(font-path('OpenSans-Regular.eot?#iefix')) format('embedded-opentype'),
+       asset-url(font-path('OpenSans-Regular.woff2')) format('woff2'),
+       asset-url(font-path('OpenSans-Regular.woff')) format('woff'),
+       asset-url(font-path('OpenSans-Regular.ttf')) format('truetype'),
+       asset-url(font-path('OpenSans-Regular.svg#open_sanssemibold')) format('svg');
 }
 
 @font-face {
