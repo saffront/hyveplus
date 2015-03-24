@@ -1,0 +1,9 @@
+#hyve-features-home {
+  h4 {
+    @include avenir(heavy, 2rem); 
+  }
+
+  p {
+    color: $grey;
+  }
+}

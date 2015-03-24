@@ -8,6 +8,15 @@
   padding: 1rem 3rem;
 }
 
+.btn-feature {
+  @include btn-basic;
+  width: 15rem;
+  border-color: $blue;
+  border-width: 0.2rem;
+  background-color: white;
+  color: $blue;
+}
+
 //Press
 .btn-press-kit {
   @include btn-basic;

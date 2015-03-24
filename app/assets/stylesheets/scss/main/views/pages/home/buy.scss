@@ -1,0 +1,16 @@
+#hyve-buy {
+  h1 {
+    @include avenir(heavy, 2rem);
+  }
+  
+  h2 {
+    @include avenir(roman, 1.4rem);
+    color: $grey;
+  } 
+
+  .btn.btn-blue {
+    margin-left: 0;
+    padding-top: 1.1rem ; 
+    padding-bottom: 1.1rem ; 
+  }
+}
