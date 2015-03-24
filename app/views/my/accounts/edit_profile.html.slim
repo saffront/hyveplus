@@ -7,26 +7,22 @@
           - @user.errors.full_messages.each do |message|
             li = message
     table
-      tr
-        td width="200px"
-          = f.label :email
-        td
-          = f.text_field :email, placeholder: "example@hyve.com"
+      col width="200"
       tr
         td
           = f.label :username
         td
-          = f.text_field :username, placeholder: "hyve_user"
+          = f.text_field :username
       tr
         td
           = f.label :first_name
         td
-          = f.text_field :first_name, placeholder: "Bob"
+          = f.text_field :first_name
       tr
         td
           = f.label :last_name
         td
-          = f.text_field :last_name, placeholder: "Dylan"
+          = f.text_field :last_name
       tr
         td
           = f.label :avatar

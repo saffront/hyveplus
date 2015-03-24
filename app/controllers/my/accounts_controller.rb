@@ -38,7 +38,7 @@ class My::AccountsController < My::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :avatar, :username)
+    params.require(:user).permit(:first_name, :last_name, :avatar, :username)
   end
 
   def password_params
