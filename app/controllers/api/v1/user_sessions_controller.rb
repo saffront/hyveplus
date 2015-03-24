@@ -2,7 +2,6 @@ class Api::V1::UserSessionsController < Api::ApiController
   skip_before_action :authenticate_token
 
   def create
-    binding.pry
     if info_params[:provider] == "email"
       #Logging in with email
       @user = login(info_params[:email], info_params[:password])
