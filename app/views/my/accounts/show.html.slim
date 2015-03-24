@@ -1,7 +1,40 @@
 .container
   h1 User Management
+
+  .jumbotron
+    h3 Current User Info
+
+    table
+      col width="200"
+      tr
+        td
+          h4 First Name
+        td
+          =  @user.first_name
+      tr
+        td
+          h4 Last Name
+        td
+          =  @user.last_name
+      tr
+        td
+          h4 Username
+        td
+          =  @user.username
+      tr
+        td
+          h4 Role
+        td
+          =  @user.role
+      tr
+        td
+          h4 Provider(s)
+        td
+          - @user.authentications.each do |a|
+            h5 #{a.provider.capitalize!}
+
   p
-    = link_to 'Edit Profile', edit_profile_my_account_path, class: 'btn btn-default'
+    = link_to 'Edit Profile', edit_profile_my_account_path, class: 'btn btn-info'
   p
     = link_to 'Change Password', edit_password_my_account_path, class: 'btn btn-primary'
   p
@@ -14,4 +47,4 @@
         = hidden_field_tag :email, @user.email 
         = submit_tag "Subscribe from Mailing List", class: 'btn btn-success'
   p
-    = link_to 'Back to User Profile', user_path(@user) 
+    = link_to 'Back to User Profile', user_path(@user), class: 'btn btn-default'

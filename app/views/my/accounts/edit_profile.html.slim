@@ -1,4 +1,6 @@
 .container
+
+
   = form_for @user, url: update_profile_my_account_path, method: :patch do |f|
     - if @user.errors.any?
       #error_explanation
@@ -8,6 +10,11 @@
             li = message
     table
       col width="200"
+      tr
+        td
+          h4 Email
+        td
+          =  @user.email
       tr
         td
           = f.label :username
