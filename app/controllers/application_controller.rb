@@ -10,9 +10,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login
 
-  #For iOS API
-  skip_before_action :verify_authenticity_token, if: :json_request?
-
   private
 
   def not_authenticated
@@ -24,7 +21,4 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
-  def json_request?
-    request.format.json?
-  end
 end

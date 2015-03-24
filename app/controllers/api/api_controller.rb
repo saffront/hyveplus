@@ -3,6 +3,9 @@ class Api::ApiController < ActionController::Base
   before_action :authenticate_token
   before_action :set_default_response_format
 
+  #For iOS API
+  skip_before_action :verify_authenticity_token, if: :json_request?
+
   private
 
   def authenticate_token
@@ -18,5 +21,9 @@ class Api::ApiController < ActionController::Base
 
   def set_default_response_format
     request.format = :json
+  end
+
+  def json_request?
+    request.format.json?
   end
 end
