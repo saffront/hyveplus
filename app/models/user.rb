@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-  authenticates_with_sorcery!
-
   authenticates_with_sorcery! do |config|
     config.authetications_class = Authentication
   end
@@ -12,16 +10,12 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :authentications
 
   after_initialize :set_default_password, if: :new_record?
-  #before_validation :set_default_email, if: :new_record?
 
   validates :password, length: { minimum: 8 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
-
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-
   validates_presence_of :first_name
-
   validates_uniqueness_of :username, case_sensitive: false
   #Regex for friendly ID and parameterize
   validates_format_of :username, with: /\A[a-zA-Z0-9_ -]+\z/, message: "can only have alphanumeric, - or _ characters"
@@ -54,14 +48,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
-  #def set_default_email
-    #return unless self.email.nil?
-    #self.email = loop do
-      #email = "#{SecureRandom.urlsafe_base64(6)}@changeme.com"
-      #break email unless User.where(email: email).exists?
-    #end
-  #end
 
   def set_default_password
     return unless self.password.nil?
