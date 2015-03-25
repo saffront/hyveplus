@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20150325092123) do
     t.float    "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "hyvelet_id"
+    t.integer  "hyve_id"
   end
 
-  add_index "hyve_missing_locations", ["hyvelet_id"], name: "index_hyve_missing_locations_on_hyvelet_id", using: :btree
+  add_index "hyve_missing_locations", ["hyve_id"], name: "index_hyve_missing_locations_on_hyve_id", using: :btree
 
   create_table "hyves", force: :cascade do |t|
     t.string   "name"
@@ -90,5 +90,5 @@ ActiveRecord::Schema.define(version: 20150325092123) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
-  add_foreign_key "hyve_missing_locations", "hyves", column: "hyvelet_id"
+  add_foreign_key "hyve_missing_locations", "hyves", column: "hyve_id"
 end
