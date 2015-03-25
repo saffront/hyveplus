@@ -1,0 +1,27 @@
+h1 Listing hyve_missing_locations
+
+table
+  thead
+    tr
+      th Deviceid
+      th Lat
+      th Lng
+      th Hyve
+      th
+      th
+      th
+
+  tbody
+    - @hyve_missing_locations.each do |hyve_missing_location|
+      tr
+        td = hyve_missing_location.deviceid
+        td = hyve_missing_location.lat
+        td = hyve_missing_location.lng
+        td = hyve_missing_location.hyve_id
+        td = link_to 'Show', hyve_missing_location
+        td = link_to 'Edit', edit_hyve_missing_location_path(hyve_missing_location)
+        td = link_to 'Destroy', hyve_missing_location, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Hyve missing location', new_hyve_missing_location_path

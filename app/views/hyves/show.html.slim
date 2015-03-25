@@ -1,0 +1,28 @@
+.container
+  p#notice = notice
+
+  table
+    col width="100"
+    tr
+      td
+        strong User
+      td
+        = @hyve.user
+    tr
+      td
+        strong Name
+      td
+        = @hyve.name
+    tr
+      td
+        strong Distance
+      td
+        = @hyve.distance
+    tr
+      td
+        strong UUID
+      td
+        = @hyve.uuid
+  br
+  p
+  = link_to 'Edit', edit_hyve_path(@hyve), class: "btn btn-info"

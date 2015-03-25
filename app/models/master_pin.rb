@@ -1,3 +1,3 @@
 class MasterPin < ActiveRecord::Base
-	has_one :hyvelet
+	has_one :hyve
 end

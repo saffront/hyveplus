@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317094916) do
+ActiveRecord::Schema.define(version: 20150325092123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150317094916) do
     t.string   "secret"
   end
 
-  create_table "hyvelet_missing_locations", force: :cascade do |t|
+  create_table "hyve_missing_locations", force: :cascade do |t|
     t.string   "deviceid"
     t.float    "lat"
     t.float    "lng"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20150317094916) do
     t.integer  "hyvelet_id"
   end
 
-  add_index "hyvelet_missing_locations", ["hyvelet_id"], name: "index_hyvelet_missing_locations_on_hyvelet_id", using: :btree
+  add_index "hyve_missing_locations", ["hyvelet_id"], name: "index_hyve_missing_locations_on_hyvelet_id", using: :btree
 
-  create_table "hyvelets", force: :cascade do |t|
+  create_table "hyves", force: :cascade do |t|
     t.string   "name"
     t.string   "pin"
     t.float    "lat"
@@ -90,5 +90,5 @@ ActiveRecord::Schema.define(version: 20150317094916) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
-  add_foreign_key "hyvelet_missing_locations", "hyvelets"
+  add_foreign_key "hyve_missing_locations", "hyves", column: "hyvelet_id"
 end

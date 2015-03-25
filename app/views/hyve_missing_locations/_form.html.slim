@@ -1,0 +1,21 @@
+= form_for @hyve_missing_location do |f|
+  - if @hyve_missing_location.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@hyve_missing_location.errors.count, "error")} prohibited this hyve_missing_location from being saved:"
+      ul
+        - @hyve_missing_location.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :deviceid
+    = f.text_field :deviceid
+  .field
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :lng
+    = f.text_field :lng
+  .field
+    = f.label :hyve_id
+    = f.number_field :hyve_id
+  .actions = f.submit

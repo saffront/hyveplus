@@ -1,5 +1,6 @@
 class MailingsController < ApplicationController
   before_action :set_user
+  skip_before_action :require_login
 
   def sub
     mailchimp("subscribe", true)

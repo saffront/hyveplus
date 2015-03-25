@@ -1,28 +1,34 @@
 class User < ActiveRecord::Base
 
-  authenticates_with_sorcery! do |config|
-    config.authetications_class = Authentication
-  end
+  after_initialize :set_default_password, if: :new_record?
 
+  #Associations
   has_many :authentications, dependent: :destroy
-  has_many :hyvelets
+  has_many :hyves
 
   accepts_nested_attributes_for :authentications
 
-  after_initialize :set_default_password, if: :new_record?
-
+  #Validations
   validates :password, length: { minimum: 8 }, if: :password
   validates :password, confirmation: true, if: :password
   validates :password_confirmation, presence: true, if: :password
-  validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+
+  validates_uniqueness_of :email, case_senstive: false
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/
+
   validates_presence_of :first_name
+  
   validates_uniqueness_of :username, case_sensitive: false
-  #Regex for friendly ID and parameterize
-  validates_format_of :username, with: /\A[a-zA-Z0-9_ -]+\z/, message: "can only have alphanumeric, - or _ characters"
+  validates_format_of :username, with: /\A[\w_ -]+\z/, message: "can only have alphanumeric, - or _ characters"
   validates_format_of :username, without: /\A\d/, message: "cannot start with number"
 
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
+
+  #Sorcery
+  authenticates_with_sorcery! do |config|
+    config.authetications_class = Authentication
+  end
 
   def to_param
     if username

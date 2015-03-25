@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :hyvelet_missing_locations
+  resources :hyve_missing_locations
 
   resources :master_pins
 
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   resources :password_resets
   resources :user_sessions, only: [:new, :create, :destroy]
-  resources :hyvelets
+  resources :hyves, only: [:show, :edit, :update]
 
   get 'login', to: 'user_sessions#new', as: 'login'
   post 'logout', to: 'user_sessions#destroy', as: 'logout'
@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:show]
-      resources :hyvelets, except: [:create, :new]
+      resources :hyves, except: [:index]
       resources :user_sessions, only: [:create, :destroy]
     end
   end
