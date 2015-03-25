@@ -35,6 +35,7 @@
           = f.label :avatar
         td
           = f.file_field :avatar, type: 'file'
-    = f.submit "Update Profile"
+    = f.submit "Update Profile", class: "btn btn-primary"
 
-  = link_to "Back to User Management", my_account_path
+  br
+  = link_to "Back to User Management", my_account_path, class: "btn btn-info"
