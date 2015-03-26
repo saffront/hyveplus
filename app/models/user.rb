@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   #Associations
   has_many :authentications, dependent: :destroy
-  has_many :hyves, foreign_key: :user_id, class_name: "Hyve"
+  has_many :hyves
 
   accepts_nested_attributes_for :authentications
 
