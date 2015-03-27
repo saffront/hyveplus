@@ -20,7 +20,7 @@ class Hyve < ActiveRecord::Base
 
 
   #Carrierwave
-  mount_uploader :image, AvatarUploader
+  mount_uploader :image, HyveImageUploader
 
 	def default_values
 		if self.name.nil?

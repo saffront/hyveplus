@@ -1,16 +1,4 @@
 .container
-  - if current_user
-    .jumbotron
-      h3 Current User Info
-      h5 ID: #{current_user.id}
-      h5 First Name: #{current_user.first_name}
-      h5 Username: #{current_user.username} 
-      - current_user.authentications.each do |a|
-        h5 Provider: #{a.provider.capitalize!}
-      h5 Role: #{current_user.role}
-
-      = link_to 'Show My User Info', user_path(current_user), class: "btn btn-lg btn-primary" 
-
   h1 All Users
   table
     thead
@@ -22,7 +10,6 @@
         th width="200px" Last Name
         th width="200px" Username
         th width='100px' Role
-        th width="200px" Activation State
         th width="200px" Action
     tbody
     - @users.each do |user|
@@ -36,5 +23,6 @@
         td = user.last_name
         td = user.username
         td = user.role
-        td = user.activation_state.capitalize!
-        td = link_to 'Show', user_path(user)
+        //Static atm
+        td
+          .btn.btn-danger Delete

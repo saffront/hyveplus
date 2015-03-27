@@ -11,7 +11,7 @@ class OauthController < ApplicationController
     if @user = login_from(provider)
       set_access_token(@user)
       flash[:success] = "You're logged in from #{provider.titleize}!"
-      redirect_to user_path(@user)
+      redirect_to my_account_path
     else
       if logged_in?
         link_account(provider)
@@ -61,7 +61,7 @@ class OauthController < ApplicationController
     end
 
     set_access_token(current_user)
-    redirect_to user_path(current_user)
+    redirect_to my_account_path
   end
 
   def set_access_token(user)

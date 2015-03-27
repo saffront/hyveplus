@@ -26,7 +26,7 @@ RSpec.describe UsersController, :type => :controller do
 
       it "redirects to user path" do
         post :create, user: attributes_for(:user)
-        expect(response).to redirect_to user_path(User.last) 
+        expect(response).to redirect_to my_account_url 
       end
     end
 
@@ -43,18 +43,4 @@ RSpec.describe UsersController, :type => :controller do
       end
     end
   end
-
-  describe "GET show" do
-    let!(:user) { create(:user) }
-    before { get :show, id: user }
-
-    it "assigns user to @user" do
-      expect(assigns(:user)).to eq user 
-    end
-
-    it "renders the :show template" do
-      expect(response).to render_template :show
-    end
-  end
-
 end

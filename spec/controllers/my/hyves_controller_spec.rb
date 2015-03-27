@@ -1,20 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe HyvesController, type: :controller do
-
-  render_views
+RSpec.describe My::HyvesController, type: :controller do render_views
 
   let!(:user) { create(:user) }
   let!(:hyve1) { create(:hyve, user: user) }
   let!(:hyve2) { create(:hyve, user: user) }
-
-  describe "GET index" do
-    before { get :index }
-    it "assigns all of user's hyve(s) to @hyves" do
-      expect(user.hyves.first).to eql hyve1
-      expect(user.hyves.last).to eql hyve2
-    end
-  end
 
   #describe "GET show" do
     #before { get :show, id: hyve1.id }

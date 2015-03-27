@@ -1,5 +1,6 @@
 class My::AccountsController < My::BaseController
   before_action :set_user
+  before_action :set_hyves, only: [:show]
 
   def show
   end
@@ -27,6 +28,10 @@ class My::AccountsController < My::BaseController
 
   def set_user
     @user = current_user
+  end
+
+  def set_hyves
+    @hyves = @user.hyves
   end
 
   def update(parameters, text, page)

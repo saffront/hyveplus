@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe HyvesController, type: :routing do
+RSpec.describe Api::V1::UserSessionsController, type: :routing do
   describe "routing" do
 
     it "routes to POST #create" do

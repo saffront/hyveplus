@@ -30,7 +30,7 @@ RSpec.describe UserSessionsController, type: :controller do
 
       #it "redirects to back or to user path" do
         #login_user(user)
-        #expect(response).to redirect_to user_path(user) || "where_user_came_from" 
+        #expect(response).to redirect_to my_account_url(user) || "where_user_came_from" 
       #end
     #end
 

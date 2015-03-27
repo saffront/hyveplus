@@ -16,17 +16,17 @@ Rails.application.routes.draw do
       get :edit_password
       patch :update_password, to: 'accounts#update_password'
     end
+    resources :hyves, only: [:show, :edit, :update, :destroy]
   end
   
   namespace :admin do
     resources :users, only: [:index]
+    resources :hyves, only: [:index]
   end
 
-  resources :users, except: [:index, :edit, :update, :destroy] do 
-  end
+  resources :users, only: [:create, :new] 
 
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :hyves, except: [:new, :create]
   resources :user_sessions, only: [:create]
 
   get 'login', to: 'user_sessions#new', as: 'login'

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe HyvesController, type: :routing do
+RSpec.describe Api::V1::HyvesController, type: :routing do
   describe "routing" do
 
     it "routes to GET #index" do
