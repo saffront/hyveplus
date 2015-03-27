@@ -1,9 +1,10 @@
 = form_for :user_sessions, url: user_sessions_path , method: :post do |f|
-  .field
+  p
     = f.text_field :email, placeholder: 'email@hyve.com', required: true
-  .field
+  p
     = f.password_field :password, placeholder: 'Password', required: true
-  .field
+  p
     = f.submit "Log In", class: 'btn btn-success'
 
+p
   = link_to "Forgot Password", new_password_reset_path, class: 'btn btn-warning'

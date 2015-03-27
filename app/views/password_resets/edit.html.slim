@@ -1,21 +1,31 @@
-h1 Choose a new password
-= form_for @user, url: password_reset_path(@token), html: { method: :put } do |f|
-  - if @user.errors.any?
-    #error_explanations
-      h2 #{pluralize(@user.errors.count, "error")} prohibited this user from being saved.
+.container
+  h1 Choose a new password
+  = form_for @user, url: password_reset_path(@token), html: { method: :put } do |f|
+    - if @user.errors.any?
+      #error_explanations
+        h2 #{pluralize(@user.errors.count, "error")} prohibited this user from being saved.
 
-      ul
-      - @user.error.full_messages.each do |msg|
-        li = msg
+        ul
+        - @user.error.full_messages.each do |msg|
+          li = msg
 
-  .field
-    = f.label :email
-    = @user.email
-  .field
-    = f.label :password
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-  .actions
-    = f.submit
+    table
+      col width="200"
+      tr
+        td
+          = f.label :email
+        td
+          = @user.email
+      tr
+        td
+          = f.label :password
+        td
+          = f.password_field :password
+      tr
+        td
+          = f.label :password_confirmation
+        td
+          = f.password_field :password_confirmation
+      tr colspan="2"
+        td
+          = f.submit "Change Password", class: "btn btn-success"

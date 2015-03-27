@@ -23,10 +23,9 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: [:index, :edit, :update, :destroy] do 
-    get :activate, on: :member
   end
 
-  resources :password_resets, only: [:create, :edit, :update]
+  resources :password_resets, only: [:new, :create, :edit, :update]
   resources :hyves, except: [:new, :create]
   resources :user_sessions, only: [:create]
 

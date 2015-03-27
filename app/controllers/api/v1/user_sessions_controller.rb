@@ -49,10 +49,6 @@ class Api::V1::UserSessionsController < Api::ApiController
       render json: { errors: @user.errors }
     end
 
-    if info_params[:provider] != "email"
-      #Activate users who register via external providers
-      @user.activate!
-    end
   end
 
   def set_authentication(user)

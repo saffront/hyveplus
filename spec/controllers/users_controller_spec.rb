@@ -57,6 +57,4 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-  #describe "GET activate" do
-  #end
 end
