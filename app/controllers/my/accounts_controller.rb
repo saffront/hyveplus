@@ -11,7 +11,7 @@ class My::AccountsController < My::BaseController
   end
 
   def update_profile
-    update(user_params, "profile", "edit_profile")
+    update(profile_params, "profile", "edit_profile")
   end
 
   def update_password
@@ -37,8 +37,8 @@ class My::AccountsController < My::BaseController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :avatar, :username)
+  def profile_params
+    params.require(:user).permit(:email, :first_name, :last_name, :avatar, :username)
   end
 
   def password_params

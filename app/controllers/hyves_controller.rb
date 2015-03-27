@@ -1,5 +1,10 @@
 class HyvesController < ApplicationController
-  before_action :set_hyve, only: [:show, :edit, :update]
+  before_action :set_user
+  before_action :set_hyve, except: [:index]
+
+  def index
+    @hyves = @user.hyves.all 
+  end
 
   def show
   end
@@ -8,17 +13,21 @@ class HyvesController < ApplicationController
   end
 
   def update
-    if @user.update(hyve_params)
+    if @hyve.update(hyve_params)
       redirect_to hyve_path, notice: "Your hyve was successfully updated."
     else
       render :edit 
     end
   end
   
-  #def destroy
-  #end
+  def destroy
+  end
 
   private
+    def set_user
+      @user = current_user
+    end
+
     def set_hyve
       @hyve = Hyve.find(params[:id])
     end

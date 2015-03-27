@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @auth = @user.authentications.new
+
     begin
       @auth[:uid] = ( (SecureRandom.random_number)*1234567890 + 1234567890 ).to_i 
     end while Authentication.exists?(uid: @auth[:uid])

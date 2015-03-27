@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   skip_before_action :require_login
 
+  def home
+  end
+
   ###About###
   def company
   end
@@ -12,10 +15,19 @@ class PagesController < ApplicationController
   end
   ###End###
 
-  def home
-  end
-
   def order
   end
+
+  #def push
+    #begin     
+      #data = { :alert => "This is a notification from Parse" }
+      #push = Parse::Push.new(data, "Giants")
+      #push.type = "ios"
+      #push.save
+    #rescue
+      #flash[:error] = "Send failed"
+    #end
+    #redirect_to root_path
+  #end
 
 end

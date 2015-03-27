@@ -18,11 +18,19 @@ RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 
+#Sorcery
+  config.include Sorcery::TestHelpers::Rails::Controller, type: :controller
+  config.include Sorcery::TestHelpers::Rails::Integration, type: :feature
+
 # Use color in STDOUT
   config.color = true
 
 # Use color not only in STDOUT but also in pagers and files
   config.tty = true
+
+  config.after(:suite) do
+    WebMock.disable_net_connect!(allow: %w{codeclimate.com})
+  end
 
 # Use the specified formatter
   #I don't like documentation format, if you want said format define it in .rspec file in your project's root directory-TC WUUUUU

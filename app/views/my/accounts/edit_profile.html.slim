@@ -1,6 +1,5 @@
 .container
 
-
   = form_for @user, url: update_profile_my_account_path, method: :patch do |f|
     - if @user.errors.any?
       #error_explanation
@@ -10,26 +9,27 @@
             li = message
     table
       col width="200"
+      col width="200"
       tr
         td
-          h4 Email
+          = f.label :email
         td
-          =  @user.email
+          = f.text_field :email, class: 'full-width-input'
       tr
         td
           = f.label :username
         td
-          = f.text_field :username
+          = f.text_field :username, class: 'full-width-input'
       tr
         td
           = f.label :first_name
         td
-          = f.text_field :first_name
+          = f.text_field :first_name, class: 'full-width-input'
       tr
         td
           = f.label :last_name
         td
-          = f.text_field :last_name
+          = f.text_field :last_name, class: 'full-width-input'
       tr
         td
           = f.label :avatar

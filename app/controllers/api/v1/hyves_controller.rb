@@ -1,11 +1,11 @@
 class Api::V1::HyvesController < Api::ApiController
 
   def new
-    @hyve = Hyve.new 
+    @hyve = @user.hyves.build(hyve_params)
   end
 
   def create
-    @hyve = Hyve.new(hyve_params)
+    @hyve = @user.hyves.build(hyve_params)
     if @hyve.save
       render json: @hyve
     else
@@ -33,6 +33,10 @@ class Api::V1::HyvesController < Api::ApiController
   end
 
   private
+  
+  def set_user
+    @user = user 
+  end
 
   def hyve_params
     params.require(:hyve).permit(:name, :pin, :lat, :lng, :created_at, :updated_at, :user_id, :status, :distance, :uuid, :image)

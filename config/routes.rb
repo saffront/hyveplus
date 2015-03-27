@@ -26,32 +26,39 @@ Rails.application.routes.draw do
     get :activate, on: :member
   end
 
-  resources :password_resets
-  resources :user_sessions, only: [:new, :create, :destroy]
-  resources :hyves, only: [:show, :edit, :update]
+  resources :password_resets, only: [:create, :edit, :update]
+  resources :hyves, except: [:new, :create]
+  resources :user_sessions, only: [:create]
 
   get 'login', to: 'user_sessions#new', as: 'login'
   post 'logout', to: 'user_sessions#destroy', as: 'logout'
+
   
-  #Mailchimp subscription
+  # ==============================================================================================
+  # Mailchimp Subscription
+  # ==============================================================================================
   post :subscribe, to: 'mailings#sub'
   post :unsubscribe, to: 'mailings#unsub'
 
-  #Home
+  # ==============================================================================================
+  # Static Pages
+  # ==============================================================================================
   root 'pages#home'
-  post 'push' => 'home#push'
-
-  #Static Pages
   get '/company', to: 'pages#company', as: 'company'
   get '/press', to: 'pages#press', as: 'press'
   get '/product', to: 'pages#product', as: 'product'
   get '/order', to: 'pages#order', as: 'order'
 
-  #API for Mobile App
+  #Parse push notification
+  #post 'push' => 'pages#push'
+
+  # ==============================================================================================
+  # API for iOS mobile
+  # ==============================================================================================
   namespace :api do
     namespace :v1 do
       resources :users, only: [:show]
-      resources :hyves, except: [:index]
+      resources :hyves
       resources :user_sessions, only: [:create, :destroy]
     end
   end
