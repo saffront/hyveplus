@@ -10,18 +10,18 @@ RSpec.describe "hyve_missing_locations/edit", :type => :view do
     ))
   end
 
-  #it "renders the edit hyve_missing_location form" do
-    #render
+  xit "renders the edit hyve_missing_location form" do
+    render
 
-    #assert_select "form[action=?][method=?]", hyve_missing_location_path(@hyve_missing_location), "post" do
+    assert_select "form[action=?][method=?]", hyve_missing_location_path(@hyve_missing_location), "post" do
 
-      #assert_select "input#hyve_missing_location_deviceid[name=?]", "hyve_missing_location[deviceid]"
+      assert_select "input#hyve_missing_location_deviceid[name=?]", "hyve_missing_location[deviceid]"
 
-      #assert_select "input#hyve_missing_location_lat[name=?]", "hyve_missing_location[lat]"
+      assert_select "input#hyve_missing_location_lat[name=?]", "hyve_missing_location[lat]"
 
-      #assert_select "input#hyve_missing_location_lng[name=?]", "hyve_missing_location[lng]"
+      assert_select "input#hyve_missing_location_lng[name=?]", "hyve_missing_location[lng]"
 
-      #assert_select "input#hyve_missing_location_hyve_id[name=?]", "hyve_missing_location[hyve_id]"
-    #end
-  #end
+      assert_select "input#hyve_missing_location_hyve_id[name=?]", "hyve_missing_location[hyve_id]"
+    end
+  end
 end

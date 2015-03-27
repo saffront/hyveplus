@@ -1,26 +1,60 @@
 require 'rails_helper'
 
-RSpec.describe UserSessionsController, :type => :controller do
+RSpec.describe UserSessionsController, type: :controller do
+
+  let!(:user) { create :user } 
+  before do
+    request.env["HTTP_REFERER"] = "where_user_came_from"
+  end
 
   describe "GET new" do
-    it "returns http success" do
+    before do
       get :new
-      expect(response).to be_success
+    end
+
+    it "assign a new user to @user" do
+      expect(assigns(:user)).to be_a_new(User)
+    end
+
+    it "renders the :new template" do
+      expect(response).to render_template :new
     end
   end
 
-  describe "GET create" do
+  #describe "POST create" do
+    #context "with VALID login credentials" do
+      #it "login the user" do
+        #@user = login_user(user)
+        #expect(@user). to eql user
+      #end
+
+      #it "redirects to back or to user path" do
+        #login_user(user)
+        #expect(response).to redirect_to user_path(user) || "where_user_came_from" 
+      #end
+    #end
+
+    #context "with INVALID login credentials" do
+      #it "does not login the user to the database" do
+        #expect {
+          #post :create, user: attributes_for(:user, :invalid_user)
+        #}.to_not change(User, :count)
+      #end
+
+     #it "redirects to back" do
+        #post :create, user: attributes_for(:user, :invalid_user)
+        #expect(response).to render_template :new
+      #end
+    #end
+  #end
+
+
+  describe "POST destroy" do
+    before { login_user(user) }
     it "returns http success" do
-      get :create
-      expect(response).to be_success
+      post :destroy
+      expect(flash[:notice]).to be_present 
+      expect(response).to redirect_to "where_user_came_from" || root_url
     end
   end
-
-  describe "GET destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to be_success
-    end
-  end
-
 end

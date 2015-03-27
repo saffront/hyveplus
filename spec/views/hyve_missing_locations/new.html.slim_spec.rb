@@ -10,7 +10,7 @@ RSpec.describe "hyve_missing_locations/new", :type => :view do
     ))
   end
 
-  it "renders new hyve_missing_location form" do
+  xit "renders new hyve_missing_location form" do
     render
 
     assert_select "form[action=?][method=?]", hyve_missing_locations_path, "post" do

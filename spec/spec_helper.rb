@@ -14,6 +14,9 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+#require 'webmock/rspec'
+
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
@@ -28,9 +31,11 @@ RSpec.configure do |config|
 # Use color not only in STDOUT but also in pagers and files
   config.tty = true
 
-  config.after(:suite) do
-    WebMock.disable_net_connect!(allow: %w{codeclimate.com})
-  end
+  WebMock.disable_net_connect!(allow: %w{codeclimate.com})
+ 
+  #config.after(:suite) do
+    #WebMock.disable_net_connect!(allow: %w{codeclimate.com}, allow_localhost: true)
+  #end
 
 # Use the specified formatter
   #I don't like documentation format, if you want said format define it in .rspec file in your project's root directory-TC WUUUUU

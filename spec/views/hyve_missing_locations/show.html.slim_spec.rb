@@ -10,7 +10,7 @@ RSpec.describe "hyve_missing_locations/show", :type => :view do
     ))
   end
 
-  it "renders attributes in <p>" do
+  xit "renders attributes in <p>" do
     render
     expect(rendered).to match(/Deviceid/)
     expect(rendered).to match(/1.5/)

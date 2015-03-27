@@ -8,6 +8,16 @@ FactoryGirl.define do
     last_name 'Freeman'
     username 'morgan_freeman15'
 
+    trait :valid_login do
+      email 'morgan.freeman@gmail.com'
+      password 'password'
+    end
+
+    trait :invalid_login do
+      email 'morgan.freeman@gmail.com'
+      password 'wrong_password'
+    end
+
     trait :invalid_user do
       email ''
       first_name ''
