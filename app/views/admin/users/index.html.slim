@@ -3,14 +3,14 @@
   table
     thead
       tr
-        th width="50px" ID
-        th width="200px" Provider
-        th width="300px" Email
-        th width="200px" First Name
-        th width="200px" Last Name
-        th width="200px" Username
-        th width='100px' Role
-        th width="200px" Action
+        th width="50" ID
+        th width="200" Provider
+        th width="300" Email
+        th width="200" First Name
+        th width="200" Last Name
+        th width="200" Username
+        th width="100" Role
+        th width="200" Action
     tbody
     - @users.each do |user|
       tr
@@ -23,6 +23,3 @@
         td = user.last_name
         td = user.username
         td = user.role
-        //Static atm
-        td
-          .btn.btn-danger Delete
