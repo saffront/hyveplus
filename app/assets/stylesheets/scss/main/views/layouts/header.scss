@@ -8,29 +8,29 @@
 
 body.pages-home {
   #home-link.blue-border-btm {
-    @include link-blue-border-btm;
+    @include link-blue-border-btm(36%, 36%);
     }
 }
 
 body.pages-company, body.pages-product, body.pages-press {
   #about-link.blue-border-btm {
-    @include link-blue-border-btm;
-    }
-}
-
-body.pages-order {
-  #order-link.blue-border-btm {
-    @include link-blue-border-btm;
-    }
-}
-
-body.user_sessions-new {
-  #login-link.blue-border-btm {
-    @include link-blue-border-btm;
+    @include link-blue-border-btm(35%, 35%);
     }
 }
 
 //Shameful-see header.coffee
 .blue-border-btm-hack {
-  @include link-blue-border-btm;
+  @include link-blue-border-btm(35%, 35%);
+}
+
+body.pages-order {
+  #order-link.blue-border-btm {
+    @include link-blue-border-btm(36%, 36%);
+    }
+}
+
+body.user_sessions-new {
+  #login-link.blue-border-btm {
+    @include link-blue-border-btm(36%, 34%);
+    }
 }
