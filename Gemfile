@@ -5,9 +5,10 @@ ruby '2.2.0'
 gem 'rails', '4.2.0'
 
 #Bug with font-awesome, sprockets-rails v2.2.4 fixes this
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'slim-rails'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'unicorn-rails'
 gem 'pg'
 gem 'role_model'

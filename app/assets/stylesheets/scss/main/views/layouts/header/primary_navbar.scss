@@ -1,0 +1,25 @@
+#primary {
+
+}
+
+//Horizontal align
+//Add @media query if we only want this effect to happen when nav isn't collapsed
+//@media (min-width: 500px) { styling }
+
+#primary-navbar {
+  display: inline-block;
+  float: none; 
+
+  li {
+    font-size: 2rem;
+    width: 20rem; 
+    //Vertical align
+    a {
+      line-height: 5.5rem;
+    }
+  }
+}
+
+.collapse.navbar-collapse {
+  text-align: center;
+}

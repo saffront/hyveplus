@@ -6,48 +6,31 @@
 #hyve-logo {
 }
 
-#primary {
-
-}
-
-//Horizontal align
-//Add @media query if we only want this effect to happen when nav isn't collapsed
-//@media (min-width: 500px) { styling }
-#primary-navbar {
-  display: inline-block;
-  float: none; 
-
-  li {
-    font-size: 2rem;
-    width: 20rem; 
-    //Vertical align
-    a {
-      line-height: 5.5rem;
+body.pages-home {
+  #home-link.blue-border-btm {
+    @include link-blue-border-btm;
     }
-  }
 }
 
-.collapse.navbar-collapse {
-  text-align: center;
-}
-
-#secondary {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  background-color: black;
-}
-
-#secondary-navbar {
-  display: inline-block;
-  float: none; 
-   
-  li {
-    font-size: 1.5rem;
-    width: 15rem;
-    a {
-      color: white;
+body.pages-company, body.pages-product, body.pages-press {
+  #about-link.blue-border-btm {
+    @include link-blue-border-btm;
     }
-  }
 }
 
+body.pages-order {
+  #order-link.blue-border-btm {
+    @include link-blue-border-btm;
+    }
+}
+
+body.user_sessions-new {
+  #login-link.blue-border-btm {
+    @include link-blue-border-btm;
+    }
+}
+
+//Shameful-see header.coffee
+.blue-border-btm-hack {
+  @include link-blue-border-btm;
+}

@@ -40,3 +40,11 @@
     text-decoration: none;
   }
 }
+
+@mixin link-blue-border-btm {
+  margin-top: -2.5rem;
+  left: 32%;
+  right: 32%;
+  position: absolute;
+  border-bottom: 2px solid $blue;
+}

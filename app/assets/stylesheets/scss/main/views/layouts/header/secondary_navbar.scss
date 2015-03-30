@@ -1,0 +1,23 @@
+#secondary {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  background-color: black;
+}
+
+#secondary-navbar {
+  display: inline-block;
+  float: none; 
+   
+  li {
+    font-size: 1.5rem;
+    width: 15rem;
+    a {
+      color: white;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

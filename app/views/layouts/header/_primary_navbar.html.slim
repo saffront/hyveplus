@@ -11,13 +11,16 @@
     ul#primary-navbar.nav.navbar-nav
       li
         = link_to "Home", root_path
-      li
+        #home-link.blue-border-btm
+      li#about
         = link_to "About", root_path
+        #about-link.blue-border-btm
       li
         = link_to root_path
           = image_tag 'header/hyve_logo.png', id: 'hyve-logo'
       li
         = link_to "Order", order_path
+        #order-link.blue-border-btm
       - if current_user
         li.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 
@@ -33,4 +36,5 @@
       - else
         li
           = link_to "Log In", login_path
+          #login-link.blue-border-btm
 

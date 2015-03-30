@@ -1,6 +1,6 @@
 //.no-padding
 //.padded-row
-//.padded-(top/btm)-(x) where x = 1, 2, 5, 8
+//.padded-(top/btm)-(x) where x = 1, 2, 3, 4, 5, 6, 7, 8
 //.margin-(x) where x = 1, 2
 //.margin-(top/btm)-(x) where x = 1, 2
 //.text-(x) where x = centered, left, right
@@ -29,12 +29,44 @@
   padding-bottom: 2rem;
 }
 
+.padded-top-3 {
+  padding-top: 3rem;
+}
+
+.padded-btm-3 {
+  padding-bottom: 3rem;
+}
+
+.padded-btm-4 {
+  padding-bottom: 4rem;
+}
+
+.padded-top-4 {
+  padding-top: 4rem;
+}
+
 .padded-top-5 {
   padding-top: 5rem;
 }
 
 .padded-btm-5 {
   padding-bottom: 5rem;
+}
+
+.padded-top-6 {
+  padding-top: 6rem;
+}
+
+.padded-btm-6 {
+  padding-bottom: 6rem;
+}
+
+.padded-top-7 {
+  padding-top: 7rem;
+}
+
+.padded-btm-7 {
+  padding-bottom: 7rem;
 }
 
 .padded-top-8 {
