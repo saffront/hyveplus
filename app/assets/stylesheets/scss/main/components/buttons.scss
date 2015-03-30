@@ -1,11 +1,14 @@
 //Home
 .btn-blue {
+  @include btn-basic;
   width: 17rem;
   background-color: $blue;
   color: white;
   border-color: $blue;
-  margin: 2rem 0.5rem;
-  padding: 1rem 3rem;
+  padding: 0.7rem inherit;
+  &:hover, &:active, &:link, &:visited {
+    color: white;
+  }
 }
 
 .btn-feature {
@@ -15,6 +18,9 @@
   border-width: 0.2rem;
   background-color: white;
   color: $blue;
+  &:hover, &:active, &:link, &:visited {
+    color: $blue;
+  }
 }
 
 //Press
@@ -24,16 +30,26 @@
   margin-left: 0;
   background-color: white;
   color: $blue;
+  &:hover, &:active, &:link, &:visited {
+    color: $blue;
+  }
 }
 
 .btn-video {
   @include btn-basic;
   color: white;
+  &:hover, &:active, &:link, &:visited {
+    color: white;
+  }
 }
 
 //Footer
 .btn-subscribe-footer {
-  margin: 2rem 0 2rem 0.5rem;
+  @include btn-basic;
+  color: white;
+  width: 13rem;
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem 0 1.5rem 0.5rem;
   font-family: avenir-roman;
   font-size: 10px;
   background-color: white;
@@ -41,4 +57,7 @@
   //No floating elements allowed on left and right side of a specfied p element
   clear: both;
   float: right;
+  &:hover, &:active, &:link, &:visited {
+    color: $orange;
+  }
 }

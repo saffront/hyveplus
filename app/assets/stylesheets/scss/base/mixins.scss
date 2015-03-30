@@ -1,3 +1,4 @@
+//layout.scss
 @mixin avenir($weight, $size) {
   font-family: avenir- + $weight, sans-serif;
   font-size: $size
@@ -10,6 +11,23 @@
 
 //buttons.scss
 @mixin btn-basic {
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+
   width: 20rem;
   border-width: 0.3rem;
   border-color: white;
@@ -17,4 +35,8 @@
   margin: 2rem 0.5rem;
   font-family: avenir-heavy;
   font-size: 1.4rem;
+
+  &:hover, &:active, &:link, &:visited {
+    text-decoration: none;
+  }
 }
