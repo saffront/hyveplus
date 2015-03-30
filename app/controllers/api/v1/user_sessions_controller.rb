@@ -6,11 +6,14 @@ class Api::V1::UserSessionsController < Api::ApiController
       #Logging in with email
       @user = login(info_params[:email], info_params[:password])
       find_user(@user)
-    else
+    elsif info_params[:provider] == "facebook" || info_params[:provider] == "google"
       #Logging in with external providers
       @user = User.find_by(email: info_params[:email]) 
       @auth = @user.try(:authentications).try(:find_by_uid, info_params[:uid]) #returns nil rather than raising an exception
       find_user(@user, @auth)
+    else
+      @params = NilParams.new 
+      render json: @params
     end
   end
 
@@ -75,5 +78,13 @@ class Api::V1::UserSessionsController < Api::ApiController
     else
       auth.uid = info_params[:uid]
     end
+  end
+end
+
+class NilParams
+  attr_accessor :error
+
+  def initialize
+    @error = "Parameters missing or invalid."
   end
 end

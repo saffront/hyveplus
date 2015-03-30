@@ -39,7 +39,8 @@ class Api::V1::HyvesController < Api::ApiController
   end
 
   def hyve_params
-    params.require(:hyve).permit(:name, :pin, :lat, :lng, :created_at, :updated_at, :user_id, :status, :distance, :uuid, :image)
+    #:pin, :lat, :lng, 
+    params.require(:hyve).permit(:name, :created_at, :updated_at, :user_id, :status, :distance, :uuid, :image)
   end
 end
 
