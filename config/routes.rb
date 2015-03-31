@@ -72,8 +72,9 @@ Rails.application.routes.draw do
   # ==============================================================================================
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:show]
-      resources :hyves
+      #resources :user, only: [:index]
+      resource :account, only: [:show, :update]
+      resources :hyves, except: [:new, :edit]
       resources :user_sessions, only: [:create, :destroy]
     end
   end
