@@ -12,4 +12,12 @@
   }
 }
 
-.link-
+//Might want to reuse this elsewhere
+.link-decoration-none {
+  text-decoration: none;
+  color: white;
+  &:hover, &:active, &:link, &:visited {
+    color: white;
+    text-decoration: none;
+  }
+}

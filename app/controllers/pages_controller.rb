@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   skip_before_action :require_login
 
+  ###Header###
   def home
   end
 
-  ###About###
   def company
   end
 
@@ -13,9 +13,17 @@ class PagesController < ApplicationController
 
   def press
   end
-  ###End###
 
   def order
+  end
+  ###Footer###
+  def faq
+  end
+
+  def contact
+  end
+
+  def tnc
   end
 
   #def push
