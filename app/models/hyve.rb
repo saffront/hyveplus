@@ -14,9 +14,9 @@ class Hyve < ActiveRecord::Base
   validates_uniqueness_of :uuid
   validates_format_of :uuid, with: /\A[\w -]+\z/, message: "can only have alphanumeric or - characters"
 
-  validates_presence_of :distance
-  validates_format_of :distance, with: /\A\d{1,2}\z/, message: "must be a number from 1-99"
-  validates_format_of :distance, without: /\A0/, message: "can only have digits and cannot be 0"
+  #validates_presence_of :distance
+  #validates_format_of :distance, with: /\A\d{1,2}\z/, message: "must be a number from 1-99"
+  #validates_format_of :distance, without: /\A0/, message: "can only have digits and cannot be 0"
 
 
   #Carrierwave
