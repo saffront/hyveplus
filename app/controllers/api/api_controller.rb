@@ -6,10 +6,10 @@ class Api::ApiController < ActionController::Base
 
   def authenticate_token
     api_token = request.headers['X-hyve-token']
-    user = User.find_by_api_token(api_token)
+    @user = User.find_by_api_token(api_token)
 
-    if api_token.present? && user
-      auto_login(user)
+    if api_token.present? && @user
+      auto_login(@user)
     else
       render json: { status: :unauthorized }
     end
