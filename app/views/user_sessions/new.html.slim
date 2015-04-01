@@ -1,15 +1,15 @@
 .container
   .row
-    .col-md-6
+    .col-lg-6.col-md-6
       h1 Login with Email 
       = render 'form'
 
-    .col-md-6
+    .col-lg-6.col-md-6
       h1 Social Medias 
       p = link_to raw("#{fa_icon 'facebook', text: 'Login with Facebook'}"), auth_at_provider_path(provider: :facebook), class: "btn btn-block btn-social btn-facebook"
       p = link_to raw("#{fa_icon 'google-plus', text: 'Login with Google'}"), auth_at_provider_path(provider: :google), class: "btn btn-block btn-social btn-google-plus"
   
   .row
-    .col-md-6
+    .col-lg-6.col-md-6
       h1 Create User Account
       = link_to 'Register', new_user_path, class: 'btn btn-default'

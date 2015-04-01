@@ -4,7 +4,8 @@ h1 My Hyves (#{@hyves.count})
   - @hyves.each do |hyve|
     table
       col width="100"
-      tr colspan="2"
+      col width="220"
+      tr colspan="3"
         td
           = link_to "Edit Hyve", edit_my_hyve_path(hyve), class: "btn btn-primary" 
       tr
@@ -12,6 +13,8 @@ h1 My Hyves (#{@hyves.count})
           strong Name
         td
           = hyve.name
+        td rowspan="3"
+          = image_tag "#{hyve.image}"
       tr
         td
           strong UUID

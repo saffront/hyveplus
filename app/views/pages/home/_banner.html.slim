@@ -1,15 +1,15 @@
 .container-fluid
   #banner-home.row.vertical-align
-    .col-lg-6.col-centered
+    .col-lg-6.col-md-8.col-centered
       .row.row-eq-height.padded-row
-        .col-lg-4.text-centered
+        .col-lg-4.col-md-8.text-centered
           = image_tag 'home/hyve_logo.png'
-        .col-lg-8
+        .col-lg-8.col-md-10
           h1.white Give your essentials a HYVE
           h2.white and they will always find their way back home
       
       .row.row-eq-height.vertical-align.padded-row
-        .col-lg-6.col-lg-offset-5
+        .col-lg-6.col-lg-offset-5.col-md-6.col-md-offset-5
           = form_tag subscribe_path, id: "subscribe_home" do
             = email_field_tag :email, nil, placeholder: 'Your email address', class: "form-control form-newsletter-home"
             = submit_tag "Subscribe Now", class: 'btn-blue'

@@ -2,6 +2,7 @@ body {
   margin-top: 8.6rem;
   margin-bottom: 25rem;
   padding-top: 7rem;
+  padding-bottom: 7rem;
 
 // ==============================================================================================
 // Page specific paddings and margins
@@ -9,20 +10,23 @@ body {
 
   //Home(root) Page
   &.pages-home {
-    padding-top: 0;
     margin-bottom: 28.4rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   //Press Page
   &.pages-press {
     margin-bottom: 28.4rem;
     padding-top: 0;
+    padding-bottom: 0;
   }
   
   //Product Page
   &.pages-product {
     margin-bottom: 28.4rem;
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
