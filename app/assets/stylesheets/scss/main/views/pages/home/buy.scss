@@ -1,11 +1,11 @@
 #hyve-buy {
+  background-color: rgba(73,89,102,100); 
   h1 {
     @include avenir(heavy, 2rem);
   }
   
   h2 {
     @include avenir(roman, 1.4rem);
-    color: $grey;
   } 
 
   .btn-blue {
