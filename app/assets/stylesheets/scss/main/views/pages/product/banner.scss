@@ -1,6 +1,10 @@
 #banner-product {
   background-image: image-url('product/banner.png');
   background-repeat: no-repeat;
-  height: 90rem;
-  background-size: 192rem 108rem;
+  height: 92vh;
+  background-size: cover;
+
+  h1 {
+    @include opensans(semibold, 2rem);
+  }
 }

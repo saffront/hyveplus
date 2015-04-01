@@ -1,9 +1,8 @@
 #banner-home {
-  height: 95rem;
+  height: 92vh;
   background-image: image-url('home/banner.png');
   background-size: cover;
   background-repeat: no-repeat;
-  /*margin-right: -3rem;*/
 
   h1 {
     @include opensans(semibold, 3.6rem);

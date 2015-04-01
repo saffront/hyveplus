@@ -8,15 +8,33 @@
 }
 
 body.pages-home {
-  #home-link.blue-border-btm {
+  #home-link-border.blue-border-btm {
     @include link-blue-border-btm(36%, 36%);
     }
 }
 
 body.pages-company, body.pages-product, body.pages-press {
-  #about-link.blue-border-btm {
+  #about-link-border.blue-border-btm {
     @include link-blue-border-btm(35%, 35%);
     }
+}
+
+body.pages-company {
+  #company {
+    color: $orange;
+  }
+}
+
+body.pages-product {
+  #product {
+    color: $orange;
+  }
+}
+
+body.pages-press {
+  #press {
+    color: $orange;
+  }
 }
 
 //Shameful-see header.coffee
@@ -25,13 +43,13 @@ body.pages-company, body.pages-product, body.pages-press {
 }
 
 body.pages-order {
-  #order-link.blue-border-btm {
+  #order-link-border.blue-border-btm {
     @include link-blue-border-btm(37%, 36%);
     }
 }
 
 body.user_sessions-new {
-  #login-link.blue-border-btm {
+  #login-link-border.blue-border-btm {
     @include link-blue-border-btm(36%, 34%);
     }
 }
