@@ -18,9 +18,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name
   
-  validates_uniqueness_of :username, case_sensitive: false
-  validates_format_of :username, with: /\A[\w_ -]+\z/, message: "can only have alphanumeric, - or _ characters"
-  validates_format_of :username, without: /\A\d/, message: "cannot start with number"
+  validates_format_of :username, with: /\A[\w_ -]+\z/, message: "can only contain alphanumeric, - and _ characters"
 
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
@@ -29,19 +27,6 @@ class User < ActiveRecord::Base
   #Sorcery
   authenticates_with_sorcery! do |config|
     config.authetications_class = Authentication
-  end
-
-  def to_param
-    if username
-      username.parameterize
-    else
-      super
-    end
-  end
-
-  def self.find(input)
-    #ruby converts strings starting with letter to 0
-    input.to_i == 0 ? find_by_username(input) : super
   end
 
   def set_access_token(token, secret, provider)

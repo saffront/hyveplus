@@ -32,14 +32,14 @@ class Api::V1::UserSessionsController < Api::ApiController
 
   def register_new_user
     @user = User.new do |user|
+      #Complex
       user.email = info_params[:email]
       user.password = info_params[:password]
       user.password_confirmation = info_params[:password_confirmation]
-      user.username = info_params[:username].parameterize
+      user.username = info_params[:username]
       user.remote_avatar_url = info_params[:avatar]
       user.first_name = info_params[:first_name]
       user.last_name = info_params[:last_name]
-      user.role = 'user'
       set_authentication(user)
     end
 

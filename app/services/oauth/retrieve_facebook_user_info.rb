@@ -13,12 +13,6 @@ class Oauth::RetrieveFacebookUserInfo
     #Facebook's username is nil for some reason
     @username = (fb_user.first_name.gsub(/\s+/, "") + " " + fb_user.last_name).parameterize
 
-    if User.exists?(username: @username)
-      begin
-        @username = @username + "-" + SecureRandom.hex(3)
-      end while User.exists?(username: @username)
-    end
-
     @user.update(first_name: fb_user.first_name,
                  last_name: fb_user.last_name,
                  avatar: fb_user.picture,
