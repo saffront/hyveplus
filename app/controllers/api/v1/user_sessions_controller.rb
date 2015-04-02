@@ -3,11 +3,9 @@ class Api::V1::UserSessionsController < Api::ApiController
 
   def create
     if info_params[:provider] == "email"
-      #Logging in with email
       @user = login(info_params[:email], info_params[:password])
       find_user(@user)
     elsif info_params[:provider] == "facebook" || info_params[:provider] == "google"
-      #Logging in with external providers
       @user = User.find_by(email: info_params[:email]) 
       @auth = @user.try(:authentications).try(:find_by_uid, info_params[:uid]) #returns nil rather than raising an exception
       find_user(@user, @auth)
