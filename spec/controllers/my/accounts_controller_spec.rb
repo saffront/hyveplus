@@ -72,7 +72,7 @@ RSpec.describe My::AccountsController, type: :controller do
         expect(user.email).to eq "morgan.freeman@gmail.com"
         expect(user.first_name).to eq "Morgan"
         expect(user.last_name).to eq "Freeman"
-        expect(user.username).to eq "morgan_freeman15"
+        expect(user.username).to eq "morgan-freeman"
       end
 
       it "re-renders the :edit_profile template" do
