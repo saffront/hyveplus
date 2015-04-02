@@ -11,16 +11,12 @@ class Hyve < ActiveRecord::Base
   validates_presence_of :name
 
   validates_presence_of :uuid
-  validates_uniqueness_of :uuid
+  validates_uniqueness_of :uuid, case_sensitive: false
   validates_format_of :uuid, with: /\A[\w -]+\z/, message: "can only have alphanumeric or - characters"
-
-  #validates_presence_of :distance
-  #validates_format_of :distance, with: /\A\d{1,2}\z/, message: "must be a number from 1-99"
-  #validates_format_of :distance, without: /\A0/, message: "can only have digits and cannot be 0"
-
 
   #Carrierwave
   mount_uploader :image, HyveImageUploader
+  mount_base64_uploader :image, HyveImageUploader
 
 	def default_values
 		if self.name.nil?

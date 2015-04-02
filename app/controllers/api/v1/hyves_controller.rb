@@ -40,7 +40,7 @@ class Api::V1::HyvesController < Api::ApiController
   end
 
   def set_hyve
-    @hyve = Hyve.find_by(id: params[:id]) || NilHyve.new
+    @hyve = Hyve.find_by(uuid: params[:uuid]) || NilHyve.new
   end
 
   def hyve_params
@@ -53,6 +53,6 @@ class NilHyve
   attr_accessor :error
 
   def initialize
-    @error = "No hyve found."
+    @error = "UUID error, no hyve found."
   end
 end
