@@ -1,7 +1,21 @@
 #flash_messages {
-  /*position: absolute;*/
-  /*z-index: 5;*/
   margin: 1.5rem auto 0 auto;
   left: 0;
   right: 0;
+  z-index: 2;
+}
+
+body {
+  &.pages-home {
+    #flash_messages {
+      position: absolute;
+      margin-top: 1rem;
+    }
+  }
+  &.pages-company, &.pages-product, &.pages-press {
+    #flash_messages {
+      position: absolute;
+      margin-top: 6rem;
+    }
+  }
 }
