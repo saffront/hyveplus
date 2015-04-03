@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     end while Authentication.exists?(uid: @auth[:uid])
     @auth[:provider] =  "email"
     if @user.save
+      UserMailer.welcome(@user).deliver
       auto_login(@user)
       redirect_to my_account_path
     else

@@ -10,18 +10,6 @@ class ApplicationPolicy
     user && user.role == "admin"
   end
 
-  #def is_user
-    #user && !user.admin?
-  #end
-
-  #def is_logged_in
-    #user.id != nil
-  #end
-
-  #def the_author
-    #record.user_id == user.id
-  #end
-
   def scope
     Pundit.policy_scope!(user, record.class)
   end
@@ -41,33 +29,3 @@ class ApplicationPolicy
   end
 
 end
-
-#Default auto gen policies-for reference :)
-
-#def index?
-  #false
-#end
-
-#def show?
-  #scope.where(:id => record.id).exists?
-#end
-
-#def create?
-  #false
-#end
-
-#def new?
-  #create?
-#end
-
-#def update?
-  #false
-#end
-
-#def edit?
-  #update?
-#end
-
-#def destroy?
-  #false
-#end
