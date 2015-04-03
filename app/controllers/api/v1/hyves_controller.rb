@@ -1,6 +1,6 @@
 class Api::V1::HyvesController < Api::ApiController
 
-  before_action :set_hyve, only: [:show, :destroy]
+  before_action :set_hyve, only: [:show, :update, :destroy]
 
   def index
     @hyves = @user.hyves
@@ -35,10 +35,6 @@ class Api::V1::HyvesController < Api::ApiController
 
   private
   
-  def set_user
-    @user = user 
-  end
-
   def set_hyve
     @hyve = Hyve.find_by(uuid: params[:uuid]) || NilHyve.new
   end
