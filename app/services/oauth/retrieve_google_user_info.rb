@@ -15,11 +15,9 @@ class Oauth::RetrieveGoogleUserInfo
     gplus_user = GooglePlus::Person.get("me?access_token=#{@token}")
     upload_profile_image(gplus_user)
 
-    @username = gplus_user.display_name.parameterize
-
     @user.update(first_name: gplus_user.name.given_name,
                  last_name: gplus_user.name.family_name,
-                 username: @username)
+                 username: gplus_user.display_name)
   end
 
   private

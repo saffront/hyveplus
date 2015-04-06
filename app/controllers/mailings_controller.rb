@@ -3,11 +3,11 @@ class MailingsController < ApplicationController
   skip_before_action :require_login
 
   def sub
-    mailchimp("subscribe", true)
+    mailchimp("subscribed", true)
   end
 
   def unsub
-    mailchimp("unsubscribe", false)
+    mailchimp("unsubscribed", false)
   end
 
   private
@@ -18,11 +18,10 @@ class MailingsController < ApplicationController
   end
 
   def mailchimp(action, boolean)
-    @action = action + "d"
     begin
       response = Mailings::MailChimpService.new(params[:email]).send(action)
       @user.update(subscription: boolean) if @user
-      flash[:success] = "#{params[:email]} #{@action} successfully"
+      flash[:success] = "#{params[:email]} #{action} successfully"
     rescue Gibbon::MailChimpError => e
       flash[:error] = e.message
     end

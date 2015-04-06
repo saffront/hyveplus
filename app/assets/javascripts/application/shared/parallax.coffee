@@ -13,5 +13,4 @@ $(->
       windowYOffset = window.pageYOffset - $(el).position().top
       elBackgrounPos = '50% ' + windowYOffset * speed + 'px'
       el.style.backgroundPosition = elBackgrounPos
-
-)()
+)

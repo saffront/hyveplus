@@ -55,6 +55,8 @@ Rails.application.routes.draw do
       patch :update_profile, to: 'accounts#update_profile'
       get :edit_password
       patch :update_password, to: 'accounts#update_password'
+      patch :subscribe, to: 'accounts#subscribe'
+      patch :unsubscribe, to: 'accounts#unsubscribe'
     end
     resources :hyves, only: [:show, :edit, :update, :destroy]
   end

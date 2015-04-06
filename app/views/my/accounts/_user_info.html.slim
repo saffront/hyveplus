@@ -41,7 +41,7 @@ h1 User Management
               =  @user.subscription
           tr
             td
-              h4 Provider(s)
+              h4 Provider
             td
               - @user.authentications.each do |a|
                 h5 #{a.provider.capitalize!}
@@ -49,13 +49,11 @@ h1 User Management
     .row.text-centered.margin-top-1.margin-btm-2
       .col-lg-3
         - if @user.subscription
-          = form_tag(unsubscribe_path) do
-            = hidden_field_tag :email, @user.email 
+          = form_tag unsubscribe_my_account_path, method: :patch do
             = submit_tag "Unsubscribe from Mailing List", class: 'btn btn-danger'
         - else
-          = form_tag(subscribe_path) do
-            = hidden_field_tag :email, @user.email 
-            = submit_tag "Subscribe from Mailing List", class: 'btn btn-success'
+          = form_tag subscribe_my_account_path, method: :patch do
+            = submit_tag "Subscribe to Mailing List", class: 'btn btn-success'
 
       .col-lg-2
 

@@ -25,6 +25,7 @@ gem 'parse-ruby-client'
 gem 'geokit-rails'
 gem 'enumerize'
 gem 'rails_admin'
+gem 'sucker_punch', '~> 1.0'
 
 #Authentication and authorisation
 gem 'sorcery'
@@ -32,7 +33,6 @@ gem 'pundit'
 
 #Social Media API Wrapper
 gem 'fb_graph'
-gem 'twitter'
 gem 'google_plus'
 
 #Mail Chimp API Wrapper
