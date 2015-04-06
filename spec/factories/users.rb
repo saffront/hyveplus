@@ -52,4 +52,8 @@ FactoryGirl.define do
     sequence(:username) { |n| "morgan-freeman-#{n}" }
     role "admin"
   end
+
+  trait :with_api_token do
+    api_token "MLdYS4fs88TYVc48UIC0QQ"
+  end
 end
