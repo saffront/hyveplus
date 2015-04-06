@@ -8,22 +8,7 @@ body {
 // Page specific paddings and margins
 // ==============================================================================================
 
-  //Home(root) Page
-  &.pages-home {
-    margin-bottom: 28.4rem;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  //Press Page
-  &.pages-press {
-    margin-bottom: 28.4rem;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  
-  //Product Page
-  &.pages-product {
+  &.pages-home, &.pages-company, &.pages-press, &.pages-product {
     margin-bottom: 28.4rem;
     padding-top: 0;
     padding-bottom: 0;

@@ -1,0 +1,5 @@
+#about-company {
+  h1.orange {
+    @include avenir(heavy, 20px);
+  }
+}
