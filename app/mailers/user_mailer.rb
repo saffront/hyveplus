@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def welcome(user)
     @user = user
-    mail to: user.email, subject: "Welcome to Hyve, #{user.first_name}!", from: "jiashern@hyve.com"
+    mail to: user.email, subject: "Welcome to Hyve, #{user.first_name}!", from: "hello@hyve.com"
   end 
 
   def reset_password_email(user)
