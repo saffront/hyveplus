@@ -18,6 +18,16 @@ class Hyve < ActiveRecord::Base
   mount_uploader :image, HyveImageUploader
   mount_base64_uploader :image, HyveImageUploader
 
+  #Testing
+  def to_param
+    uuid
+  end
+
+  def self.find_by_param(input)
+    find_by_uuid(input)
+  end
+  #End
+
 	def default_values
 		if self.name.nil?
 			self.name = self.pin

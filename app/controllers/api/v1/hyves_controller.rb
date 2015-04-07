@@ -3,7 +3,7 @@ class Api::V1::HyvesController < Api::ApiController
   before_action :set_hyve, only: [:show, :update, :destroy]
 
   def index
-    @hyves = @user.hyves
+    @hyves = @user.hyves.sort_by { |hyve| hyve.name }
     render json: @hyves
   end
 
@@ -36,7 +36,7 @@ class Api::V1::HyvesController < Api::ApiController
   private
   
   def set_hyve
-    @hyve = Hyve.find_by(uuid: params[:uuid]) || NilHyve.new
+    @hyve = Hyve.find_by_param(params[:id]) || NilHyve.new
   end
 
   def hyve_params

@@ -25,7 +25,7 @@ class My::HyvesController < My::BaseController
     end
 
     def set_hyve
-      @hyve = Hyve.find(params[:id])
+      @hyve = Hyve.find_by_param(params[:id])
     end
 
     def hyve_params
