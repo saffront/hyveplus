@@ -36,8 +36,9 @@ Rails.application.routes.draw do
   # ==============================================================================================
   # Mailchimp Subscription
   # ==============================================================================================
-  post :subscribe, to: 'mailings#sub'
-  post :unsubscribe, to: 'mailings#unsub'
+  post :subscribe_early_adopters, to: 'mailings#sub_adopters'
+  post :subscribe, to: 'mailings#sub_users'
+  post :unsubscribe, to: 'mailings#unsub_users'
 
   # ==============================================================================================
   # Sorcery/Omniauth

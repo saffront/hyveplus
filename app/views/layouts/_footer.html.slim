@@ -31,6 +31,6 @@ footer.footer
             .row
               p.white Newsletter with the latest product updates!
 
-              = form_tag(subscribe_path) do
+              = form_tag subscribe_early_adopters_path do
                 = email_field_tag :email, nil, placeholder: 'email@example.com', class: "form-control form-newsletter-footer"
                 = submit_tag "Subscribe Now", class: 'btn-subscribe-footer'

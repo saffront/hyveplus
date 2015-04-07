@@ -1,15 +1,14 @@
 class Hyve < ActiveRecord::Base
 	extend Enumerize
 	enumerize :status, in: [:missing, :destroyed], scope: :status
+	acts_as_mappable
 
 	belongs_to :user
 	after_create :default_values
-	acts_as_mappable
 	has_many :hyve_missing_locations
 
   #Validations
   validates_presence_of :name
-
   validates_presence_of :uuid
   validates_uniqueness_of :uuid, case_sensitive: false
   validates_format_of :uuid, with: /\A[\w -]+\z/, message: "can only have alphanumeric or - characters"
@@ -18,15 +17,9 @@ class Hyve < ActiveRecord::Base
   mount_uploader :image, HyveImageUploader
   mount_base64_uploader :image, HyveImageUploader
 
-  #Testing
   def to_param
     uuid
   end
-
-  def self.find_by_param(input)
-    find_by_uuid(input)
-  end
-  #End
 
 	def default_values
 		if self.name.nil?

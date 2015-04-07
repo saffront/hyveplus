@@ -36,7 +36,7 @@ class Api::V1::HyvesController < Api::ApiController
   private
   
   def set_hyve
-    @hyve = Hyve.find_by_param(params[:id]) || NilHyve.new
+    @hyve = Hyve.find_by_uuid(params[:id]) || NilHyve.new
   end
 
   def hyve_params

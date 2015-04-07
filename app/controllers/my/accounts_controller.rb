@@ -19,14 +19,6 @@ class My::AccountsController < My::BaseController
     update(password_params, "password", "edit_password")
   end
 
-  def subscribe
-    newsletter(true, "SUBSCRIBED")
-  end
-
-  def unsubscribe
-    newsletter(false, "UNSUBSCRIBED")
-  end
-
   #def destroy
     #@user.destroy
     #redirect_to root_url
@@ -48,11 +40,6 @@ class My::AccountsController < My::BaseController
     else
       render page.to_sym 
     end
-  end
-
-  def newsletter(boolean, action)
-    @user.update(subscription: boolean)
-    redirect_to my_account_path, notice: "You have successfully #{action} to our monthly user newsletter!"
   end
 
   def profile_params
