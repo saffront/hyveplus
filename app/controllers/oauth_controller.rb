@@ -13,11 +13,7 @@ class OauthController < ApplicationController
       flash[:success] = "You're logged in from #{provider.titleize}!"
       redirect_to my_account_path
     else
-      if logged_in?
-        link_account(provider)
-      else
-        register_new_user(provider)
-      end
+      register_new_user(provider)
     end
   end
 
@@ -51,17 +47,6 @@ class OauthController < ApplicationController
   def save_google_info
     set_access_token(@user)
     Oauth::RetrieveGoogleUserInfo.new(@access_token.token, @user).save
-  end
-
-  def link_account(provider)
-    if current_user.authentications.find_by(provider: provider).blank? && @user = add_provider_to_user(provider)
-      flash[:notice] = "You have successfully linked your #{provider.titleize} account."
-    else
-      flash[:alert] = "There was a problem linking your #{provider.titleize} account."
-    end
-
-    set_access_token(current_user)
-    redirect_to my_account_path
   end
 
   def set_access_token(user)
