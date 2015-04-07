@@ -1,0 +1,49 @@
+.container
+  = form_for @user, url: admin_user_path, method: :patch do |f|
+    - if @user.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        ul
+          - @user.errors.full_messages.each do |message|
+            li = message
+    table
+      col width="200"
+      col width="200"
+      tr
+        td
+          = f.label :email
+        td
+          = f.text_field :email, class: 'full-width-input'
+      tr
+        td
+          = f.label :username
+        td
+          = f.text_field :username, class: 'full-width-input'
+      tr
+        td
+          = f.label :first_name
+        td
+          = f.text_field :first_name, class: 'full-width-input'
+      tr
+        td
+          = f.label :last_name
+        td
+          = f.text_field :last_name, class: 'full-width-input'
+      tr
+        td
+          = f.label :role
+        td
+          = f.radio_button :role, "user", placeholder: "user"
+          = label :role_user, "User"
+        td
+          = f.radio_button :role, "admin", placeholder: "admin"
+          = label :role_admin, "Admin"
+      tr
+        td
+          = f.label :avatar
+        td
+          = f.file_field :avatar, type: 'file'
+    = f.submit "Update Profile", class: "btn btn-primary"
+
+  br
+  = link_to "Back to Show User Page", admin_user_path, class: "btn btn-info"

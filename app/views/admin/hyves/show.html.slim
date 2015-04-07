@@ -1,0 +1,52 @@
+.container
+  table
+    col width='150'
+    tr
+      td
+        strong Name
+      td
+        = @hyve.name
+    tr
+      td
+        strong UUID
+      td
+        = @hyve.uuid
+    tr
+      td
+        strong Distance
+      td
+        = @hyve.distance
+    tr
+      td
+        p
+    tr
+      td
+        strong User's Details
+    tr
+      td
+        strong Email
+      td = @hyve.user.email
+    tr
+      td
+        strong Username
+      td = @hyve.user.username
+    tr
+      td
+        strong First Name
+      td = @hyve.user.first_name
+    tr
+      td
+        strong Last Name
+      td = @hyve.user.last_name
+
+  - if @hyve.image_url.nil?
+    p No Avatar
+  - else
+    = image_tag "#{@hyve.image}", class: "margin-top-2 margin-btm-2"
+
+  p
+    = link_to "Edit Hyve", edit_admin_hyve_path, class: "btn btn-primary"
+  p 
+    = link_to "Delete", admin_hyve_path(@hyve), method: :delete, data: { confirm: "Are you would like to delete #{@hyve.name}-#{@hyve.user.email}?" }, class: "btn btn-danger"
+  p
+    = link_to 'Back to Hyves Index', admin_hyves_path, class: "btn btn-default"

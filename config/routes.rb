@@ -66,8 +66,8 @@ Rails.application.routes.draw do
   # Admin namespace
   # ==============================================================================================
   namespace :admin do
-    resources :users, only: [:index]
-    resources :hyves, only: [:index]
+    resources :users, except: [:new, :create]
+    resources :hyves, except: [:new, :create]
   end
 
   # ==============================================================================================

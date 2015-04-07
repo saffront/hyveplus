@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe PasswordResetsController, type: :routing do
+RSpec.describe OauthController, type: :routing do
   describe "routing" do
 
     it "routes to POST #callback" do

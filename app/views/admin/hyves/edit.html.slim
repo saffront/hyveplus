@@ -1,0 +1,40 @@
+.container
+  = form_for @hyve, url: admin_hyve_path, method: :patch do |f|
+    - if @hyve.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@hyve.errors.count, "error")} prohibited this user from being saved:"
+        ul
+          - @hyve.errors.full_messages.each do |message|
+            li = message
+    table
+      col width="200"
+      col width="200"
+      tr
+        td
+          = f.label :name
+        td
+          = f.text_field :name, class: 'full-width-input'
+      tr
+        td
+          = f.label :uuid
+        td
+          = f.text_field :uuid, class: 'full-width-input'
+      tr
+        td
+          = f.label :distance
+        td
+          = f.text_field :distance, class: 'full-width-input'
+      /tr
+        /td
+          /= f.label :status
+        /td
+          /= f.text_field :status, class: 'full-width-input'
+      tr
+        td
+          = f.label :avatar
+        td
+          = f.file_field :avatar, type: 'file'
+    = f.submit "Update Profile", class: "btn btn-primary"
+
+  br
+  = link_to "Back to Show Hyve Page", admin_hyve_path, class: "btn btn-info"

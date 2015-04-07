@@ -1,0 +1,38 @@
+require "rails_helper"
+
+RSpec.describe PagesController, type: :routing do
+  describe "routing" do
+
+    it "routes to GET #home" do
+      expect(get: "/").to route_to("pages#home")
+    end
+
+    it "routes to GET #company" do
+      expect(get: "/company").to route_to("pages#company")
+    end
+
+    it "routes to GET #press" do
+      expect(get: "/press").to route_to("pages#press")
+    end
+
+    it "routes to GET #product" do
+      expect(get: "/product").to route_to("pages#product")
+    end
+
+    it "routes to GET #order" do
+      expect(get: "/order").to route_to("pages#order")
+    end
+
+    it "routes to GET #faq" do
+      expect(get: "/faq").to route_to("pages#faq")
+    end
+
+    it "routes to GET #conatct" do
+      expect(get: "/contact").to route_to("pages#contact")
+    end
+
+    it "routes to GET #tnc" do
+      expect(get: "/tnc").to route_to("pages#tnc")
+    end
+  end
+end
