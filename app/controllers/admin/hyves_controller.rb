@@ -33,6 +33,6 @@ class Admin::HyvesController < Admin::AdminsController
   end
 
   def hyve_params
-    params.require(:hyve).permit(:name, :uuid, :distance, :status)
+    params.require(:hyve).permit(:name, :uuid, :distance)
   end
 end

@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
 
+  #Callbacks
   after_initialize :set_default_password, if: :new_record?
 
   #Associations
   has_many :authentications, dependent: :destroy
   has_many :hyves, dependent: :destroy
-
   accepts_nested_attributes_for :authentications
 
   #Validations

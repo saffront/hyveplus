@@ -1,6 +1,5 @@
 class My::HyvesController < My::BaseController
-  before_action :set_user
-  before_action :set_hyve
+  before_action :set_user, :set_hyve
 
   def show
   end
@@ -17,6 +16,8 @@ class My::HyvesController < My::BaseController
   end
   
   def destroy
+    @hyve.destroy
+    redirect_to my_account_path, notice: "Your hyve was successfully destroyed."
   end
 
   private
@@ -29,6 +30,7 @@ class My::HyvesController < My::BaseController
     end
 
     def hyve_params
-      params.require(:hyve).permit(:name, :uuid, :distance, :status)
+:A
+      params.require(:hyve).permit(:name, :uuid, :distance, :image)
     end
 end

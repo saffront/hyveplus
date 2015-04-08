@@ -22,8 +22,6 @@ Rails.application.routes.draw do
   # ==============================================================================================
 
   resources :users, only: [:create, :new] 
-  resources :hyve_missing_locations
-  resources :master_pins
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   # ==============================================================================================
