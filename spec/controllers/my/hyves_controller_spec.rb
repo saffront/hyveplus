@@ -1,52 +1,62 @@
 require 'rails_helper'
 
-RSpec.describe My::HyvesController, type: :controller do render_views
+RSpec.describe My::HyvesController, type: :controller do
 
   let!(:user) { create(:user) }
-  let!(:hyve1) { create(:hyve, user: user) }
-  let!(:hyve2) { create(:hyve, user: user) }
+  let!(:hyve) { create(:hyve, user: user) }
 
-  #describe "GET show" do
-    #before { get :show, id: hyve1.id }
+  before do
+    login_user(user)
+  end
 
-    #it "assigns the hyve to @hyve" do
-      #expect(assigns(:hyve1)).to eq hyve1 
-    #end
+  it { should permit(:name, :uuid, :distance, :image).for(:update, params: { id: hyve.uuid } ) }
 
-    #it "renders the :show template" do
-      #expect(response).to render_template :show
-    #end
-  #end
+  describe "GET show" do
+    before { get :show, id: hyve.uuid }
 
-  #describe "GET edit" do
-    #before { get :edit, id: hyve1 }
+    it "assigns the hyve to @hyve" do
+      expect(assigns(:hyve)).to eq hyve 
+    end
 
-    #it "renders the :edit template" do
-      #expect(response).to render_template :edit
-    #end
-  #end
+    it "renders the :show template" do
+      expect(response).to render_template :show
+    end
+  end
 
-  #describe "PATCH update" do
-    #context "with VALID hyve attributes" do
-      #it "gets the hyve" do
-      #end 
+  describe "GET edit" do
+    before { get :edit, id: hyve.uuid }
 
-      #it "changes @hyve's attributes" do
-      #end
+    it "renders the :edit template" do
+      expect(response).to render_template :edit
+    end
+  end
 
-      #it "redirect to hyve_path" do
-      #end
-    #end
+  describe "PATCH update" do
+    context "with VALID hyve attributes" do
+      xit "gets the hyve" do
+      end 
 
-    #context "with INVALID hyve attributes" do
-      #it "does not change @hyve's attributes" do
-      #end
+      xit "changes @hyve's attributes" do
+      end
 
-      #it "re-renders :edit template" do
-      #end
-    #end
-  #end
+      xit "redirect to hyve_path" do
+      end
+    end
 
-  #describe "DELETE destroy" do
-  #end
+    context "with INVALID hyve attributes" do
+      xit "does not change @hyve's attributes" do
+      end
+
+      xit "re-renders :edit template" do
+      end
+    end
+  end
+
+  describe "DELETE destroy" do
+      xit "deletes the user's hyve" do
+      end
+
+      xit "redirects to my_account_path" do
+      end
+  end
 end

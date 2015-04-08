@@ -1,6 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Api::ApiController, type: :controller do
+RSpec.describe Api::UserSessionsController, type: :controller do
+
+  xit { should permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :api_token, :uid, :provider).for(:create) }
 
   describe "POST create" do
     context "registering with email" do

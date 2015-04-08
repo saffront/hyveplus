@@ -3,9 +3,13 @@ require 'rails_helper'
 RSpec.describe My::AccountsController, type: :controller do
 
   let!(:user) { create :user } 
-  before(:each) do
+
+  before do
     login_user(user)
   end
+
+  it { should permit(:email, :first_name, :last_name, :avatar, :username).for(:update_profile, verb: :patch, params: { id: user.id } ) }
+  it { should permit(:password, :password_confirmation).for(:update_password, verb: :patch, params: { id: user.id } ) }
 
   describe "GET show" do
     before { get :show, id: user }
@@ -97,7 +101,7 @@ RSpec.describe My::AccountsController, type: :controller do
         #expect(user.password_confirmation).to eq("new_password")
       #end
 
-      it "redirects to the my_account path" do
+      it "redirects to my_account path" do
         patch :update_password, id: user, user: attributes_for(:user, password: "new_password", password_confirmation: "new_password")
         expect(response).to redirect_to action: :show
       end

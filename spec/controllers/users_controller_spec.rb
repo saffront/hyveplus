@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
+  it { should permit(:email, :username, :first_name, :last_name, :avatar, :password, :password_confirmation).for(:create) }
+
   describe "GET new" do
     before do
       get :new
