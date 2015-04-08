@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include Pundit
-  after_action :verify_authorized, only: :index
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 

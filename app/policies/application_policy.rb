@@ -1,6 +1,7 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  #Model object is called record
   def initialize(user, record)
     @user = user
     @record = record
@@ -11,7 +12,7 @@ class ApplicationPolicy
   end
 
   def scope
-    Pundit.policy_scope!(user, record.class)
+    record.class
   end
 
   class Scope

@@ -29,6 +29,7 @@ class Admin::HyvesController < Admin::AdminsController
 
   def set_hyve
     @hyve = Hyve.find_by_uuid(params[:id])
+    authorize @hyve
   end
 
   def hyve_params

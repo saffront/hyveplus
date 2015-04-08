@@ -4,10 +4,9 @@
     - if @user.errors.any?
       #error_explanations
         h2 #{pluralize(@user.errors.count, "error")} prohibited this user from being saved.
-
         ul
-        - @user.error.full_messages.each do |msg|
-          li = msg
+          - @user.error.full_messages.each do |msg|
+            li = msg
 
     table
       col width="200"

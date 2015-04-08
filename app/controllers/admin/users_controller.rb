@@ -29,6 +29,7 @@ class Admin::UsersController < Admin::AdminsController
 
   def set_user
     @user = User.find(params[:id])
+    authorize @user
   end
 
   def user_params
