@@ -4,11 +4,10 @@ class Hyve < ActiveRecord::Base
 	acts_as_mappable
 
 	belongs_to :user
-	after_create :default_values
-	has_many :hyve_missing_locations
 
   #Validations
   validates_presence_of :name
+  validates_format_of :distance, with: /\A(1|2|4|8|16)\z/
   validates_presence_of :uuid
   validates_uniqueness_of :uuid, case_sensitive: false
   validates_format_of :uuid, with: /\A[\w -]+\z/, message: "can only have alphanumeric or - characters"
@@ -20,12 +19,6 @@ class Hyve < ActiveRecord::Base
   def to_param
     uuid
   end
-
-	def default_values
-		if self.name.nil?
-			self.name = self.pin
-		end
-	end
 
 	def toggle_missing
 		self.update(status: :missing)

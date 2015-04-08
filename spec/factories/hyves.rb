@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :hyve do
 		sequence(:name) { |n| "hyve-#{n}" }
     sequence(:uuid) { |n| "hyve-#{n}" }
-    sequence(:distance) { |n| "#{n}" }
+    distance "2"
   end
 
   trait :invalid do

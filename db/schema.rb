@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331030734) do
+ActiveRecord::Schema.define(version: 20150408075055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,22 +26,8 @@ ActiveRecord::Schema.define(version: 20150331030734) do
     t.string   "secret"
   end
 
-  create_table "hyve_missing_locations", force: :cascade do |t|
-    t.string   "deviceid"
-    t.float    "lat"
-    t.float    "lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "hyve_id"
-  end
-
-  add_index "hyve_missing_locations", ["hyve_id"], name: "index_hyve_missing_locations_on_hyve_id", using: :btree
-
   create_table "hyves", force: :cascade do |t|
     t.string   "name"
-    t.string   "pin"
-    t.float    "lat"
-    t.float    "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
@@ -49,14 +35,6 @@ ActiveRecord::Schema.define(version: 20150331030734) do
     t.string   "distance"
     t.string   "uuid",       null: false
     t.string   "image"
-  end
-
-  create_table "master_pins", force: :cascade do |t|
-    t.string   "manufacturer"
-    t.string   "serialnumber"
-    t.string   "pin"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,5 +64,4 @@ ActiveRecord::Schema.define(version: 20150331030734) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
-  add_foreign_key "hyve_missing_locations", "hyves"
 end

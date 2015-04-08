@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Hyve, :type => :model do
+RSpec.describe Hyve, type: :model do
 
 	let!(:hyve) { create(:hyve ) }
 	it { should belong_to(:user) }
