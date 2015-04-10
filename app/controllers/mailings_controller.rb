@@ -25,7 +25,7 @@ class MailingsController < ApplicationController
     begin
       response = Mailings::MailChimpService.new(params[:email]).send(action)
       @user.update(subscription: boolean) if @user
-      flash[:notice] = "#{params[:email]} #{@action} newsletter successfully"
+      flash[:success] = "#{params[:email]} #{@action} newsletter successfully"
     rescue Gibbon::MailChimpError => e
       flash[:error] = e.message
     end

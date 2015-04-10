@@ -11,12 +11,11 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_path, alert: "Please login first"
+    redirect_to(request.referrer || root_path, alert: "Please login first")
   end
 
   def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action"
-    redirect_to(request.referrer || root_path)
+    redirect_back_or_to(request.referrer || root_path, flash_hash = { alert: "You are not authorized to perform this action" } )
   end
 
 end

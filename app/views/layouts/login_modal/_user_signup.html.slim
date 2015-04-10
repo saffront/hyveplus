@@ -6,7 +6,7 @@
       p.no-margin Already have an account? <a href="#user-login" class="user-login-link orange-link">Login</a>
 
   .row
-    = form_for :users, url: users_path , method: :post do |f|
+    = form_for :user, url: users_path , method: :post do |f|
       .text-centered
         = f.text_field :email, placeholder: 'Email Address', required: true, class: "form-login-modal"
       .text-centered 

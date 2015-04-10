@@ -1,6 +1,6 @@
 $(document).ready ->
   $("#login-modal-trigger").leanModal({
-    top: 150,
+    top: 145,
     overlay: 0.5,
     closeButton: ".modal_close"
   })
