@@ -31,8 +31,7 @@
   background-color: white;
   color: $blue;
   &:hover, &:active, &:link, &:visited {
-    color: $blue;
-  }
+    color: $blue}
 }
 
 .btn-video {
@@ -41,6 +40,40 @@
   &:hover, &:active, &:link, &:visited {
     color: white;
   }
+}
+
+//Header-Login Modal
+@mixin btn-login($rgba) {
+  @include btn-basic;
+  width: 20vw;
+  margin: 1.5rem 0;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: $rgba;
+  border-radius: 0.5rem;
+  &:hover, &:active, &:link, &:visited {
+    color: white;
+  }
+} 
+
+//Both Sign Up and Reset Password buttons
+.btn-orange {
+  @include btn-login($orange);
+}
+
+.btn-login {
+  @include btn-login(rgba(71,162,200,100));
+}
+
+.btn-login-facebook {
+  @include btn-login(rgba(59,89,152,100));
+  padding: 0.6rem 3rem;
+}
+
+.btn-login-google {
+  @include btn-login(rgba(221,75,57,100));
+  padding: 0.6rem 3rem;
 }
 
 //Footer

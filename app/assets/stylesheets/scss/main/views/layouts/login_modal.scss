@@ -1,0 +1,77 @@
+#login-modal {
+  display: none;
+  width: 25vw;
+  border-radius: 1rem;
+}
+
+.popupContainer{
+ position:absolute;
+ width: auto;
+ height: auto;
+ left: 45%;
+ background: #FFF;
+}
+
+.popupBody .modal_close  {
+    cursor:  pointer;
+    position:  absolute;
+    top: 1rem;
+    right:  3rem;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    p {
+      margin: 0;
+      padding: 0.3rem 0.7rem 0.1rem;
+      border: 1.5px solid black;
+      border-radius: 3rem;
+    }
+}
+ 
+.popupBody  {
+    padding: 8rem 1.5rem 4rem;
+}
+
+//Shared between the 3 login_modal pages
+@mixin social-icon($color, $padding, $margin) {
+  background-color: white;
+  color: $color;
+  padding: $padding;
+  margin-right: $margin;
+  border-radius: 3rem;
+}
+
+@mixin color-link($color) {
+  color: $color;
+  text-decoration: underline;
+
+  &:hover, &:active, &:link, &:visited {
+    color: $color;
+  }
+}
+
+.facebook-social-icon {
+  @include social-icon(rgba(59,89,152,100), 1rem 1.2rem, 5rem);
+}
+
+.google-social-icon {
+  @include social-icon(rgba(221,75,57,100), 1rem, 6rem);
+}
+
+.orange-link {
+  @include color-link($orange);
+}
+
+.blue-link {
+  @include color-link($blue);
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}

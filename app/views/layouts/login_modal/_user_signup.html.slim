@@ -1,0 +1,30 @@
+#user-signup.container.hidden
+  .row.row-eq-height.padded-btm-1
+    .col-md-5.col-lg-5.vertical-align.left-align
+      h3.no-margin Sign Up
+    .col-md-7.col-lg-7.vertical-align.right-align
+      p.no-margin Already have an account? <a href="#user-login" class="user-login-link orange-link">Login</a>
+
+  .row
+    = form_for :users, url: users_path , method: :post do |f|
+      .text-centered
+        = f.text_field :email, placeholder: 'Email Address', required: true, class: "form-login-modal"
+      .text-centered 
+        = f.text_field :first_name, placeholder: "First Name", required: true, class: "form-login-modal"
+      .text-centered 
+        = f.text_field :last_name, placeholder: "Last Name", required: true, class: "form-login-modal"
+      .text-centered 
+        = f.password_field :password, placeholder: 'Password', required: true, class: "form-login-modal"
+      .text-centered 
+        = f.password_field :password_confirmation, placeholder: 'Repeat Password', required: true, class: "form-login-modal"
+      .text-centered 
+        = f.submit "Sign Up", class: 'btn btn-orange'
+
+  .row.text-centered.padded-top-1.padded-btm-3
+    p By click "Sign Up", you agree to HYVE's <a href="/tnc", class="blue-link">Terms and Conditions</a>
+
+  .row.padded-top-3
+    .text-centered
+      p Or you can Sign Up via
+    .text-centered = link_to raw("<i class='fa fa-facebook-f facebook-social-icon'></i>FACEBOOK"), auth_at_provider_path(provider: :facebook), class: "btn btn-login-facebook"
+    .text-centered = link_to raw("<i class='fa fa-google-plus google-social-icon'></i>GOOGLE"), auth_at_provider_path(provider: :google), class: "btn btn-login-google"

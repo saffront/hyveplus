@@ -3,6 +3,26 @@
   align-items: center;
 }
 
+.left-align {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right-align {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-align {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bottom-align {
+  display: flex;
+  align-items: flex-end;
+}
+
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;

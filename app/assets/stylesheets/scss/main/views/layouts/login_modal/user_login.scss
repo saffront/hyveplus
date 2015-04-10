@@ -1,0 +1,22 @@
+#user-login {
+  width: 22vw;
+
+  .row:nth-child(2) {
+    border-bottom: 0.15rem solid $grey;
+  }
+
+  .row.row-eq-height {
+    a:hover, a:active, a:link, a:visited {
+      text-decoration: none;
+    }
+  } 
+}
+
+.user-forgot-password-link {
+  color: rgba(71,162,200,100);
+
+    &:hover, &:active, &:link, &:visited {
+      text-decoration: none;
+      color: rgba(71,162,200,100);
+    }
+}

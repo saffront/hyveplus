@@ -11,5 +11,6 @@ html
   body class="#{controller_name}-#{action_name}"
     = render partial: "layouts/header", locals: { view: "#{controller_name} #{action_name}" }
     = render 'shared/flash'
+    = render 'layouts/login_modal'
     = yield
     = render "layouts/footer"

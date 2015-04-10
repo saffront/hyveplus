@@ -7,9 +7,11 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:user_sessions][:email], params[:user_sessions][:password])
-      redirect_back_or_to(my_account_path, notice: "Login successful")
+      flash[:notice] = "Login successful"
+      redirect_back_or_to my_account_path
     else
-      redirect_to :back, alert: "Login failed. Please input correct email or password."
+      flash[:error] = "Login failed. Please input correct email or password."
+      redirect_to(request.referrer || root__path)
     end
   end
 
