@@ -71,12 +71,16 @@ RSpec.describe My::AccountsController, type: :controller do
  
     context "with INVALID profile attributes" do
       it "does not change @user's profile attributes" do
+        @email = user.email
+        @first_name = user.first_name
+        @last_name = user.last_name
+        @username = user.username
         patch :update_profile, id: user, user: attributes_for(:user, :invalid_profile)
         user.reload
-        expect(user.email).to eq "morgan.freeman@gmail.com"
-        expect(user.first_name).to eq "Morgan"
-        expect(user.last_name).to eq "Freeman"
-        expect(user.username).to eq "morgan-freeman"
+        expect(user.email).to eq @email 
+        expect(user.first_name).to eq @first_name 
+        expect(user.last_name).to eq @last_name
+        expect(user.username).to eq @username
       end
 
       it "re-renders the :edit_profile template" do

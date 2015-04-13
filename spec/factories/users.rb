@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    email "morgan.freeman@gmail.com"
+		sequence(:email) { |n| "morgan.freeman#{n}@gmail.com" }
     password "password"
     password_confirmation "password"
-    first_name "Morgan"
-    last_name "Freeman"
-    username "morgan-freeman"
+    sequence(:first_name) { |n| "Morgan-#{n}"}
+    sequence(:last_name) { |n| "Freeman-#{n}"}
+    sequence(:username) { |n| "morgan-freeman-#{n}"}
   end
 
   trait :valid_login do

@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
       redirect_back_or_to my_account_path
     else
       flash[:error] = "Login failed. Please input correct email or password."
-      redirect_to(request.referrer || root__path)
+      redirect_to(request.referrer || root_path)
     end
   end
 

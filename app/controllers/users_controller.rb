@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user[:username] = (user_params[:first_name] + " " + user_params[:last_name]).parameterize
+    @user[:username] = user_params[:first_name].parameterize
     @auth = @user.authentications.new(provider: "email")
     generate_random_uid
 
@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to my_account_path
     else
-      render :new
+      flash[:error] = @user.errors
+      redirect_to request.referrer
     end
   end
 

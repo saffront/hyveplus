@@ -1,21 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, :type => :controller do
+RSpec.describe UsersController, type: :controller do
 
-  it { should permit(:email, :username, :first_name, :last_name, :avatar, :password, :password_confirmation).for(:create) }
+  #let!(:user) { create(:user) }
+  #it { should permit(:email, :username, :first_name, :last_name, :avatar, :password, :password_confirmation).for(:create) }
 
-  describe "GET new" do
-    before do
-      get :new
-    end
-
-    it "assign a new user to @user" do
-      expect(assigns(:user)).to be_a_new(User)
-    end
-
-    it "renders the :new template" do
-      expect(response).to render_template :new
-    end
+  before(:each) do
+    request.env["HTTP_REFERER"] = "where_user_came_from"
   end
 
   describe "POST create" do
@@ -26,7 +17,7 @@ RSpec.describe UsersController, :type => :controller do
         }.to change(User, :count).by(1)
       end
 
-      it "redirects to user path" do
+      it "redirects to my/account path" do
         post :create, user: attributes_for(:user)
         expect(response).to redirect_to my_account_url 
       end
@@ -39,9 +30,11 @@ RSpec.describe UsersController, :type => :controller do
         }.to_not change(User, :count)
       end
 
-      it "re-renders :new template" do
-        post :create, user: attributes_for(:user, :invalid_user)
-        expect(response).to render_template :new
+      it "redirects to :back" do
+        expect {
+          post :create, user: attributes_for(:user, :invalid_user)
+          expect(response).to eq "where_user_came_from"
+        }
       end
     end
   end
