@@ -11,8 +11,28 @@ class Api::V1::UserSessionsController < Api::ApiController
       @auth = @user.try(:authentications).try(:find_by_uid, info_params[:uid]) #returns nil rather than raising an exception
       find_user(@user, @auth)
     else
-      @params = NilParams.new 
-      render json: @params
+      @nil_params = NilParams.new 
+      render json: @nil_params
+    end
+  end
+  
+  def register
+    @user = User.new do |user|
+      user.email = info_params[:email]
+      user.password = info_params[:password]
+      user.password_confirmation = info_params[:password_confirmation]
+      user.username = info_params[:username]
+      user.avatar = info_params[:avatar]
+      user.first_name = info_params[:first_name]
+      user.last_name = info_params[:last_name]
+      set_authentication(user)
+    end
+
+    if @user.save
+      @user.generate_api_token!
+      render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
+    else
+      render json: { errors: user.errors }
     end
   end
 
@@ -27,22 +47,9 @@ class Api::V1::UserSessionsController < Api::ApiController
       user.generate_api_token!
       render json: { user_session: UserSerializer.new(user), api_token: user.api_token }
     else
-      register_new_user
+      @nil_user = NilUser.new 
+      render json: @nil_user
     end
-  end
-
-  def register_new_user
-    @user = User.new do |user|
-      user.email = info_params[:email]
-      user.password = info_params[:password]
-      user.password_confirmation = info_params[:password_confirmation]
-      user.username = info_params[:username]
-      user.avatar = info_params[:avatar]
-      user.first_name = info_params[:first_name]
-      user.last_name = info_params[:last_name]
-      set_authentication(user)
-    end
-    save_and_generate_api_token(@user)
   end
 
   def set_authentication(user)
@@ -70,15 +77,6 @@ class Api::V1::UserSessionsController < Api::ApiController
       auth.uid = info_params[:uid]
     end
   end
-
-  def save_and_generate_api_token(user)
-    if user.save
-      user.generate_api_token!
-      render json: { user_session: UserSerializer.new(user), api_token: user.api_token }
-    else
-      render json: { errors: user.errors }
-    end
-  end
 end
 
 class NilParams
@@ -86,5 +84,13 @@ class NilParams
 
   def initialize
     @error = "Parameters missing or invalid."
+  end
+end
+
+class NilUser
+  attr_accessor :error
+
+  def initialize
+    @error = "User not found, please check your parameters."
   end
 end

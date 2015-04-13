@@ -77,6 +77,7 @@ Rails.application.routes.draw do
       resource :account, only: [:show, :update]
       resources :hyves, except: [:new, :edit]
       resources :user_sessions, only: [:create, :destroy]
+      post :register, to: 'user_sessions#register'
     end
   end
 
