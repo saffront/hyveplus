@@ -25,8 +25,8 @@ class Api::V1::UserSessionsController < Api::ApiController
       user.avatar = info_params[:avatar]
       user.first_name = info_params[:first_name]
       user.last_name = info_params[:last_name]
-      set_authentication(@user)
     end
+    set_authentication(@user)
 
     if @user.save
       @user.generate_api_token!
