@@ -20,11 +20,5 @@
       .text-centered 
         = f.submit "Sign Up", class: 'btn btn-orange'
 
-  .row.text-centered.padded-top-1.padded-btm-3
+  .row.text-centered.padded-top-1
     p By click "Sign Up", you agree to HYVE's <a href="/tnc", class="blue-link">Terms and Conditions</a>
-
-  .row.padded-top-3
-    .text-centered
-      p Or you can Sign Up via
-    .text-centered = link_to raw("<i class='fa fa-facebook-f facebook-social-icon'></i>FACEBOOK"), auth_at_provider_path(provider: :facebook), class: "btn btn-login-facebook"
-    .text-centered = link_to raw("<i class='fa fa-google-plus google-social-icon'></i>GOOGLE"), auth_at_provider_path(provider: :google), class: "btn btn-login-google"

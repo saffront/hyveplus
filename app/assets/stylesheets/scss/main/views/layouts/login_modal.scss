@@ -1,6 +1,5 @@
 #login-modal {
   display: none;
-  width: 25vw;
   border-radius: 1rem;
 }
 
@@ -15,8 +14,8 @@
 .popupBody .modal_close  {
     cursor:  pointer;
     position:  absolute;
-    top: 1rem;
-    right:  3rem;
+    top: 1vw;
+    right: 3vh;
     padding: 1.5rem;
     font-size: 1.2rem;
     p {
@@ -28,33 +27,16 @@
 }
  
 .popupBody  {
-    padding: 8rem 1.5rem 4rem;
+    padding: 8vh 1.5vh 4vh;
 }
 
-//Shared between the 3 login_modal pages
-@mixin social-icon($color, $padding, $margin) {
-  background-color: white;
-  color: $color;
-  padding: $padding;
-  margin-right: $margin;
-  border-radius: 3rem;
-}
-
-@mixin color-link($color) {
-  color: $color;
-  text-decoration: underline;
-
-  &:hover, &:active, &:link, &:visited {
-    color: $color;
-  }
-}
-
+//Shared between 3 login-modal
 .facebook-social-icon {
-  @include social-icon(rgba(59,89,152,100), 1rem 1.2rem, 5rem);
+  @include social-icon(rgba(59,89,152,100), 0.8rem 1rem, 2vw);
 }
 
 .google-social-icon {
-  @include social-icon(rgba(221,75,57,100), 1rem, 6rem);
+  @include social-icon(rgba(221,75,57,100), 0.8rem, 3vw);
 }
 
 .orange-link {
@@ -64,6 +46,7 @@
 .blue-link {
   @include color-link($blue);
 }
+//End
 
 #lean_overlay {
     position: fixed;

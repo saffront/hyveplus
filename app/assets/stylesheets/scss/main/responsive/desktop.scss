@@ -1,0 +1,15 @@
+@media (max-width: 1200px) {
+  @include login-modal-desktop(40vw);
+}
+
+@media (min-width: 1200px) {
+  @include login-modal-desktop(35vw);
+}
+
+@media (min-width: 1400px) {
+  @include login-modal-desktop(30vw);
+}
+
+@media (min-width: 1600px) {
+  @include login-modal-desktop(25vw);
+}

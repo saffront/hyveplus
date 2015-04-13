@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to my_account_path
     else
-      flash[:error] = @user.errors
+      flash[:error] = @user.errors.full_messages
       redirect_to request.referrer
     end
   end

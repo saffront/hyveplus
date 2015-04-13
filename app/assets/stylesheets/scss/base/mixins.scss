@@ -20,7 +20,6 @@
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -41,10 +40,42 @@
   }
 }
 
+//header.scss
 @mixin link-blue-border-btm($left, $right) {
   margin-top: -2.5rem;
   left: $left;
   right: $right;
   position: absolute;
   border-bottom: 2px solid $blue;
+}
+
+//login_modal.scss
+@mixin social-icon($color, $padding, $margin) {
+  background-color: white;
+  color: $color;
+  padding: $padding;
+  margin-right: $margin;
+  border-radius: 3rem;
+}
+
+@mixin color-link($color) {
+  color: $color;
+  text-decoration: underline;
+
+  &:hover, &:active, &:link, &:visited {
+    color: $color;
+  }
+}
+
+//desktop.scss
+@mixin login-modal-desktop($width) {
+  #login-modal {
+    width: $width;
+  }
+  #user-forgot-password, #user-login, #user-signup {
+    width: $width*0.9;
+  }
+  .btn-orange, .btn-login, .btn-login-facebook, .btn-login-google, .form-login-modal {
+    width: $width*0.8;
+  }
 }

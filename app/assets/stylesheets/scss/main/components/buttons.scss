@@ -45,7 +45,9 @@
 //Header-Login Modal
 @mixin btn-login($rgba) {
   @include btn-basic;
-  width: 20vw;
+  font-size: 1.6vmin;
+  height: 4vh;
+  padding: 0.4rem 3rem;
   margin: 1.5rem 0;
   text-align: center;
   border: none;
@@ -68,12 +70,12 @@
 
 .btn-login-facebook {
   @include btn-login(rgba(59,89,152,100));
-  padding: 0.6rem 3rem;
+  /*padding: 0.6rem 3rem;*/
 }
 
 .btn-login-google {
   @include btn-login(rgba(221,75,57,100));
-  padding: 0.6rem 3rem;
+  /*padding: 0.6rem 3rem;*/
 }
 
 //Footer
