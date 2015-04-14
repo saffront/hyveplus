@@ -10,31 +10,25 @@
 
 //Login-modal
 .form-login-modal {
-  height: 4vh;
-  margin: 1rem auto;
-  padding: 1rem;
-  color: rgba(71,162,200,100);
-  background-color: rgba(241,242,245,100);
-  border: none;
-  border-radius: 0.5rem;
-  &:focus {
-    box-shadow: 0 0 1pt 1pt rgba(71,162,200,100);
-  }
+  @include form-input-grey;
 }
 
 //my/account edit user info
 .form-my-account {
-  height: 4rem;
+  @include form-input-grey;
   width: 100%;
-  margin: 1rem auto;
-  padding: 1rem;
-  color: rgba(71,162,200,100);
-  background-color: rgba(241,242,245,100);
-  border: none;
-  border-radius: 0.5rem;
-  &:focus {
-    box-shadow: 0 0 1pt 1pt rgba(71,162,200,100);
-  }
+}
+
+//Contact
+.form-contact {
+  @include form-input-grey;
+  width: 100%;
+}
+
+.form-contact-message {
+  @include form-input-grey;
+  height: 11rem;
+  width: 100%;
 }
 
 //Footer

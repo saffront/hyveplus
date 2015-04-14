@@ -83,6 +83,18 @@
   }
 } 
 
+@mixin form-input-grey {
+  height: 4rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  color: rgba(71,162,200,100);
+  background-color: rgba(241,242,245,100);
+  border: none;
+  border-radius: 0.5rem;
+  &:focus {
+    box-shadow: 0 0 1pt 1pt rgba(71,162,200,100);
+  }
+}
 
 //desktop.scss
 @mixin login-modal-desktop($width) {

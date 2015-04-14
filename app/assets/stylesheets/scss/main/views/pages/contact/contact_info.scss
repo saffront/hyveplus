@@ -1,0 +1,11 @@
+#contact-info {
+  background-color: #495966;
+  padding: 6rem;
+
+  a {
+    color: white;
+    &:hover, &:active, &:link, &:visited {
+      text-decoration: none;
+    } 
+  }
+}

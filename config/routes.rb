@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact', as: 'contact'
   get '/tnc', to: 'pages#tnc', as: 'tnc'
 
+  post :contact_us, to: 'contacts#send_contact_form'
+
   #Parse push notification
   #post 'push' => 'pages#push'
 
