@@ -1,6 +1,5 @@
 $(document).ready ->
-  $("#about").click (e) ->
-    e.preventDefault()
+  $("#about").click ->
     #Make secondary navbar appear
     $("#secondary").removeClass("hidden")
     #Remove blue-border-btm from rest and add blue-border-btm to about

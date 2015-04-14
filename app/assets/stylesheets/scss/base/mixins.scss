@@ -67,6 +67,23 @@
   }
 }
 
+//buttons.scss
+@mixin btn-login($rgba) {
+  @include btn-basic;
+  height: 3.5rem;
+  padding: 0.3rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  border: none;
+  color: white;
+  background-color: $rgba;
+  border-radius: 0.5rem;
+  &:hover, &:active, &:link, &:visited {
+    color: white;
+  }
+} 
+
+
 //desktop.scss
 @mixin login-modal-desktop($width) {
   #login-modal {

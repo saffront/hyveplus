@@ -1,64 +1,11 @@
-h1 User Management
-.jumbotron
-  .container
-    .row
-      .col-lg-4.text-centered
-        h3 User Info
-
-    .row.row-eq-height.vertical-align
-      .col-lg-4.text-centered
-        - if @user.avatar_url.nil?
-          p No Avatar
-        - else
-          = image_tag "#{@user.avatar}", class: "margin-top-2 margin-btm-2"
-      .col-lg-8
-        table
-          col width="200"
-          tr
-            td
-              h4 First Name
-            td
-              =  @user.first_name
-          tr
-            td
-              h4 Last Name
-            td
-              =  @user.last_name
-          tr
-            td
-              h4 Username
-            td
-              =  @user.username
-          tr
-            td
-              h4 Email
-            td
-              = @user.email
-          tr
-            td
-              h4 Email Subscription
-            td
-              =  @user.subscription
-          tr
-            td
-              h4 Provider
-            td
-              - @user.authentications.each do |a|
-                h5 #{a.provider.capitalize!}
-
-    .row.text-centered.margin-top-1.margin-btm-2
-      .col-lg-3
-        - if @user.subscription
-          = form_tag unsubscribe_path do
-            = hidden_field_tag :email, @user.email 
-            = submit_tag "Unsubscribe from Mailing List", class: 'btn btn-danger'
-        - else
-          = form_tag subscribe_path do
-            = hidden_field_tag :email, @user.email 
-            = submit_tag "Subscribe to Mailing List", class: 'btn btn-success'
-
-      .col-lg-2
-
-        = link_to 'Edit Profile', edit_profile_my_account_path, class: 'btn btn-info'
-      .col-lg-2
-        = link_to 'Change Password', edit_password_my_account_path, class: 'btn btn-primary'
+#my-account-info.container-fluid
+  .row.row-eq-height.vertical-align
+    .col-md-3.col-lg-3.text-centered
+      = image_tag "#{@user.avatar}", class: "round-image"
+    .col-md-6.col-lg-6.white
+      h4
+        = @user.full_name.capitalize
+      p
+        = @user.email
+    .col-md-3.col-lg-3.text-centered
+      = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-my-account-info", id: "edit-my-account-info-link", remote: true

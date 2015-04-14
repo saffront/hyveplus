@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 
   def create
     if @user = login(params[:user_sessions][:email], params[:user_sessions][:password])
-      flash[:notice] = "Login successful"
+      flash[:success] = "Login successful"
       redirect_back_or_to my_account_path
     else
       flash[:error] = "Login failed. Please input correct email or password."
@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    flash[:notice] = "Logged out"
+    flash[:success] = "Logged out"
     redirect_to root_path
   end
 end

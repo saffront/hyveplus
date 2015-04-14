@@ -1,28 +1,12 @@
-h1 My Hyves (#{@hyves.count})
-.jumbotron
-
+#accordion.panel-group aria-multiselectable="true" role="tablist" 
   - @hyves.each do |hyve|
-    table
-      col width="100"
-      col width="220"
-      tr colspan="3"
-        td
-          = link_to "Edit Hyve", edit_my_hyve_path(hyve), class: "btn btn-primary" 
-      tr
-        td
-          strong Name
-        td
-          = hyve.name
-        td rowspan="3"
-          = image_tag "#{hyve.image}"
-      tr
-        td
-          strong UUID
-        td
-          = hyve.uuid
-      tr
-        td
-          strong Distance
-        td
-          = hyve.distance
-    br
+    .panel.panel-default
+      .panel-heading role="tab" aria-controls="collapse#{hyve.id}" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse#{hyve.id}" id="heading#{hyve.id}"
+        h4.panel-title.blue #{hyve.name} 
+      .panel-collapse.collapse aria-labelledby="heading#{hyve.id}" role="tabpanel" id="collapse#{hyve.id}" 
+        .panel-body
+          /p = image_tag "#{hyve.image}"
+          p #{hyve.distance}
+          p #{hyve.uuid}
+          p #{hyve.created_at}
+          p #{hyve.updated_at}

@@ -3,7 +3,7 @@
     .col-md-6.col-lg-6.vertical-align.left-align
       h3.no-margin User Login
     .col-md-6.col-lg-6.vertical-align.right-align
-      = link_to "Forgot Password?", "#user-forgot-password", class: "user-forgot-password-link text-right" 
+      = link_to "Forgot Password?", "#user-forgot-password", class: "user-forgot-password-link text-right"
 
   .row.padded-btm-2
     = form_for :user_sessions, url: user_sessions_path , method: :post do |f|

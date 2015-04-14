@@ -34,6 +34,11 @@ class User < ActiveRecord::Base
     auth.update(token: token, secret: secret)
   end
 
+  #Decorator/Presenter
+  def full_name
+    self.first_name + " " + self.last_name
+  end
+
   #Mobile App API
   def generate_api_token!
     generate_token(:api_token)
