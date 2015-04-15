@@ -23,29 +23,29 @@ RSpec.describe My::AccountsController, type: :controller do
     end
   end
     
-  describe "GET edit_profile" do
-    before { get :edit_profile, id: user }
+  #describe "GET edit_profile" do
+    #before { get :edit_profile, id: user }
     
-    it "assigns the current_user to @user" do
-      expect(assigns(:user)).to eq user 
-    end 
+    #it "assigns the current_user to @user" do
+      #expect(assigns(:user)).to eq user 
+    #end 
 
-    it "renders the :edit_profile template" do
-      expect(response).to render_template :edit_profile
-    end
-  end
+    #it "renders the :edit_profile template" do
+      #expect(response).to render_template :edit_profile
+    #end
+  #end
 
-  describe "GET edit_password" do
-    before { get :edit_password, id: user }
+  #describe "GET edit_password" do
+    #before { get :edit_password, id: user }
     
-    it "assigns the current_user to @user" do
-      expect(assigns(:user)).to eq user 
-    end 
+    #it "assigns the current_user to @user" do
+      #expect(assigns(:user)).to eq user 
+    #end 
 
-    it "renders the :edit_password template" do
-      expect(response).to render_template :edit_password
-    end
-  end
+    #it "renders the :edit_password template" do
+      #expect(response).to render_template :edit_password
+    #end
+  #end
 
   describe "PATCH update_profile" do
     context 'with VALID profile attributes' do
@@ -83,9 +83,9 @@ RSpec.describe My::AccountsController, type: :controller do
         expect(user.username).to eq @username
       end
 
-      it "re-renders the :edit_profile template" do
+      it "re-renders the :show template" do
         patch :update_profile, id: user, user: attributes_for(:user, :invalid_profile)
-        expect(response).to render_template :edit_profile
+        expect(response).to render_template :show
       end
     end
   end
@@ -119,7 +119,7 @@ RSpec.describe My::AccountsController, type: :controller do
 
       it "re-renders the :edit_password template" do
         patch :update_password, id: user, user: attributes_for(:user, :invalid_password)
-        expect(response).to render_template :edit_password
+        expect(response).to render_template :show
       end
     end
   end

@@ -53,7 +53,7 @@ RSpec.describe UserSessionsController, type: :controller do
     before { login_user(user) }
     it "returns http success" do
       post :destroy
-      expect(flash[:notice]).to be_present 
+      expect(flash[:success]).to be_present 
       expect(response).to redirect_to root_url
     end
   end

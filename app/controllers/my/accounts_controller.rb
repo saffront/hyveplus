@@ -5,18 +5,18 @@ class My::AccountsController < My::BaseController
   def show
   end
 
-  def edit_profile
-  end
+  #def edit_profile
+  #end
 
-  def edit_password
-  end
+  #def edit_password
+  #end
 
   def update_profile
-    update(profile_params, "profile", "edit_profile")
+    update(profile_params, "profile")
   end
 
   def update_password
-    update(password_params, "password", "edit_password")
+    update(password_params, "password")
   end
 
   #def destroy
@@ -34,11 +34,11 @@ class My::AccountsController < My::BaseController
     @hyves = @user.hyves
   end
 
-  def update(parameters, text, page)
+  def update(parameters, text)
     if @user.update(parameters)
       redirect_to my_account_path, notice: "Your #{text} was successfully updated."
     else
-      render page.to_sym 
+      render :show 
     end
   end
 
