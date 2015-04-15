@@ -63,7 +63,7 @@ RSpec.describe My::AccountsController, type: :controller do
         expect(user.username).to eq "new_user"
       end
 
-      it "redirects to the my_account path" do
+      it "redirects to the my_account_path" do
         patch :update_profile, id: user, user: attributes_for(:user, email: "new_email@gmail.com", first_name: "New", last_name: "Name", username: "new_user")
         expect(response).to redirect_to action: :show 
       end
@@ -83,9 +83,9 @@ RSpec.describe My::AccountsController, type: :controller do
         expect(user.username).to eq @username
       end
 
-      it "re-renders the :show template" do
+      it "re-directs to the my_account_path" do
         patch :update_profile, id: user, user: attributes_for(:user, :invalid_profile)
-        expect(response).to render_template :show
+        expect(response).to redirect_to action: :show
       end
     end
   end
@@ -119,7 +119,7 @@ RSpec.describe My::AccountsController, type: :controller do
 
       it "re-renders the :edit_password template" do
         patch :update_password, id: user, user: attributes_for(:user, :invalid_password)
-        expect(response).to render_template :show
+        expect(response).to redirect_to action: :show
       end
     end
   end

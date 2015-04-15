@@ -1,0 +1,12 @@
+table#user-details-personal-info {
+  margin: 0 auto 2rem;
+
+  //Subscription
+  tr:nth-child(5) {
+    height: 3rem;
+    td > p {
+      display: inline;
+      margin-left: 1.5rem;
+    }
+  }
+} 

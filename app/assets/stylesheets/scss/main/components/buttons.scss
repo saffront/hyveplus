@@ -61,7 +61,7 @@
 }
 
 //My/Account User Info
-.btn-my-account-info {
+.btn-edit-user-details {
   @include btn-login(rgba(71,162,200,100));
   font-size: 12px;
   width: 12rem;
@@ -69,20 +69,13 @@
   height: initial;
 }
 
-.btn-edit-my-account-info {
+.btn-update-user-details {
   @include btn-login($orange);
   font-size: 12px;
   width: 12rem;
-  padding: 0.6rem 3rem;
+  padding: 0.6rem;
   height: initial;
-}
-
-.btn-my-account-password {
-  @include btn-login(rgba(71,162,200,100));
-  font-size: 12px;
-  width: 12rem;
-  padding: 0.6rem 1rem;
-  height: initial;
+  margin: 0;
 }
 
 //Contact

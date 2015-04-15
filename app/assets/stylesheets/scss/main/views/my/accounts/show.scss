@@ -1,0 +1,14 @@
+.my-account-avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+$avatar-dimensions: 120px;
+.my-account-avatar {
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: $avatar-dimensions;
+  width: $avatar-dimensions;
+  border-radius: $avatar-dimensions/2;
+  text-align: center;
+}

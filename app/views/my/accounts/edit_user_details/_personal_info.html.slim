@@ -1,0 +1,41 @@
+= form_for @user, url: update_profile_my_account_path, method: :patch do |f|
+  .row.row-eq-height.vertical-align
+    .col-md-3.col-lg-3
+      .row.padded-row
+        .col-md-12.col-lg-12.my-account-avatar-container
+          .my-account-avatar style="background-image: url(#{@user.avatar})"
+      .row.padded-row
+        .col-md-12.col-lg-12
+          = f.file_field :avatar, accept: "image/png, image/gif, image/jpeg"
+    .col-md-9.col-lg-9
+      table#user-details-personal-info
+        col width="200"
+        col width="400"
+        tr
+          td
+            = f.label :username
+          td
+            = f.text_field :username, class: 'form-my-account'
+        tr
+          td
+            = f.label :first_name
+          td
+            = f.text_field :first_name, class: 'form-my-account'
+        tr
+          td
+            = f.label :last_name
+          td
+            = f.text_field :last_name, class: 'form-my-account'
+        tr
+          td
+            = f.label :email
+          td
+            = f.text_field :email, class: 'form-my-account'
+        tr
+          td colspan="2"
+            = f.check_box :subscription
+            p Subscribe me for email newsletter
+        tr
+          td
+          td.text-right
+            = f.submit "Update Profile", class: "btn btn-update-user-details"

@@ -1,15 +1,9 @@
 class My::AccountsController < My::BaseController
   before_action :set_user
-  before_action :set_hyves, only: [:show]
+  before_action :set_hyves
 
   def show
   end
-
-  #def edit_profile
-  #end
-
-  #def edit_password
-  #end
 
   def update_profile
     update(profile_params, "profile")
@@ -19,11 +13,6 @@ class My::AccountsController < My::BaseController
     update(password_params, "password")
   end
 
-  #def destroy
-    #@user.destroy
-    #redirect_to root_url
-  #end
-
   private
 
   def set_user
@@ -31,19 +20,21 @@ class My::AccountsController < My::BaseController
   end
 
   def set_hyves
-    @hyves = @user.hyves
+    @hyves = current_user.hyves
   end
 
   def update(parameters, text)
     if @user.update(parameters)
       redirect_to my_account_path, notice: "Your #{text} was successfully updated."
     else
-      render :show 
+      flash[:error] = @user.errors.full_messages
+      redirect_to my_account_path
+      #render :show
     end
   end
 
   def profile_params
-    params.require(:user).permit(:email, :first_name, :last_name, :avatar, :username)
+    params.require(:user).permit(:email, :first_name, :last_name, :avatar, :username, :subscription)
   end
 
   def password_params

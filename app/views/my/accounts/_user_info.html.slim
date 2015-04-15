@@ -1,11 +1,13 @@
-#my-account-info.container-fluid
+#user-info.container-fluid
   .row.row-eq-height.vertical-align
-    .col-md-3.col-lg-3.text-centered
-      = image_tag "#{@user.avatar}", class: "round-image"
+    .col-md-3.col-lg-3.my-account-avatar-container
+      .my-account-avatar style="background-image: url(#{@user.avatar})"
     .col-md-6.col-lg-6.white
       h4
-        = @user.full_name.capitalize
+        = @user.full_name.titleize
+      p
+        = @user.username
       p
         = @user.email
     .col-md-3.col-lg-3.text-centered
-      = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-my-account-info", id: "edit-my-account-info-link", remote: true
+      = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-edit-user-details", remote: true
