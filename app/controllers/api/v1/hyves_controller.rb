@@ -40,7 +40,7 @@ class Api::V1::HyvesController < Api::ApiController
   end
 
   def hyve_params
-    params.require(:hyve).permit(:name, :distance, :uuid, :image)
+    params.require(:hyve).permit(:name, :distance, :uuid, :image, :proximity)
   end
 end
 
