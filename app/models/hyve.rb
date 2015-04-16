@@ -17,7 +17,6 @@ class Hyve < ActiveRecord::Base
 
   #Carrierwave
   mount_uploader :image, HyveImageUploader
-  mount_base64_uploader :image, HyveImageUploader
 
   def to_param
     uuid

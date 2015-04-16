@@ -8,7 +8,7 @@
               - if hyve.image.blank?
                 = image_tag "shared/default-hyve-image.png", class: "my-account-hyve-image"
               - else
-                = image_tag "#{hyve.image}", class: "my-account-hyve-image"
+                = image_tag "#{hyve.image_url}", class: "my-account-hyve-image"
             .col-md-7.col-lg-7.text-left
               h4.blue #{hyve.name}
             .col-md-2.col-lg-2.text-right
@@ -56,32 +56,4 @@
                 = link_to "Edit", "#edit-my-hyve-info", class: "btn btn-my-account-edit edit-my-hyve-info-btn", id: "edit-my-hyve-#{hyve.id}-info-btn", remote: true
 
           //hidden
-          .container.hidden id="edit-my-hyve-#{hyve.id}-info"
-            = form_for hyve, url: update_hyve_my_account_path(hyve), method: :patch do |f|
-              .row.row-eq-height.vertical-align
-                .col-md-3.col-lg-3.text-centered
-                  - if hyve.image.blank?
-                    = image_tag "shared/default-hyve-image.png", class: "my-account-hyve-image-large"
-                  - else
-                    = image_tag "#{hyve.image}", class: "my-account-hyve-image-large"
-                  = f.file_field :image, accept: "image/png, image/gif, image/jpeg"
-                .col-md-7.col-lg-7.text-left
-                  table#edit-hyve-info-details
-                    col width="200"
-                    col width="400"
-                    tr
-                      td colspan="2"
-                        = f.text_field :name, class: "form-my-hyve"
-                    tr
-                      td
-                        = f.label :distance
-                      td
-                        = f.select :distance, %w[1 2 4 8 16] 
-                    tr
-                      td
-                        label UUID
-                      td
-                        = hyve.uuid
-                .col-md-2.col-lg-2.text-center
-                  = f.submit "Update Hyve", class: "btn btn-my-account-update"
-
+          = render "my/accounts/edit_my_hyve_info", hyve: hyve

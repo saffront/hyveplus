@@ -14,7 +14,6 @@ class Oauth::RetrieveFacebookUserInfo
 
     @user.update(first_name: fb_user.first_name,
                  last_name: fb_user.last_name,
-                 avatar: fb_user.picture,
                  username: @username)
   end
 end

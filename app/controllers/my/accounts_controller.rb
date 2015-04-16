@@ -51,6 +51,6 @@ class My::AccountsController < My::BaseController
   end
 
   def hyve_params
-    params.require(:hyve).permit(:name, :uuid, :distance, :image)
+    params.require(:hyve).permit(:name, :distance, :image)
   end
 end

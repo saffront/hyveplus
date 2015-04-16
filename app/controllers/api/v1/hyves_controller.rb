@@ -13,6 +13,7 @@ class Api::V1::HyvesController < Api::ApiController
 
   def create
     @hyve = @user.hyves.build(hyve_params)
+    @hyve.remote_image_url = hyve_params[:image] if present?
     if @hyve.save
       render json: @hyve
     else
@@ -21,6 +22,7 @@ class Api::V1::HyvesController < Api::ApiController
   end
 
   def update
+    @hyve.remote_image_url = hyve_params[:image] if present?
     if @hyve.update(hyve_params)
       render json: @hyve
     else

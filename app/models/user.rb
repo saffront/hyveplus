@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
 
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
-  mount_base64_uploader :avatar, AvatarUploader
 
   #Sorcery
   authenticates_with_sorcery! do |config|

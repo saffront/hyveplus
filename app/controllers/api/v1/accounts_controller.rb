@@ -5,6 +5,7 @@ class Api::V1::AccountsController < Api::ApiController
   end
 
   def update
+    @user.remote_avatar_url = user_params[:avatar] if present?
     if @user.update(user_params)
       render json: @user
     else

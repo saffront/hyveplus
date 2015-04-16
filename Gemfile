@@ -41,7 +41,6 @@ gem 'active_model_serializers'
 
 #Image Uploaders
 gem 'carrierwave'
-gem 'carrierwave-base64'  #for JSON image encoded in base64
 gem 'mini_magick'
 gem 'fog'
 

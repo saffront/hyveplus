@@ -36,7 +36,7 @@ class OauthController < ApplicationController
   
     auto_login(@user)
     flash[:notice] = "You've registered through #{provider.titleize}!"
-    redirect_to edit_profile_my_account_path(current_user)
+    redirect_to my_account_path
   end
 
   def save_facebook_info

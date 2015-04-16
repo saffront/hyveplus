@@ -2,13 +2,13 @@ class Api::V1::UserSessionsController < Api::ApiController
   skip_before_action :authenticate_token
 
   def create
-    case info_params[:provider]
+    case user_params[:provider]
     when "email"
-      @user = login(info_params[:email], info_params[:password])
+      @user = login(user_params[:email], user_params[:password])
       find_user(@user)
     when "facebook", "google"
-      @user = User.find_by(email: info_params[:email]) 
-      @auth = @user.try(:authentications).try(:find_by_uid, info_params[:uid]) #returns nil rather than raising an exception
+      @user = User.find_by(email: user_params[:email]) 
+      @auth = @user.try(:authentications).try(:find_by_uid, user_params[:uid]) #returns nil rather than raising an exception
       find_user(@user, @auth)
     else
       @nil_params = NilParams.new 
@@ -18,13 +18,13 @@ class Api::V1::UserSessionsController < Api::ApiController
   
   def register
     @user = User.new do |user|
-      user.email = info_params[:email]
-      user.password = info_params[:password]
-      user.password_confirmation = info_params[:password_confirmation]
-      user.username = info_params[:username]
-      user.avatar = info_params[:avatar]
-      user.first_name = info_params[:first_name]
-      user.last_name = info_params[:last_name]
+      user.email = user_params[:email]
+      user.password = user_params[:password]
+      user.password_confirmation = user_params[:password_confirmation]
+      user.username = user_params[:username]
+      user.remote_avatar_url = user_params[:avatar]
+      user.first_name = user_params[:first_name]
+      user.last_name = user_params[:last_name]
     end
     set_authentication(@user)
 
@@ -38,7 +38,7 @@ class Api::V1::UserSessionsController < Api::ApiController
 
   private
 
-  def info_params
+  def user_params
     params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :api_token, :uid, :provider)
   end
   
@@ -60,21 +60,21 @@ class Api::V1::UserSessionsController < Api::ApiController
   end
 
   def set_provider(auth)
-    if info_params[:provider].nil?
+    if user_params[:provider].nil?
       auth.provider = "email" 
     else
-      auth.provider = info_params[:provider]
+      auth.provider = user_params[:provider]
     end
   end
 
   def set_uid(auth)
-    if info_params[:uid].nil?
+    if user_params[:uid].nil?
       begin
         #Addition because SecureRandom may output 0
         auth[:uid] = ( (SecureRandom.random_number)*1234567890 + 1234567890 ).to_i 
       end while Authentication.exists?(uid: auth[:uid])
     else
-      auth.uid = info_params[:uid]
+      auth.uid = user_params[:uid]
     end
   end
 end
