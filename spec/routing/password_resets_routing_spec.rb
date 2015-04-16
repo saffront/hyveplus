@@ -3,6 +3,10 @@ require "rails_helper"
 RSpec.describe PasswordResetsController, type: :routing do
   describe "routing" do
 
+    it "routes to GET #new" do
+      expect(get: "/password_resets/new").to route_to("password_resets#new")
+    end
+
     it "routes to POST #create" do
       expect(post: "/password_resets").to route_to("password_resets#create")
     end

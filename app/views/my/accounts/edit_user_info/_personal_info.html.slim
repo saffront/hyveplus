@@ -8,7 +8,7 @@
         .col-md-12.col-lg-12
           = f.file_field :avatar, accept: "image/png, image/gif, image/jpeg"
     .col-md-9.col-lg-9
-      table#user-details-personal-info
+      table#user-info-personal-details
         col width="200"
         col width="400"
         tr
@@ -38,4 +38,4 @@
         tr
           td
           td.text-right
-            = f.submit "Update Profile", class: "btn btn-update-user-details"
+            = f.submit "Update Profile", class: "btn btn-my-account-update"

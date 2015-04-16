@@ -19,6 +19,12 @@
   width: 100%;
 }
 
+.form-my-hyve {
+  @include form-input-grey;
+  color: $orange;
+  width: 50%;
+}
+
 //Contact
 .form-contact {
   @include form-input-grey;

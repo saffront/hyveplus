@@ -61,7 +61,7 @@
 }
 
 //My/Account User Info
-.btn-edit-user-details {
+.btn-my-account-edit {
   @include btn-login(rgba(71,162,200,100));
   font-size: 12px;
   width: 12rem;
@@ -69,7 +69,7 @@
   height: initial;
 }
 
-.btn-update-user-details {
+.btn-my-account-update {
   @include btn-login($orange);
   font-size: 12px;
   width: 12rem;

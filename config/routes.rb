@@ -16,9 +16,6 @@ Rails.application.routes.draw do
 
   post :contact_us, to: 'contacts#send_contact_form'
 
-  #Parse push notification
-  #post 'push' => 'pages#push'
-
   # ==============================================================================================
   # Resources
   # ==============================================================================================
@@ -51,15 +48,13 @@ Rails.application.routes.draw do
   # MY namespace
   # ==============================================================================================
   namespace :my do
-    resource :account, only: [:show, :destroy] do
-      get :edit_profile
+    resource :account, only: [:show] do
       patch :update_profile, to: 'accounts#update_profile'
-      get :edit_password
       patch :update_password, to: 'accounts#update_password'
+      patch :update_hyve, to: 'accounts#update_hyve'
       patch :subscribe, to: 'accounts#subscribe'
       patch :unsubscribe, to: 'accounts#unsubscribe'
     end
-    resources :hyves, only: [:show, :edit, :update, :destroy]
   end
   
   # ==============================================================================================
@@ -75,12 +70,10 @@ Rails.application.routes.draw do
   # ==============================================================================================
   namespace :api do
     namespace :v1 do
-      #resources :user, only: [:index]
       resource :account, only: [:show, :update]
       resources :hyves, except: [:new, :edit]
       resources :user_sessions, only: [:create, :destroy]
       post :register, to: 'user_sessions#register'
     end
   end
-
 end

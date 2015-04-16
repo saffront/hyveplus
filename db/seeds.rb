@@ -12,8 +12,8 @@ end
 @user1 = User.create!(email: "morgan.freeman@hyve.com", username: "morgan-freeman", first_name: "Morgan", last_name: "Freeman", password: "password", password_confirmation: "password", avatar: open("#{@image1}"))
 @uid = generate_uid
 @user1.authentications.build(provider: "email", uid: "#{@uid}").save!
-@user1.hyves.build(name: "m.freeman-briefcase", uuid: "hyve-0001", distance: "10", image: open("#{@image2}")).save!
-@user1.hyves.build(name: "m.freeman-wallet", uuid: "hyve-0002", distance: "5", image: open("#{@image3}")).save!
+@user1.hyves.build(name: "m.freeman-briefcase", uuid: "hyve-0001", distance: "1", image: open("#{@image2}")).save!
+@user1.hyves.build(name: "m.freeman-wallet", uuid: "hyve-0002", distance: "2", image: open("#{@image3}")).save!
 
 @image4 = File.join(Rails.root.join('app', 'assets', 'images', 'db_seeds', 'taylor_swift.jpg'))
 @image5 = File.join(Rails.root.join('app', 'assets', 'images', 'icons', 'handbag.png'))
@@ -21,5 +21,5 @@ end
 @user2 = User.create!(email: "taylor.swift@hyve.com", username: "taylor-swift", first_name: "Taylor", last_name: "Swift", password: "password", password_confirmation: "password", avatar: open("#{@image4}"))
 @uid = generate_uid
 @user2.authentications.build(provider: "email", uid: "#{@uid}").save!
-@user2.hyves.build(name: "t.swift-handbag", uuid: "hyve-0201", distance: "10", image: open("#{@image5}")).save!
-@user2.hyves.build(name: "t.swift-phone", uuid: "hyve-0626", distance: "5", image: open("#{@image6}")).save!
+@user2.hyves.build(name: "t.swift-handbag", uuid: "hyve-0201", distance: "4", image: open("#{@image5}")).save!
+@user2.hyves.build(name: "t.swift-phone", uuid: "hyve-0626", distance: "8", image: open("#{@image6}")).save!

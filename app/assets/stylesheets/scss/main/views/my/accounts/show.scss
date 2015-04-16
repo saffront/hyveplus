@@ -3,12 +3,14 @@
   justify-content: center;
 }
 
-$avatar-dimensions: 120px;
 .my-account-avatar {
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: $avatar-dimensions;
-  width: $avatar-dimensions;
-  border-radius: $avatar-dimensions/2;
-  text-align: center;
+  @include rounded-image(120px);
+}
+
+.my-account-hyve-image {
+  @include rounded-image(50px);
+}
+
+.my-account-hyve-image-large {
+  @include rounded-image(100px);
 }

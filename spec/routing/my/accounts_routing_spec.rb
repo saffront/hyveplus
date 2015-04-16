@@ -7,20 +7,16 @@ RSpec.describe My::AccountsController, type: :routing do
       expect(get: "/my/account/").to route_to("my/accounts#show")
     end
 
-    it "routes to GET #edit_profile" do
-      expect(get: "/my/account/edit_profile").to route_to("my/accounts#edit_profile")
-    end
-
     it "routes to PATCH #update_profile" do
       expect(patch: "/my/account/update_profile").to route_to("my/accounts#update_profile")
     end
 
-    it "routes to GET #edit_password" do
-      expect(get: "/my/account/edit_password").to route_to("my/accounts#edit_password")
-    end
-
     it "routes to PATCH #update_password" do
       expect(patch: "/my/account/update_password").to route_to("my/accounts#update_password")
+    end
+
+    it "routes to PATCH #update_hyve" do
+      expect(patch: "/my/account/update_hyve").to route_to("my/accounts#update_hyve")
     end
 
     it "routes to PATCH #subscribe" do
@@ -29,10 +25,6 @@ RSpec.describe My::AccountsController, type: :routing do
 
     it "routes to PATCH #unsubscribe" do
       expect(patch: "/my/account/unsubscribe").to route_to("my/accounts#unsubscribe")
-    end
-
-    it "routes to DELETE #destroy" do
-      expect(delete: "/my/account").to route_to("my/accounts#destroy")
     end
   end
 end

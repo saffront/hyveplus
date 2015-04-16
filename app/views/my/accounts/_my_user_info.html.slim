@@ -1,4 +1,4 @@
-#user-info.container-fluid
+#my-user-info.container-fluid
   .row.row-eq-height.vertical-align
     .col-md-3.col-lg-3.my-account-avatar-container
       .my-account-avatar style="background-image: url(#{@user.avatar})"
@@ -10,4 +10,4 @@
       p
         = @user.email
     .col-md-3.col-lg-3.text-centered
-      = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-edit-user-details", remote: true
+      = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-my-account-edit", id: "edit-my-account-info-btn", remote: true
