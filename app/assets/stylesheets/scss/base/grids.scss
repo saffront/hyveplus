@@ -1,11 +1,11 @@
-.vertical-align {
-  display: flex;
-  align-items: center;
-}
-
 .left-align {
   display: flex;
   justify-content: flex-start;
+}
+
+.center-align {
+  display: flex;
+  justify-content: center;
 }
 
 .right-align {
@@ -16,6 +16,11 @@
 .top-align {
   display: flex;
   align-items: flex-start;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
 }
 
 .bottom-align {

@@ -4,13 +4,14 @@ $(document).ready ->
     $("#edit-my-user-info").removeClass("hidden")
 
   $(".edit-my-hyve-info-btn").click (e) ->
+    #e.g. e.target.id =  "edit-my-hyve-70-info-btn"
     array = (e.target.id).split("-")
-    #Remove last element from array i.e. "btn"
-    array.pop()
-    show = array.join("-")
-    #Remove 1st element from array i.e. "edit"
-    array.shift()
-    hide = array.join("-")
 
+    array.pop()
+    show = array.join("-") #e.g "edit-my-hyve-70-info"
+
+    array.shift()
+    hide = array.join("-") #e.g "my-hyve-70-info"
+    
     $("#"+show).removeClass("hidden")
     $("#"+hide).addClass("hidden")

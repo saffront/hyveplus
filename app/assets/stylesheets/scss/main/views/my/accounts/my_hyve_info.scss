@@ -1,8 +1,12 @@
 #hyves-accordion {
   .panel-heading {
+    background-color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
     .container {
       width: 100%;
     }
+
     h4 {
       .glyphicon {
         line-height: 5rem;
@@ -16,13 +20,18 @@
   }
 
   .panel-collapse > .panel-body {
+    border-top: none;
+    padding: 0 2rem initial;
+    margin-bottom: 3rem;
     .container {
       //Make bootstrap container fit inside the parent div
       width: 100%;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      /*padding: 6rem;*/
     }
+  }
+
+  //Bottom align edit btn in accordion
+  .btn {
+    margin-bottom: 0;
   }
 }
 
@@ -34,10 +43,10 @@
   -webkit-transform: scaleY(-1);
 }
 
-.my-account-hyve-image {
+.my-hyve-image {
   @include rounded-image(50px);
 }
 
-.my-account-hyve-image-large {
+.my-hyve-image-large {
   @include rounded-image(100px);
 }
