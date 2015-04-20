@@ -1,3 +1,9 @@
 #overview-product {
-  height: 65vh;
+  background-image: image-url('product/features.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-origin: content-box;
+  height: 60vh;
+  padding-top: 10rem;
 }

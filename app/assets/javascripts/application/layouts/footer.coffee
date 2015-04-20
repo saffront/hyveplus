@@ -1,3 +1,4 @@
+#Footer font color when in particular page
 $(document).ready ->
   if $("body").is('.pages-faq')
     $("#faq").css("color", "#495966")

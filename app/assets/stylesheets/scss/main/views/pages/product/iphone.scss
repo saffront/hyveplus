@@ -1,0 +1,9 @@
+#product-iphone.container {
+  height: 50vh;
+  background-image: image-url('product/iphone.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  .row {
+    height: 50vh;
+  }
+}

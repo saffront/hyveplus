@@ -8,6 +8,9 @@
     }
 
     h4 {
+      &.panel-title.blue {
+        text-align: right;
+      }
       .glyphicon {
         line-height: 5rem;
         font-size: 3rem;

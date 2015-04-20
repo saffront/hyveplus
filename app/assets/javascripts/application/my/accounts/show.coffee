@@ -1,3 +1,4 @@
+#Show edit-user-info/edit-hyve-info container and hide user-info/hyve-info container
 $(document).ready ->
   $("#edit-my-account-info-btn").click ->
     $("#my-user-info").addClass("hidden")

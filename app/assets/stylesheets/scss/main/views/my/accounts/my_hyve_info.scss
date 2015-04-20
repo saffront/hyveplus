@@ -1,14 +1,23 @@
+#my-hyve-info.container {
+  width: 80%;
+}
+
 #hyves-accordion {
+  .panel-heading {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
   //Bottom align edit btn in accordion
   .btn {
     margin-bottom: 0;
+  }
+
+  h4.blue {
+    padding-top: 1rem;
+    padding-bottom: 1.1rem;
   }
 }
 
 .my-hyve-image {
   @include rounded-image(50px);
-}
-
-.my-hyve-image-large {
-  @include rounded-image(100px);
 }

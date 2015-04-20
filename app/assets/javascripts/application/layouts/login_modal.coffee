@@ -1,3 +1,4 @@
+#Login popup modal
 $(document).ready ->
   $("#login-modal-trigger").leanModal({
     top: 145,

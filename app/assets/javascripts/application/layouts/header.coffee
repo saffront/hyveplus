@@ -1,3 +1,4 @@
+#Header blue-border-btm when at particular page
 $(document).ready ->
   $("#about").click ->
     #Make secondary navbar appear
