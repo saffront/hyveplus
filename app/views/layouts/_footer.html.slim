@@ -1,11 +1,13 @@
-footer.footer
+footer.footer.padded-top-4.padded-btm-4
   .container
     .row
-      .col-md-10.col-lg-12.col-centered
+      .col-md-12.col-lg-12.col-centered
         .row.row-eq-height.vertical-align
           #footer-links.col-md-4.col-lg-4
             .row
               = link_to "FAQ", faq_path, class: "link-decoration-none", id: "faq"
+            .row
+              = link_to "Blog", root_path, class: "link-decoration-none", id: "faq"
             .row
               = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
             .row

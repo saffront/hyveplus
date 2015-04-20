@@ -14,4 +14,7 @@ html
     = render 'shared/flash'
     = render 'layouts/login_modal'
     = yield
-    = render "layouts/footer"
+    - if controller_name == "accounts"
+      = render "layouts/footer_min"
+    - else
+      = render "layouts/footer"

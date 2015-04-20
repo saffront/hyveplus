@@ -1,4 +1,9 @@
 #hyves-accordion, #faq-accordion {
+  .panel.panel-default {
+    margin-bottom: 2rem;
+    box-shadow: -2px 2px 5px -1px $grey; //format: h-shadow v-shadow blur spread color 
+  }
+
   .panel-heading {
     background-color: white;
     padding-left: 2rem;

@@ -23,7 +23,7 @@
       - if current_user
         li.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 
-            | #{truncate(current_user.username, length: 15)}
+            | #{truncate(current_user.full_name, length: 15)}
             span.caret
           ul.dropdown-menu role="menu" 
             li
