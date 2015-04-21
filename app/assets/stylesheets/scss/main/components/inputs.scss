@@ -21,8 +21,11 @@
 
 .form-my-hyve {
   @include form-input-grey;
-  color: $orange;
-  width: 70%;
+  @include avenir(roman, 1.8rem);
+  color: $blue;
+  width: 69%;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 //Contact
