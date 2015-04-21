@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   get '/tnc', to: 'pages#tnc', as: 'tnc'
 
   post :contact_us, to: 'contacts#send_contact_form'
+ 
+  # ==============================================================================================
+  # Flywheel (Blog)
+  # ==============================================================================================
+  get '/blog' => redirect("https://hyve-staging.herokuapp.com/blog/") 
 
   # ==============================================================================================
   # Resources

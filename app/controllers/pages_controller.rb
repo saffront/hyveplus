@@ -26,5 +26,4 @@ class PagesController < ApplicationController
 
   def tnc
   end
-
 end

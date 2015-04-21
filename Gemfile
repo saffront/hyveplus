@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'parse-ruby-client'
 gem 'rails_admin'
 gem 'sucker_punch', '~> 1.0'
+gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 
 #Authentication and authorisation
 gem 'sorcery'
