@@ -24,7 +24,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'parse-ruby-client'
 gem 'rails_admin'
 gem 'sucker_punch', '~> 1.0'
-gem "rack-reverse-proxy", require: "rack/reverse_proxy"
 
 #Authentication and authorisation
 gem 'sorcery'
@@ -83,3 +82,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webmock'
 end
+
+# Need environment variables before rack reverse proxy is loaded
+gem "rack-reverse-proxy", require: "rack/reverse_proxy"
