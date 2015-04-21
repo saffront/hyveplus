@@ -55,8 +55,19 @@
        asset-url(font-path('AvenirLTStd-Roman.svg#open_sanssemibold')) format('svg');
 }
 
+@font-face {
+  font-family: 'avenir-light';
+  src: asset-url(font-path('AvenirLTStd-Light.eot'));
+  src: asset-url(font-path('AvenirLTStd-Light.eot?#iefix')) format('embedded-opentype'),
+       asset-url(font-path('AvenirLTStd-Light.woff2')) format('woff2'),
+       asset-url(font-path('AvenirLTStd-Light.woff')) format('woff'),
+       asset-url(font-path('AvenirLTStd-Light.ttf')) format('truetype'),
+       asset-url(font-path('AvenirLTStd-Light.svg#open_sanssemibold')) format('svg');
+}
+
 body {
-  font-family: avenir-roman;
+  font-family: avenir-light;
   font-size: 1.4rem;
-  line-height: 1.8rem;
+  line-height: 2.5rem;
+  color: #485967;
 }

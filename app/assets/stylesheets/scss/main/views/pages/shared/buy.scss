@@ -1,11 +1,15 @@
 #hyve-buy {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
   background-color: rgba(73,89,102,100); 
+  color: #E6E6E6;
   h1 {
-    @include avenir(heavy, 2rem);
+    @include opensans(semibold, 2.4rem);
   }
   
   h2 {
-    @include avenir(roman, 1.4rem);
+    @include avenir(light, 1.4rem);
+    line-height: 2.5rem;
   } 
 
   .btn-blue {

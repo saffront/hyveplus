@@ -8,13 +8,14 @@
               = image_tag "shared/default-hyve-image.png", class: "my-hyve-image-large"
             - else
               = image_tag "#{hyve.image}", class: "my-hyve-image-large"
-          .col-md-12.col-lg-12.padded-top-2.padded-bottom-2
+          .col-md-12.col-lg-12.margin-top-2
             = f.file_field :image, accept: "image/png, image/gif, image/jpeg"
       .col-md-7.col-lg-7.text-left.vertical-align
         table#edit-hyve-info-details
           col width="180"
           col width="30"
-          col width="400"
+          col width="50"
+          col width="350"
           tr
             td colspan="3"
               = f.text_field :name, class: "form-my-hyve"
@@ -24,13 +25,15 @@
             td
               | :
             td
-              = f.select :distance, %w[1 2 4 8 16] 
+              = f.select :distance, %w[1 2 4 8 16]
+            td
+              label.no-margin metres
           tr
             td
               label Proximity
             td
               | :
-            td.orange
+            td.orange colspan="2"
               - if hyve.proximity
                 = hyve.proximity
               - else
@@ -40,21 +43,21 @@
               label Registered Date
             td
               | :
-            td
+            td colspan="2"
               = hyve.created_at
           tr
             td
               label Last Connected
             td
               | :
-            td
+            td colspan="2"
               = hyve.updated_at
           tr
             td
               label UUID
             td
               | :
-            td
+            td colspan="2"
               = hyve.uuid
       .col-md-2.col-lg-2.bottom-align.right-align
         = f.submit "Update Hyve", class: "btn btn-my-account-update"

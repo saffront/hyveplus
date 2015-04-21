@@ -1,13 +1,20 @@
 .footer {
-  @include avenir(roman, 12px);
+  @include avenir(roman, 1.2rem);
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: $orange;
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 
   a { 
-    @include avenir(heavy, 14px);
-    line-height: 4.5rem;
+    @include avenir(heavy, 1.4rem);
+    line-height: 4rem;
+  }
+  
+  p {
+    @include avenir(light, 1.2rem);
   }
 }
 

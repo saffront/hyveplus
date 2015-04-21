@@ -1,8 +1,20 @@
 #team {
-  h1.orange {
-    @include avenir(heavy, 20px);
+  .row:nth-child(1) {
+    margin-bottom: 5rem;
   }
-  h2.blue {
-    @include avenir(heavy, 18px);
+
+  h1 {
+    @include avenir(heavy, 2.4rem);
+    color: $orange;
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    @include avenir(roman, 2rem);
+    color: $blue;
+  }
+
+  p {
+    @include avenir(light, 1.4rem);
   }
 }

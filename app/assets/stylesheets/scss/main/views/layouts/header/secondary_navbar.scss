@@ -11,8 +11,10 @@
   float: none; 
    
   li {
-    font-size: 1.5rem;
-    width: 15rem;
+    @include opensans(semibold, 1.4rem);
+    width: 8vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     a {
       color: white;
     }

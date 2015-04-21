@@ -1,4 +1,4 @@
-footer.footer.padded-top-4.padded-btm-4
+footer.footer
   .container
     .row
       .col-md-12.col-lg-12.col-centered
@@ -20,8 +20,8 @@ footer.footer.padded-top-4.padded-btm-4
               = link_to root_path
                 = image_tag 'footer/hyve_logo_white.png' 
             .row.padded-row
-              p.white &copy Hyve 2015
-              p.white All Rights Reserved
+              p.no-margin Copyright 2015 &copy Infinite Wire Sdn. Bhd. 
+              p.no-margin All Rights Reserved 2015
           #footer-newsletter.col-md-4.col-lg-4.text-right
             .row.padded-btm-2
               .col-md-2.col-md-offset-8.col-lg-2.col-lg-offset-8
@@ -31,8 +31,8 @@ footer.footer.padded-top-4.padded-btm-4
                 = link_to root_path
                   = image_tag 'footer/twitter.png' 
             .row
-              p.white Newsletter with the latest product updates!
+              p Stay up to date with whats going on at HYVE 
 
               = form_tag subscribe_early_adopters_path do
-                = email_field_tag :email, nil, placeholder: 'email@example.com', class: "form-control form-newsletter-footer"
+                = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
                 = submit_tag "Subscribe Now", class: 'btn-subscribe-footer'

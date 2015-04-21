@@ -1,22 +1,30 @@
 #hyves-accordion, #faq-accordion {
   .panel.panel-default {
     margin-bottom: 2rem;
-    box-shadow: -2px 2px 5px -1px $grey; //format: h-shadow v-shadow blur spread color 
+    box-shadow: -1px 2px 0px 0px #D1D1D1; //format: h-shadow v-shadow blur spread color 
+  }
+
+  h1 {
+    @include avenir(roman, 2rem);
+    color: $orange;
+    text-align: left;
   }
 
   .panel-heading {
     background-color: white;
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     .container {
       width: 100%;
     }
 
-    h4 {
-      &.panel-title.blue {
-        text-align: right;
-      }
+    h2 {
+      text-align: right;
+      margin: 0;
       .glyphicon {
+        color: $blue;
         line-height: 5rem;
         font-size: 3rem;
         transition: transform 1s;

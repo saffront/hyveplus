@@ -1,8 +1,19 @@
 #founders {
-  h1.orange {
-    @include avenir(heavy, 20px);
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background-color: #E9E9E9;
+
+  h1 {
+    @include opensans(semibold, 2.4rem);
+    color: $orange;
+    margin-bottom: 3rem;
   }
-  h2.blue {
-    @include avenir(heavy, 18px);
+  h2 {
+    @include opensans(semibold, 1.8rem);
+    color: $blue;
+  }
+  
+  img {
+    margin-bottom: 3rem;
   }
 }

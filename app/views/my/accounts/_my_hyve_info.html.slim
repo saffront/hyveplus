@@ -11,9 +11,9 @@
                 - else
                   = image_tag "#{hyve.image_url}", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
               .col-md-7.col-lg-7.text-left
-                h4.blue id="my-hyve-#{hyve.id}-header" #{hyve.name} 
+                h1 id="my-hyve-#{hyve.id}-header" #{hyve.name} 
               .col-md-2.col-lg-2.text-right
-                h4.panel-title.blue
+                h2
                   a aria-controls="collapse#{hyve.id}" aria-expanded="false" data-parent="" data-toggle="collapse" href="#collapse#{hyve.id}"
                     span.glyphicon.glyphicon-chevron-down aria-hidden="true" id="my-hyve-#{hyve.id}-glyphicon"
 
@@ -33,14 +33,14 @@
                       col width="400"
                       tr
                         td colspan="2"
-                          h4.blue #{hyve.name}
+                          h1 #{hyve.name}
                       tr
                         td
                           label Distance
                         td
                           | :
                         td
-                          = hyve.distance
+                          = "#{hyve.distance} metres"
                       tr
                         td
                           label Proximity 

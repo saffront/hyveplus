@@ -1,14 +1,15 @@
 #faq-banner.container-fluid {
   background-color: rgba(73,89,102,100); 
   padding: 8rem;
+  color: white;
   
-  h3{
-    margin: 4rem;
+  h1 {
+    @include opensans(semibold, 2.4rem);
+    margin: 3rem;
   }
 
   a {
-    color: white;
-    text-decoration: underline;
-    size: 14px;
+    color: $blue;
+    text-decoration: none;
   }
 }

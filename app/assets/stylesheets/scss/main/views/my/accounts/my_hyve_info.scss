@@ -3,18 +3,24 @@
 }
 
 #hyves-accordion {
-  .panel-heading {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-  //Bottom align edit btn in accordion
-  .btn {
-    margin-bottom: 0;
+  .panel.panel-default {
+    box-shadow: -2px 2px 0px 0.5px #A5A5A5; //format: h-shadow v-shadow blur spread color 
   }
 
-  h4.blue {
-    padding-top: 1rem;
-    padding-bottom: 1.1rem;
+  .panel-heading {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .panel-body{
+    label {
+      font-weight: normal;
+    }
+
+    //Bottom align edit btn in accordion
+    .btn {
+      margin-bottom: 0;
+    }
   }
 }
 

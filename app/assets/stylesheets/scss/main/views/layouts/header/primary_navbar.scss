@@ -7,11 +7,20 @@
   float: none; 
 
   li {
-    font-size: 2rem;
-    width: 20rem;
+    @include opensans(semibold, 1.4rem);
+    width: 10vw;
+    margin-left: 0;
+    margin-right: 0;
+
+    &:nth-child(3) {
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
+
     //Vertical align
     a {
       line-height: 5.6rem;
+      color: #9B9B9B;
     }
   }
 }

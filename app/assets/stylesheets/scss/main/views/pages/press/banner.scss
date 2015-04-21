@@ -5,13 +5,13 @@
   height: 88vh;
 
   h1 {
-    font-family: opensans-bold, sans-serif;
-    font-size: 50px;
-    margin: 3rem 0;
+    @include opensans(bold, 5rem);
+    color: $orange;
   }
+
   h2 {
-    font-family: opensans-semibold, sans-serif;
-    font-size: 20px;
+    @include opensans(semibold, 3rem);
+    color: white;
     margin: 5rem 0;
   }
 }

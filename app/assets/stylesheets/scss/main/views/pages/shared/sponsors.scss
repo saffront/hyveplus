@@ -3,7 +3,7 @@
   vertical-align: middle;
   line-height: 9.8rem;
   p {
-    font-size: 18px;
+    @include avenir(light, 1.4rem);
     margin: 0;
   }
 }

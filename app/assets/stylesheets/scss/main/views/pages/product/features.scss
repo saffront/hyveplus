@@ -6,6 +6,7 @@
   background-size: contain;
 
   h1 {
-    @include avenir(heavy, 2rem);
+    @include opensans(semibold, 2.4rem);
+    color: $orange;
   }
 }

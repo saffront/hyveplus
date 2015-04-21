@@ -1,5 +1,7 @@
 #about-company {
-  h1.orange {
-    @include avenir(heavy, 20px);
+  h1 {
+    @include opensans(semibold, 2.4rem);
+    color: $orange;
+    text-align: center;
   }
 }

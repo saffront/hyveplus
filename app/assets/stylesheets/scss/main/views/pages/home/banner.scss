@@ -5,16 +5,18 @@
   height: 88vh;
 
   h1 {
-    @include opensans(semibold, 3.6rem);
+    @include opensans(semibold, 5rem);
+    color: white;
   }
 
   h2 {
     @include opensans(regular, 2.5rem);
+    color: #E6E6E6;
   }
 
 }
 
 #subscribe_home {
   display: inline-flex;
-  width: 45rem;
+  width: 50rem;
 }

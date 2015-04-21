@@ -13,11 +13,14 @@
 
 .btn-feature {
   @include btn-basic;
-  width: 15rem;
+  width: 17rem;
+  padding-top: 0.6rem; 
+  padding-bottom: 0.6rem; 
   border-color: $blue;
-  border-width: 0.2rem;
+  border-width: 0.1rem;
   background-color: white;
   color: $blue;
+  margin: 1rem;
   &:hover, &:active, &:link, &:visited {
     color: $blue;
   }
@@ -110,12 +113,12 @@
   @include btn-basic;
   color: white;
   width: 13rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.3rem 0;
   margin: 1.5rem 0 1.5rem 0.5rem;
   font-family: avenir-roman;
-  font-size: 10px;
+  font-size: 1.2rem;
   background-color: white;
-  color: $orange;
+  color: $blue;
   //No floating elements allowed on left and right side of a specfied p element
   clear: both;
   float: right;

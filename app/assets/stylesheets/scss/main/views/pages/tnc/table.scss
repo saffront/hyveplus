@@ -1,8 +1,16 @@
-table {
-  h2 {
-    color: $orange;
-  }
-  h3 {
-    color: $blue;
+#terms-and-conditions {
+  table {
+    h2 {
+      color: $orange;
+    }
+
+    h3 {
+      color: $blue;
+    }
+
+    img {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
   }
 }
