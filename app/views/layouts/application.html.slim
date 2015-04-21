@@ -8,6 +8,7 @@ html
   = csrf_meta_tags
   meta content="width=device-width, initial-scale=1.0" name="viewport"
   = render "layouts/google_analytics"
+  = favicon_link_tag "favicon.ico"
 
   body class="#{controller_name}-#{action_name}"
     = render partial: "layouts/header", locals: { view: "#{controller_name} #{action_name}" }
