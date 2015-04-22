@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :hyve do
-		sequence(:name) { |n| "hyve-#{n}" }
+		sequence(:name) { |n| "hyve-name-#{n}" }
     sequence(:uuid) { |n| "hyve-#{n}" }
     distance "2"
   end

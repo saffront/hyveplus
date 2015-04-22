@@ -14,17 +14,5 @@ RSpec.describe My::AccountsController, type: :routing do
     it "routes to PATCH #update_password" do
       expect(patch: "/my/account/update_password").to route_to("my/accounts#update_password")
     end
-
-    it "routes to PATCH #update_hyve" do
-      expect(patch: "/my/account/update_hyve").to route_to("my/accounts#update_hyve")
-    end
-
-    it "routes to PATCH #subscribe" do
-      expect(patch: "/my/account/subscribe").to route_to("my/accounts#subscribe")
-    end
-
-    it "routes to PATCH #unsubscribe" do
-      expect(patch: "/my/account/unsubscribe").to route_to("my/accounts#unsubscribe")
-    end
   end
 end

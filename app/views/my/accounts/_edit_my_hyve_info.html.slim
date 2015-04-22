@@ -1,5 +1,5 @@
 .container.hidden id="edit-my-hyve-#{hyve.id}-info"
-  = form_for hyve, url: update_hyve_my_account_path(hyve), method: :patch do |f|
+  = form_for hyve, url: my_hyve_path(hyve), method: :patch do |f|
     .row.row-eq-height
       .col-md-3.col-lg-3.vertical-align.center-align
         .row

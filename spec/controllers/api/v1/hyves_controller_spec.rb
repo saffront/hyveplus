@@ -17,7 +17,6 @@ RSpec.describe Api::V1::HyvesController, type: :controller do
       get :index, format: :json
       expect(response).to be_success
       json = JSON.parse(response.body)
-      p json.inspect
       expect(json["hyves"]).should have(2).items
     end 
   end

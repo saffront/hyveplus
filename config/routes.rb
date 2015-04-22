@@ -39,8 +39,6 @@ Rails.application.routes.draw do
   # Mailchimp Subscription
   # ==============================================================================================
   post :subscribe_early_adopters, to: 'mailings#sub_adopters'
-  post :subscribe, to: 'mailings#sub_users'
-  post :unsubscribe, to: 'mailings#unsub_users'
 
   # ==============================================================================================
   # Sorcery/Omniauth
@@ -53,12 +51,11 @@ Rails.application.routes.draw do
   # MY namespace
   # ==============================================================================================
   namespace :my do
+    resources :hyves, only: [:update]
     resource :account, only: [:show] do
-      patch :update_profile, to: 'accounts#update_profile'
-      patch :update_password, to: 'accounts#update_password'
-      patch :update_hyve, to: 'accounts#update_hyve'
-      patch :subscribe, to: 'accounts#subscribe'
-      patch :unsubscribe, to: 'accounts#unsubscribe'
+      patch :update_profile, on: :member
+      patch :update_password, on: :member 
+      #patch "update_hyve/:uuid", to: 'accounts#update_hyve', as: :update_hyve 
     end
   end
   

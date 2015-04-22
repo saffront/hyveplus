@@ -8,7 +8,7 @@ RSpec.describe Api::V1::HyvesController, type: :routing do
     end
 
     it "routes to GET #show" do
-      expect(get: "/api/v1/hyves/1").to route_to("api/v1/hyves#show", :id => "1")
+      expect(get: "/api/v1/hyves/1").to route_to("api/v1/hyves#show", id: "1")
     end
 
     it "routes to POST #create" do
@@ -16,15 +16,15 @@ RSpec.describe Api::V1::HyvesController, type: :routing do
     end
 
     it "routes to PUT #update" do
-      expect(put: "/api/v1/hyves/1").to route_to("api/v1/hyves#update", :id => "1")
+      expect(put: "/api/v1/hyves/1").to route_to("api/v1/hyves#update", id: "1")
     end
 
     it "routes to PATCH #update" do
-      expect(patch: "/api/v1/hyves/1").to route_to("api/v1/hyves#update", :id => "1")
+      expect(patch: "/api/v1/hyves/1").to route_to("api/v1/hyves#update", id: "1")
     end
 
     it "routes to DELETE #destroy" do
-      expect(delete: "/api/v1/hyves/1").to route_to("api/v1/hyves#destroy", :id => "1")
+      expect(delete: "/api/v1/hyves/1").to route_to("api/v1/hyves#destroy", id: "1")
     end
 
   end

@@ -6,16 +6,17 @@
   display: inline-block;
   float: none; 
 
+  //Direct descendant of #primary-navbar
+  & > li:nth-child(3) {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
   li {
     @include opensans(semibold, 1.4rem);
     width: 10vw;
     margin-left: 0;
     margin-right: 0;
-
-    &:nth-child(3) {
-      margin-left: 10vw;
-      margin-right: 10vw;
-    }
 
     //Vertical align
     a {

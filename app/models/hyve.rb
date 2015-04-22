@@ -18,6 +18,7 @@ class Hyve < ActiveRecord::Base
   #Carrierwave
   mount_uploader :image, HyveImageUploader
 
+  # Friendly ID
   def to_param
     uuid
   end
