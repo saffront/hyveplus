@@ -1,38 +1,32 @@
-footer.footer
+footer#footer.footer
   .container
     .row
-      .col-md-12.col-lg-12.col-centered
+      .col-md-7.col-lg-7
+        #footer-links.row
+          = link_to "FAQ", faq_path, class: "link-decoration-none white-border-right", id: "faq"
+          = link_to "Blog", root_path, class: "link-decoration-none white-border-right", id: "blog"
+          = link_to "Contact Us", contact_path, class: "link-decoration-none white-border-right", id: "contact"
+          = link_to "Download App", "https://itunes.apple.com/my/app/instagram/id389801252?mt=8", class: "link-decoration-none white-border-right", data: { confirm: "You will be redirected to an external website i.e itunes.apple.com. Click OK to continue." }
+          = link_to "Terms & Conditions", tnc_path, class: "link-decoration-none", id: "tnc"
+        .row
+          p Copyright 2015 &copy Infinite Wire Sdn. Bhd. All Rights Reserved 2015
+
+      .col-md-5.col-lg-5
         .row.row-eq-height.vertical-align
-          #footer-links.col-md-4.col-lg-4
-            .row
-              = link_to "FAQ", faq_path, class: "link-decoration-none", id: "faq"
-            .row
-              = link_to "Blog", root_path, class: "link-decoration-none", id: "faq"
-            .row
-              = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
-            .row
-              = link_to "Download App", "https://itunes.apple.com/my/app/instagram/id389801252?mt=8", class: "link-decoration-none", data: { confirm: "You will be redirected to an external website i.e itunes.apple.com. Click OK to continue." }
-            .row
-              = link_to "Terms & Conditions", tnc_path, class: "link-decoration-none", id: "tnc"
-
-          #copyright.col-md-4.col-lg-4.text-centered
-            .row.padded-row
-              = link_to root_path
-                = image_tag 'footer/hyve_logo_white.png' 
-            .row.padded-row
-              p.no-margin Copyright 2015 &copy Infinite Wire Sdn. Bhd. 
-              p.no-margin All Rights Reserved 2015
-          #footer-newsletter.col-md-4.col-lg-4.text-right
-            .row.padded-btm-2
-              .col-md-2.col-md-offset-8.col-lg-2.col-lg-offset-8
-                = link_to root_path
-                  = image_tag 'footer/facebook.png' 
-              .col-md-2.col-lg-2
-                = link_to root_path
-                  = image_tag 'footer/twitter.png' 
-            .row
-              p Stay up to date with whats going on at HYVE 
-
-              = form_tag subscribe_early_adopters_path do
+          .col-md-8.col-lg-8.text-left.no-padding
+            p.no-margin Stay up to date with whats going on at HYVE 
+          .col-md-4.col-lg-4.text-centered
+            = link_to root_path
+              = image_tag 'footer/facebook.png' 
+            = link_to root_path
+              = image_tag 'footer/twitter.png' 
+        .row
+          = form_tag subscribe_early_adopters_path do
+          table
+            col width="310"
+            col width="150"
+            tr
+              td
                 = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
-                = submit_tag "Subscribe Now", class: 'btn-subscribe-footer'
+              td
+                = submit_tag "Subscribe", class: 'btn-subscribe-footer'

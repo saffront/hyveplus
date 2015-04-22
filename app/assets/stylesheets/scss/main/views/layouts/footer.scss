@@ -1,3 +1,4 @@
+//General styling to both footer and footer-min
 .footer {
   @include avenir(roman, 1.2rem);
   position: absolute;
@@ -5,25 +6,57 @@
   width: 100%;
   background-color: $orange;
   color: white;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 
-  a { 
-    @include avenir(heavy, 1.4rem);
-    line-height: 4rem;
-  }
-  
   p {
     @include avenir(light, 1.2rem);
   }
+
+  #footer-links {
+    a { 
+      @include avenir(heavy, 1.4rem);
+      line-height: 4rem;
+    }
+    
+    & > a:nth-child(1) {
+      padding-left: 0;
+    }
+  }  
 }
 
-//Might want to reuse this elsewhere
+#footer.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  
+  img {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  table {
+    text-align: center;
+  }
+  
+  #footer-links {
+    margin-bottom: 4rem;
+  }
+
+  & > .container > .row > .col-md-5.col-lg-5 > .row.row-eq-height.vertical-align {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
 .link-decoration-none {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   text-decoration: none;
   color: white;
   &:hover, &:active, &:link, &:visited {
     color: white;
     text-decoration: none;
   }
+}
+
+.white-border-right {
+  border-right: 1px solid white;
 }
