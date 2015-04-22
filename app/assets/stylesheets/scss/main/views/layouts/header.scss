@@ -7,15 +7,31 @@
 #hyve-logo {
 }
 
+#login-link-border.blue-border-btm {
+  @include link-blue-border-btm(3.7vw, 3.8vw);
+}
+
+//Apply page-specific blue-border-btm
 body.pages-home {
   #home-link-border.blue-border-btm {
-    @include link-blue-border-btm(36%, 36%);
+    @include link-blue-border-btm(3.8vw, 3.7vw);
     }
 }
 
 body.pages-company, body.pages-product, body.pages-press {
   #about-link-border.blue-border-btm {
-    @include link-blue-border-btm(35%, 35%);
+    @include link-blue-border-btm(3.7vw, 3.6vw);
+    }
+}
+
+//Shameful-see header.coffee
+.blue-border-btm-hack {
+  @include link-blue-border-btm(3.7vw, 3.6vw);
+}
+
+body.pages-order {
+  #order-link-border.blue-border-btm {
+    @include link-blue-border-btm(3.8vw,3.6vw);
     }
 }
 
@@ -35,21 +51,4 @@ body.pages-press {
   #press {
     color: $orange;
   }
-}
-
-//Shameful-see header.coffee
-.blue-border-btm-hack {
-  @include link-blue-border-btm(35%, 35%);
-}
-
-body.pages-order {
-  #order-link-border.blue-border-btm {
-    @include link-blue-border-btm(37%, 36%);
-    }
-}
-
-body.user_sessions-new {
-  #login-link-border.blue-border-btm {
-    @include link-blue-border-btm(36%, 34%);
-    }
 }
