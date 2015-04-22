@@ -32,7 +32,7 @@ class Api::V1::UserSessionsController < Api::ApiController
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
     else
-      render json: { errors: user.errors }
+      render json: { errors: @user.errors }
     end
   end
 
