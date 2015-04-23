@@ -13,7 +13,7 @@
 
 .btn-feature {
   @include btn-basic;
-  width: 17rem;
+  width: 75%;
   padding-top: 0.6rem; 
   padding-bottom: 0.6rem; 
   border-color: $blue;
@@ -117,7 +117,7 @@
   color: white;
   width: 13rem;
   padding: 0.15rem 0;
-  margin: 1.5rem 0 1.5rem 0.5rem;
+  /*margin: 1.5rem 0 1.5rem 0.5rem;*/
   background-color: white;
   color: $blue;
   //No floating elements allowed on left and right side of a specfied p element

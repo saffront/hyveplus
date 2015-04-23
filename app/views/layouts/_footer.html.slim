@@ -1,32 +1,38 @@
 footer#footer.footer
   .container
     .row
-      .col-md-7.col-lg-7
-        #footer-links.row
-          = link_to "FAQ", faq_path, class: "link-decoration-none white-border-right", id: "faq"
-          = link_to "Blog", root_path, class: "link-decoration-none white-border-right", id: "blog"
-          = link_to "Contact Us", contact_path, class: "link-decoration-none white-border-right", id: "contact"
-          = link_to "Download App", "https://itunes.apple.com/my/app/instagram/id389801252?mt=8", class: "link-decoration-none white-border-right", data: { confirm: "You will be redirected to an external website i.e itunes.apple.com. Click OK to continue." }
-          = link_to "Terms & Conditions", tnc_path, class: "link-decoration-none", id: "tnc"
-        .row
-          p Copyright 2015 &copy Infinite Wire Sdn. Bhd. All Rights Reserved 2015
+      .col-xs-12.col-sm-12.col-md-7.col-lg-7
+        #footer-links.row.row-eq-height
+          .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.left-align
+            = link_to "FAQ", faq_path, class: "link-decoration-none", id: "faq"
+          .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.center-align
+            = link_to "Blog", root_path, class: "link-decoration-none", id: "blog"
+          .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.center-align
+            = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
+          .col-xs-3.col-sm-3.col-md-3.col-lg-3.white-border-right.vertical-align.center-align
+            = link_to "Download App", "https://itunes.apple.com/my/app/instagram/id389801252?mt=8", class: "link-decoration-none", data: { confirm: "You will be redirected to an external website i.e itunes.apple.com. Click OK to continue." }
+          .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align
+            = link_to "Terms & Conditions", tnc_path, class: "link-decoration-none", id: "tnc"
+        #footer-copyright.row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            p Copyright 2015 &copy Infinite Wire Sdn. Bhd. All Rights Reserved 2015
 
-      .col-md-5.col-lg-5
-        .row.row-eq-height.vertical-align
-          .col-md-8.col-lg-8.text-left.no-padding
-            p.no-margin Stay up to date with whats going on at HYVE 
-          .col-md-4.col-lg-4.text-centered
+      .col-xs-12.col-sm-12.col-md-5.col-lg-5
+        .row.row-eq-height.vertical-align.center.align
+          .col-xs-5.col-sm-5.col-md-8.col-lg-7
+            p Stay up to date with whats going on at HYVE 
+          .col-xs-7.col-sm-7.col-md-4.col-lg-5.text-centered
             = link_to root_path
               = image_tag 'footer/facebook.png' 
             = link_to root_path
               = image_tag 'footer/twitter.png' 
         .row
-          = form_tag subscribe_early_adopters_path do
-          table
-            col width="310"
-            col width="150"
-            tr
-              td
-                = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
-              td
-                = submit_tag "Subscribe", class: 'btn-subscribe-footer'
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12
+            = form_tag subscribe_early_adopters_path do
+            table
+              col width="300"
+              tr
+                td
+                  = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
+                td
+                  = submit_tag "Subscribe", class: 'btn-subscribe-footer'

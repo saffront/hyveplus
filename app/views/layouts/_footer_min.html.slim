@@ -1,13 +1,9 @@
 footer#footer-min.footer
   .container
-    .row
-      .col-md-8.col-lg-8.col-centered
-        .row
-          .col-md-5.col-lg-5
-            #footer-links.row
-              = link_to "FAQ", faq_path, class: "link-decoration-none white-border-right", id: "faq"
-              = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
-
-          .col-md-7.col-lg-7
-            .row
-              p Copyright 2015 &copy Infinite Wire Sdn. Bhd. All Rights Reserved 2015
+    #footer-links.row.row-eq-height.vertical-align.center-align
+      .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.text-centered
+        = link_to "FAQ", faq_path, class: "link-decoration-none", id: "faq"
+      .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-centered
+        = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
+      .col-xs-8.col-sm-offset-1.col-sm-7.col-md-offset-3.col-md-5.col-lg-offset-3.col-lg-5
+        p Copyright 2015 &copy Infinite Wire Sdn. Bhd. All Rights Reserved 2015

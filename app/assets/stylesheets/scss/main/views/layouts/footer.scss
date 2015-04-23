@@ -1,6 +1,6 @@
 //General styling to both footer and footer-min
 .footer {
-  @include avenir(roman, 1.2rem);
+  @include avenir(roman, 1vmax);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -11,44 +11,39 @@
     @include avenir(light, 1.2rem);
   }
 
-  #footer-links {
+  #footer-links.row {
     a { 
       @include avenir(heavy, 1.4rem);
-      line-height: 4rem;
-    }
-    
-    & > a:nth-child(1) {
-      padding-left: 0;
     }
   }  
 }
 
+//Full footer
 #footer.footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
   
-  img {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  #footer-links.row {
+    text-align: center;
+    margin-bottom: 3rem;
+    height: 2.5rem;
   }
-  
+
+  #footer-copyright.row {
+  }
+
+  img {
+    margin-left: 0.4vmin;
+    margin-right: 0.4vmin;
+  }
+
   table {
     text-align: center;
   }
-  
-  #footer-links {
-    margin-bottom: 4rem;
-  }
-
-  & > .container > .row > .col-md-5.col-lg-5 > .row.row-eq-height.vertical-align {
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-  }
 }
+//
 
 .link-decoration-none {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   text-decoration: none;
   color: white;
   &:hover, &:active, &:link, &:visited {

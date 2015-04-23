@@ -1,3 +1,17 @@
+//Body & Footer
+@media (max-width: 992px) {
+  body {
+    &.pages-home, &.pages-company, &.pages-press, &.pages-product, &.pages-contact, &.pages-faq {
+      margin-bottom: 29.9rem;
+    }
+  }
+
+  #footer.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 //Login modal popup
 @media (max-width: 1200px) {
   @include login-modal-desktop(40vw);
