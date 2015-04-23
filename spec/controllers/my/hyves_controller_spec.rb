@@ -14,7 +14,6 @@ RSpec.describe My::HyvesController, type: :controller do
   describe "PATCH update" do
     context 'with VALID hyve attributes' do
       it "gets @hyve" do
-        p hyve.inspect
         patch :update, id: hyve.uuid, hyve: attributes_for(:hyve)
         expect(assigns(:hyve)).to eq hyve
       end
