@@ -5,14 +5,14 @@
         .panel-heading role="tab" id="heading#{hyve.id}"
           .container
             .row.row-eq-height.vertical-align
-              .col-md-3.col-lg-3.text-centered
+              .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-centered
                 - if hyve.image.blank?
                   = image_tag "shared/default-hyve-image.png", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
                 - else
                   = image_tag "#{hyve.image_url}", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
-              .col-md-7.col-lg-7.text-left
+              .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left
                 h1 id="my-hyve-#{hyve.id}-header" #{hyve.name} 
-              .col-md-2.col-lg-2.text-right
+              .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-right
                 h2
                   a aria-controls="collapse#{hyve.id}" aria-expanded="false" data-parent="" data-toggle="collapse" href="#collapse#{hyve.id}"
                     span.glyphicon.glyphicon-chevron-down aria-hidden="true" id="my-hyve-#{hyve.id}-glyphicon"

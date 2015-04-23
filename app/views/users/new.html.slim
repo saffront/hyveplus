@@ -1,0 +1,60 @@
+.container
+  h1 New user
+
+  = form_for @user do |f|
+    - if @user.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        ul
+          - @user.errors.full_messages.each do |message|
+              li = message
+
+    table
+      col width="10"
+      col width="150"
+      col width="200"
+      tr
+        td
+          strong *
+        td
+          = f.label :email
+        td
+          = f.text_field :email, required: true, placeholder: "user@hyve.com", class: "form-contact"
+      tr
+        td
+          strong *
+        td
+          = f.label :username
+        td
+          = f.text_field :username, required: true, placeholder: "Cannot start with integer", class: "form-contact"
+      tr
+        td
+          strong *
+        td
+          = f.label :first_name
+        td
+          = f.text_field :first_name, required: true, placeholder: "Bob", class: "form-contact"
+      tr
+        td
+
+        td
+          = f.label :last_name
+        td
+          = f.text_field :last_name, placeholder: "Dylan", class: "form-contact"
+      tr
+        td
+          strong *
+        td
+          = f.label :password
+        td
+          = f.password_field :password, required: true, placeholder: "Minimum 8 characters", class: "form-contact"
+      tr
+        td
+          strong *
+        td
+          = f.label :password_confirmation
+        td
+          = f.password_field :password_confirmatuin, required: true, placeholder: "Repeat password", class: "form-contact"
+      tr
+        td colspan="3"
+          = f.submit "Create New User", class: "btn btn-success"

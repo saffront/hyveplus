@@ -1,3 +1,4 @@
+//Login modal popup
 @media (max-width: 1200px) {
   @include login-modal-desktop(40vw);
 }
@@ -12,4 +13,23 @@
 
 @media (min-width: 1600px) {
   @include login-modal-desktop(25vw);
+}
+
+//Primary navbar
+#primary-navbar {
+  @media (max-width: 900px) {
+    @include primary-navbar-desktop(21vw, 3vw, 1.45rem);
+  }
+
+  @media (min-width: 900px) {
+    @include primary-navbar-desktop(19vw, 5vw, 1.6rem);
+  }
+
+  @media (min-width: 1100px) {
+    @include primary-navbar-desktop(16vw, 6vw, 1.6rem);
+  }
+
+  @media (min-width: 1400px) {
+    @include primary-navbar-desktop(14vw, 6vw, 1.6rem);
+  }
 }
