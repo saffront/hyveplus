@@ -9,4 +9,8 @@
     @include opensans(semibold, 2.4rem);
     color: $orange;
   }
+  
+  img {
+    width: 8.5vmax;
+  }
 }

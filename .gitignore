@@ -35,6 +35,9 @@ bower.json
 #Pivotal Tracker
 .pt
 
+#Uploaded Files
+/public/uploads
+
 #OSX Crap file
 **/.DS_STORE
 .DS_STORE

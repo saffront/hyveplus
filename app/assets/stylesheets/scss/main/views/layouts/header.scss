@@ -29,10 +29,10 @@ body.pages-company, body.pages-product, body.pages-press {
   @include link-blue-border-btm(3.7vw, 3.6vw);
 }
 
-body.pages-order {
-  #order-link-border.blue-border-btm {
-    @include link-blue-border-btm(3.8vw,3.6vw);
-    }
+body.pages-kickstarter {
+  #kickstarter-link-border.blue-border-btm {
+    @include link-blue-border-btm(3vw,2.8vw);
+  }
 }
 
 body.pages-company {

@@ -31,9 +31,9 @@ RSpec.describe PagesController, :type => :controller do
   end
   ###End###
 
-  describe "GET 'order'" do
+  describe "GET 'kickstarter'" do
     it "returns http success" do
-      get 'order'
+      get 'kickstarter'
       expect(response).to be_success
     end
   end

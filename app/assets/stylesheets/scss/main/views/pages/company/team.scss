@@ -1,8 +1,4 @@
 #team {
-  .row:nth-child(1) {
-    margin-bottom: 5rem;
-  }
-
   h1 {
     @include avenir(heavy, 2.4rem);
     color: $orange;

@@ -6,7 +6,7 @@ footer#footer.footer
           .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.left-align
             = link_to "FAQ", faq_path, class: "link-decoration-none", id: "faq"
           .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.center-align
-            = link_to "Blog", root_path, class: "link-decoration-none", id: "blog"
+            = link_to "Blog", blog_path, class: "link-decoration-none", id: "blog"
           .col-xs-2.col-sm-2.col-md-2.col-lg-2.white-border-right.vertical-align.center-align
             = link_to "Contact Us", contact_path, class: "link-decoration-none", id: "contact"
           .col-xs-3.col-sm-3.col-md-3.col-lg-3.white-border-right.vertical-align.center-align
@@ -19,12 +19,12 @@ footer#footer.footer
 
       .col-xs-12.col-sm-12.col-md-5.col-lg-5
         .row.row-eq-height.vertical-align.center.align
-          .col-xs-5.col-sm-5.col-md-8.col-lg-7
-            p Stay up to date with whats going on at HYVE 
-          .col-xs-7.col-sm-7.col-md-4.col-lg-5.text-centered
-            = link_to root_path
+          .col-xs-6.col-sm-5.col-md-8.col-lg-8
+            p.no-margin Stay up to date with whats going on at HYVE 
+          .col-xs-4.col-sm-2.col-md-4.col-lg-4.text-left
+            = link_to "https://www.facebook.com/WeAreVLT"
               = image_tag 'footer/facebook.png' 
-            = link_to root_path
+            = link_to "https://twitter.com/wearevlt"
               = image_tag 'footer/twitter.png' 
         .row
           .col-xs-12.col-sm-12.col-md-12.col-lg-12

@@ -19,15 +19,15 @@ RSpec.describe PagesController, type: :routing do
       expect(get: "/product").to route_to("pages#product")
     end
 
-    it "routes to GET #order" do
-      expect(get: "/order").to route_to("pages#order")
+    it "routes to GET #kickstarter" do
+      expect(get: "/kickstarter").to route_to("pages#kickstarter")
     end
 
     it "routes to GET #faq" do
       expect(get: "/faq").to route_to("pages#faq")
     end
 
-    it "routes to GET #conatct" do
+    it "routes to GET #contact" do
       expect(get: "/contact").to route_to("pages#contact")
     end
 

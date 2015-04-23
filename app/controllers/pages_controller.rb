@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   def press
   end
 
-  def order
+  def kickstarter
   end
 
   ###Footer###

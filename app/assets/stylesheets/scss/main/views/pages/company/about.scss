@@ -1,4 +1,7 @@
 #about-company {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
   h1 {
     @include opensans(semibold, 2.4rem);
     color: $orange;

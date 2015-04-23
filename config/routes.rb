@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/company', to: 'pages#company', as: 'company'
   get '/press', to: 'pages#press', as: 'press'
   get '/product', to: 'pages#product', as: 'product'
-  get '/order', to: 'pages#order', as: 'order'
+  get '/kickstarter', to: 'pages#kickstarter', as: 'kickstarter'
   # Footer
   get '/faq', to: 'pages#faq', as: 'faq'
   get '/contact', to: 'pages#contact', as: 'contact'
