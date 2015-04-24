@@ -31,6 +31,8 @@
   @include btn-basic;
   //Proper left alignment
   margin-left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: white;
   color: $blue;
   &:hover, &:active, &:link, &:visited {
@@ -40,6 +42,8 @@
 .btn-video {
   @include btn-basic;
   color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   &:hover, &:active, &:link, &:visited {
     color: white;
   }
@@ -97,7 +101,8 @@
 //Contact
 .btn-send-message {
   @include btn-basic;
-  width: 17rem;
+  width: 100%;
+  margin: 0;
   background-color: $blue;
   color: white;
   border-color: $blue;
