@@ -1,16 +1,16 @@
 .container.hidden id="edit-my-hyve-#{hyve.id}-info"
   = form_for hyve, url: my_hyve_path(hyve), method: :patch do |f|
     .row.row-eq-height
-      .col-md-3.col-lg-3.vertical-align.center-align
+      .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align
         .row
-          .col-md-12.col-lg-12.text-centered
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12.text-centered
             - if hyve.image.blank?
               = image_tag "shared/default-hyve-image.png", class: "my-hyve-image-large"
             - else
               = image_tag "#{hyve.image}", class: "my-hyve-image-large"
-          .col-md-12.col-lg-12.margin-top-2
+          .col-xs-12.col-sm-12.col-md-12.col-lg-12.margin-top-2
             = f.file_field :image, accept: "image/png, image/gif, image/jpeg", style: "display: inline-flex"
-      .col-md-7.col-lg-7.text-left.vertical-align
+      .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left.vertical-align
         table#edit-hyve-info-details
           col width="180"
           col width="30"
@@ -59,5 +59,5 @@
               | :
             td colspan="2"
               = hyve.uuid
-      .col-md-2.col-lg-2.bottom-align.right-align
-        = f.submit "Update Hyve", class: "btn btn-my-account-update"
+      .col-xs-2.col-sm-2.col-md-2.col-lg-2.bottom-align.right-align
+        = f.submit "Save", class: "btn btn-my-account-update"

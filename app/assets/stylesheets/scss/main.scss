@@ -21,6 +21,9 @@
 // Layout specific styles
 @import "main/layout";
 
+//Overwrite some of bootstrap's stuff
+@import "main/overwrite";
+
 // Objects or components
 @import "main/components/buttons";
 @import "main/components/inputs";

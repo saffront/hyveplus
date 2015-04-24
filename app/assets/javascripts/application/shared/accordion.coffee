@@ -1,8 +1,13 @@
 $(document).ready ->
-  $(".glyphicon.glyphicon-chevron-down").click (e) ->
+  #$(".glyphicon.glyphicon-chevron-down").click (e) ->
+    ##Both are equivalent
+    ##$("#" + e.target.id).toggleClass("glyphicon-up")
+    #$(this).toggleClass("glyphicon-up")
+
+  $(".accordion-down-arrow").click (e) ->
     #Both are equivalent
-    #$("#" + e.target.id).toggleClass("glyphicon-up")
-    $(this).toggleClass("glyphicon-up")
+    #$("#" + e.target.id).toggleClass("accordion-up-arrow")
+    $(this).toggleClass("accordion-up-arrow")
     
     array = (e.target.id).split("-")
     array.pop()

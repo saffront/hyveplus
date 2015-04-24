@@ -1,12 +1,12 @@
 = form_for @user, url: update_profile_my_account_path, method: :patch do |f|
   .row.row-eq-height.vertical-align
-    .col-md-3.col-lg-3.vertical-align.center-align
+    .col-xs-5.col-sm-5.col-md-offset-2.col-md-3.col-lg-offset-2.col-lg-3.vertical-align.center-align
       .row
-        .col-md-12.col-lg-12.my-account-avatar-container
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.my-account-avatar-container.margin-btm-3
           .my-account-avatar style="background-image: url(#{@user.avatar})"
-        .col-md-12.col-lg-12.padded-top-2.padded-btm-2.padded-left-5.padded-right-5
-          = f.file_field :avatar, accept: "image/png, image/gif, image/jpeg"
-    .col-md-9.col-lg-9
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12
+          = f.file_field :avatar, accept: "image/png, image/gif, image/jpeg", style: "display: inline-flex"
+    .col-xs-7.col-sm-7.col-md-5.col-lg-5
       table#user-info-personal-details
         col width="200"
         col width="440"

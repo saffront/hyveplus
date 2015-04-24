@@ -15,18 +15,18 @@
               .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-right
                 h2
                   a aria-controls="collapse#{hyve.id}" aria-expanded="false" data-parent="" data-toggle="collapse" href="#collapse#{hyve.id}"
-                    span.glyphicon.glyphicon-chevron-down aria-hidden="true" id="my-hyve-#{hyve.id}-glyphicon"
+                    img.accordion-down-arrow src="/assets/accordion/down.png" aria-hidden="true" id="my-hyve-#{hyve.id}-arrow"
 
         .panel-collapse.collapse aria-labelledby="heading#{hyve.id}" role="tabpanel" id="collapse#{hyve.id}" 
           .panel-body
             .container id="my-hyve-#{hyve.id}-info"
               .row.row-eq-height
-                .col-md-3.col-lg-3.vertical-align.center-align
+                .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align
                   - if hyve.image.blank?
                     = image_tag "shared/default-hyve-image.png", class: "my-hyve-image-large"
                   - else
                     = image_tag "#{hyve.image}", class: "my-hyve-image-large"
-                .col-md-7.col-lg-7.text-left.vertical-align
+                .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left.vertical-align
                     table#hyve-info-details
                       col width="180"
                       col width="30"
@@ -72,7 +72,7 @@
                           | :
                         td
                           = hyve.uuid
-                .col-md-2.col-lg-2.text-center.bottom-align.right-align
+                .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-center.bottom-align.right-align
                   = link_to "Edit", "#edit-my-hyve-info", class: "btn btn-my-account-edit edit-my-hyve-info-btn", id: "edit-my-hyve-#{hyve.id}-info-btn", remote: true
 
             //hidden
