@@ -9,7 +9,6 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'unicorn-rails'
 gem 'pg'
 gem 'role_model'
 gem 'font-awesome-rails'
@@ -24,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'parse-ruby-client'
 gem 'rails_admin'
 gem 'sucker_punch', '~> 1.0'
+
+gem 'puma'
+gem 'rack-timeout'
 
 #Authentication and authorisation
 gem 'sorcery'
