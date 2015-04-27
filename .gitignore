@@ -11,8 +11,7 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
-# Database.yml
-/config/database.yml
+database.yml
 
 ## Environment normalisation:
 /.bundle

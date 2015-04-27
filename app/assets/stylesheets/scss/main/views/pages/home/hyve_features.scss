@@ -1,6 +1,9 @@
 #hyve-features-home {
   padding-top: 10rem;
   padding-bottom: 10rem;
+  background-image: image-url('home/chains.png');
+  background-position: center center;
+  background-repeat: no-repeat;
 
   h4 {
     @include opensans(semibold, 1.8rem); 

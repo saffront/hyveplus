@@ -1,14 +1,14 @@
 body {
-  margin-top: 8.6rem;
-  margin-bottom: 8.6rem;
-  padding-top: 6rem;
+  margin-top: 13.6rem;
+  margin-bottom: 20.8rem;
+  padding-top: 7rem;
   padding-bottom: 7rem;
 
 // ==============================================================================================
 // Page specific paddings and margins
 // ==============================================================================================
 
-  &.pages-home, &.pages-company, &.pages-press, &.pages-product, &.pages-contact, &.pages-faq {
+  &.pages-home, &.pages-company, &.pages-press, &.pages-product, &.pages-contact, &.pages-faq, &.pages-kickstarter{
     margin-bottom: 20.8rem;
     padding-top: 0;
     padding-bottom: 0;

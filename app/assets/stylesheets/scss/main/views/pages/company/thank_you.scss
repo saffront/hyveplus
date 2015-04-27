@@ -1,0 +1,19 @@
+#company-thank-you {
+ padding-bottom: 6rem;
+  color: #495966;
+  h1 {
+    @include opensans(semibold, 2.4rem);
+  }
+
+  a {
+    line-height: 9rem;
+  }
+
+  img {
+    height: 50px;
+  }
+
+  .tq-custom-size {
+    height: 90px;
+  }
+}

@@ -1,9 +1,21 @@
 //Home and Press Page
 #sponsors {
-  vertical-align: middle;
-  line-height: 9.8rem;
+  padding-top: 2rem;
+
   p {
-    @include avenir(light, 1.4rem);
-    margin: 0;
+    @include avenir(roman, 1.6rem);
+    line-height: 7.6rem;
+  }
+
+  a {
+    line-height: 7.6rem;
+  }
+
+  img {
+    height: 35px;
+  }
+
+  .sponsors-custom-size {
+    height: 75px;
   }
 }

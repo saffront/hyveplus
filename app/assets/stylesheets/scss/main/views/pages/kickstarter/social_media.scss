@@ -1,0 +1,13 @@
+#kickstarter-social-media {
+  background-color: #E9E9E9;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  h1 {
+    @include opensans(semibold, 1.8rem);
+    margin-bottom: 4rem;
+  }
+  
+  img {
+    height: 100%;
+  }
+}

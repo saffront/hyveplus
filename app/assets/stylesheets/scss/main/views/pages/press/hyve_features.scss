@@ -5,9 +5,14 @@
 
   h4 {
     @include avenir(heavy, 20px);
+    color: $orange;
   }
   
   p {
     color: white;
+  }
+
+  img {
+    margin-bottom: 2rem;
   }
 }

@@ -89,9 +89,9 @@
 .btn-buy { 
   @include btn-basic;
   width: 17rem;
-  background-color: $blue;
+  background-color: #39DC77;
   color: white;
-  border-color: $blue;
+  border: 0;
   padding: 0.5rem inherit;
   &:hover, &:active, &:link, &:visited {
     color: white;
