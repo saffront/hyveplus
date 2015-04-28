@@ -23,6 +23,10 @@
   
   img {
     height: 100%;
-    margin: 2rem;
+    margin: 2.5rem;
+  }
+
+  p {
+    @include avenir(roman, 1.4rem);
   }
 }
