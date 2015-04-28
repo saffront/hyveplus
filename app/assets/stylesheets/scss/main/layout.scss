@@ -1,22 +1,20 @@
 body {
   margin-top: 13.6rem;
   margin-bottom: 20.8rem;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 0;
+  padding-bottom: 0;
 
 // ==============================================================================================
 // Page specific paddings and margins
 // ==============================================================================================
 
-  &.pages-home, &.pages-company, &.pages-press, &.pages-product, &.pages-contact, &.pages-faq, &.pages-kickstarter{
-    margin-bottom: 20.8rem;
-    padding-top: 0;
-    padding-bottom: 0;
+  &.pages-tnc, &.accounts-show {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
   }
 
-  &.accounts-show {
-    padding-top: 0;
-  }
+  /*&.pages-home, &.pages-company, &.pages-press, &.pages-product, &.pages-contact, &.pages-faq, &.pages-kickstarter{*/
+  /*}*/
 }
 
 html {

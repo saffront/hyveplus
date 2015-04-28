@@ -4,22 +4,27 @@ Rails.application.routes.draw do
   # Static Pages
   # ==============================================================================================
   root 'pages#home'
+
   # Header
   get '/company', to: 'pages#company', as: 'company'
   get '/press', to: 'pages#press', as: 'press'
   get '/product', to: 'pages#product', as: 'product'
   get '/kickstarter', to: 'pages#kickstarter', as: 'kickstarter'
+
   # Footer
   get '/faq', to: 'pages#faq', as: 'faq'
   get '/contact', to: 'pages#contact', as: 'contact'
   get '/tnc', to: 'pages#tnc', as: 'tnc'
+
+  # Soma
+  get '/soma', to: 'pages#soma', as: 'soma'
 
   post :contact_us, to: 'contacts#send_contact_form'
  
   # ==============================================================================================
   # Flywheel (Blog)
   # ==============================================================================================
-  get '/blog' => redirect("https://hyve-staging.herokuapp.com/blog/") 
+  get '/blog' => redirect("https://hyveplus.com/blog/") 
 
   # ==============================================================================================
   # Resources

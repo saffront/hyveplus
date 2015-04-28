@@ -1,0 +1,28 @@
+#banner-soma {
+  color: white;
+  background-color: rgba(73,89,102,100); 
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    margin: 2.5rem;
+  }
+}
+
+#info-soma {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  h1 {
+    @include opensans(semibold, 1.8rem);
+    margin-bottom: 2rem;
+  }
+  
+  img {
+    height: 100%;
+    margin: 2rem;
+  }
+}

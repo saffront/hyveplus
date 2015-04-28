@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :require_login
 
-  ###Header###
+  # Header
   def home
   end
 
@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   def kickstarter
   end
 
-  ###Footer###
+  # Footer
   def faq
   end
 
@@ -25,5 +25,9 @@ class PagesController < ApplicationController
   end
 
   def tnc
+  end
+  
+  # Others
+  def soma
   end
 end
