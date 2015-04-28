@@ -1,11 +1,11 @@
 //Home
-.btn-subscribe-home {
+.btn-blue {
   @include btn-basic;
   width: 17rem;
   background-color: $blue;
   color: white;
-  border-color: $blue;
-  padding: 0.7rem inherit;
+  border: 0;
+  padding: 0.5rem inherit;
   &:hover, &:active, &:link, &:visited {
     color: white;
   }

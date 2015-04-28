@@ -3,15 +3,19 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 88vh;
+  color: white;
+  /*color: #E6E6E6;*/
 
   h1 {
     @include opensans(semibold, 5rem);
-    color: white;
   }
 
   h2 {
     @include opensans(regular, 2.5rem);
-    color: #E6E6E6;
+  }
+
+  h3 {
+    @include opensans(regular, 1.8rem);
   }
 
 }
