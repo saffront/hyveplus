@@ -1,16 +1,14 @@
-.row
-  .col-xs-12.col-sm-10.col-md-8.col-lg-8.col-centered
-    .row.row-eq-height
-      .col-xs-5.col-sm-5.col-md-5.col-lg-5.vertical-align.center-align
-        = image_tag 'shared/buzz.png'
-      .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left
-        h1 Buzz
-        = image_tag 'product/phone.png', class: "margin-btm-2", style: "width: initial"
-        p Easily trace your misplaced items using the HYVE app’s finder function, which guides you to your items location. Activate the tag’s unique ringer sound to assist you with finding those pesky keys hidden underneath your mail. 
-        h2 Technical
-        p HYVE tags advertises RSSI (received signal strength indication) to smartphones that are scanning for it which gives an approximation of distance of tag from smartphone. Users can also buzz the HYVE tag by sending a hex code command to sound the alarm
-        = image_tag 'product/bell.png', class: "margin-btm-2", style: "width: initial"
-        p Lost your phone instead? Activate the reverse call by clicking your HYVE tag and your phone will start ringing, even if it’s on ‘Silent’ or ‘Do not disturb’ mode!
-        a name="sting"
-        h2 Technical
-        p Each tag has a button that when activated sends data to your smartphone, forcing it to alert, regardless of silent or do not disturb mode. Length and volume can be set on the app. 
+#features-buzz.row
+  .col-xs-12.col-sm-12.col-md-12.col-lg-offset-1.col-lg-3.text-centered.vertical-align.center-align
+    = image_tag 'shared/buzz.png'
+  .col-xs-12.col-sm-offset-1.col-sm-10.col-md-offset-1.col-md-10.col-lg-offset-0.col-lg-7.text-left
+    h1 Buzz
+    = image_tag 'product/phone.png', class: "margin-btm-2", style: "width: initial"
+    p Easily trace your misplaced items using the HYVE app’s finder function, which guides you to your items location. Activate the tag’s unique ringer sound to assist you with finding those pesky keys hidden underneath your mail. 
+    h2 Technical
+    p HYVE tags advertises RSSI (received signal strength indication) to smartphones that are scanning for it which gives an approximation of distance of tag from smartphone. Users can also buzz the HYVE tag by sending a hex code command to sound the alarm
+    = image_tag 'product/bell.png', class: "margin-btm-2", style: "width: initial"
+    p Lost your phone instead? Activate the reverse call by clicking your HYVE tag and your phone will start ringing, even if it’s on ‘Silent’ or ‘Do not disturb’ mode!
+    a name="sting"
+    h2 Technical
+    p Each tag has a button that when activated sends data to your smartphone, forcing it to alert, regardless of silent or do not disturb mode. Length and volume can be set on the app. 

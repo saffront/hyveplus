@@ -1,4 +1,7 @@
 #team {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
   h1 {
     @include avenir(heavy, 2.4rem);
     color: $orange;
@@ -13,4 +16,16 @@
   p {
     @include avenir(light, 1.4rem);
   }
+
+  img {
+    margin-bottom: 3rem;
+  }
+}
+
+.light-grey-background {
+  background-color: #E9E9E9;
+}
+
+.white-background {
+  // No styling needed
 }
