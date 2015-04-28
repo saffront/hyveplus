@@ -85,9 +85,9 @@
   margin: 0;
 }
 
-//Buy button-home and product page
 .btn-buy { 
   @include btn-basic;
+  font-size: 1.6rem;
   width: 17rem;
   background-color: #39DC77;
   margin-left: 0;
