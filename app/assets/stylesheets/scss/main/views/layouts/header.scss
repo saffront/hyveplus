@@ -7,6 +7,39 @@
 #hyve-logo {
 }
 
+#primary {
+  height: 8.6rem;
+}
+
+ul#primary-navbar {
+  display: inline-block;
+  float: none; 
+
+  li {
+    @include opensans(semibold, 1.6rem);
+    margin-left: 0;
+    margin-right: 0;
+    a {
+      line-height: 5.6rem;
+      color: #9B9B9B;
+    }
+  }
+
+  & > li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ul.dropdown-menu > li {
+    font-size: 1.4rem; 
+  }
+
+}
+
+.collapse.navbar-collapse {
+  text-align: center;
+}
+
 #login-link-border.blue-border-btm {
   @include link-blue-border-btm(3.7vw, 3.8vw);
 }
@@ -14,24 +47,30 @@
 //Apply page-specific blue-border-btm
 body.pages-home {
   #home-link-border.blue-border-btm {
-    @include link-blue-border-btm(3.8vw, 3.7vw);
+    @include link-blue-border-btm(4.3vw, 4.2vw);
     }
 }
 
 body.pages-company, body.pages-product, body.pages-press {
   #about-link-border.blue-border-btm {
-    @include link-blue-border-btm(3.7vw, 3.6vw);
+    @include link-blue-border-btm(4vw, 4.4vw);
     }
 }
 
 //Shameful-see header.coffee
 .blue-border-btm-hack {
-  @include link-blue-border-btm(3.7vw, 3.6vw);
+  @include link-blue-border-btm(4vw, 4.4vw);
 }
 
 body.pages-kickstarter {
   #kickstarter-link-border.blue-border-btm {
-    @include link-blue-border-btm(3vw,2.8vw);
+    @include link-blue-border-btm(3vw,2.9vw);
+  }
+}
+
+body.pages-blog{
+  #blog-link-border.blue-border-btm {
+    @include link-blue-border-btm(4.3vw, 4.2vw);
   }
 }
 
