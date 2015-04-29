@@ -1,16 +1,27 @@
 .container-fluid
-  #banner-home.row.vertical-align.parallax
-    .col-xs-12.col-sm-12.col-md-10.col-lg-8.col-centered
-      .row.row-eq-height.padded-row
-        .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.right-align
-          = image_tag 'shared/hyve_logo.png'
-        .col-xs-9.col-sm-9.col-md-9.col-lg-9
-          h1 Give Your Essentials a Hyve
-          h2 and They Will Always Find Their Way Back Home
+  #banner-home.row.row-eq-height.vertical-align.center-align.parallax
+    .col-xs-4.col-sm-3.col-md-offset-1.col-md-2.col-lg-offset-1.col-lg-2.text-centered
+      = image_tag 'shared/hyve_logo.png'
+    .col-xs-8.col-sm-9.col-md-9.col-lg-7
+      h1 Give Your Essentials a Hyve
+      h2 and They Will Always Find Their Way Back Home
+      h3 Subscribe to our newsletter to receive updates on Hyve's progress
+      = form_tag subscribe_early_adopters_path, id: "subscribe_home" do
+        = email_field_tag :email, nil, placeholder: 'Your email address', class: "form-control form-newsletter-home"
+        = submit_tag "Subscribe Now", class: "btn-blue"
+/.container-fluid
+  /#banner-home.row.vertical-align.parallax
+    /.col-xs-12.col-sm-12.col-md-10.col-lg-8.col-centered
+      /.row.row-eq-height.padded-row
+        /.col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.right-align
+          /= image_tag 'shared/hyve_logo.png'
+        /.col-xs-9.col-sm-9.col-md-9.col-lg-9
+          /h1 Give Your Essentials a Hyve
+          /h2 and They Will Always Find Their Way Back Home
       
-      .row.row-eq-height.vertical-align.padded-row
-        .col-xs-offset-2.col-xs-9.col-sm-offset-2.col-sm-9.col-md-offset-3.col-md-9.col-lg-offset-3.col-lg-9
-          h3 Subscribe to our newsletter to receive updates on Hyve's progress
-          = form_tag subscribe_early_adopters_path, id: "subscribe_home" do
-            = email_field_tag :email, nil, placeholder: 'Your email address', class: "form-control form-newsletter-home"
-            = submit_tag "Subscribe Now", class: "btn-blue"
+      /.row.row-eq-height.vertical-align.padded-row
+        /.col-xs-offset-2.col-xs-9.col-sm-offset-2.col-sm-9.col-md-offset-3.col-md-9.col-lg-offset-3.col-lg-9
+          /h3 Subscribe to our newsletter to receive updates on Hyve's progress
+          /= form_tag subscribe_early_adopters_path, id: "subscribe_home" do
+            /= email_field_tag :email, nil, placeholder: 'Your email address', class: "form-control form-newsletter-home"
+            /= submit_tag "Subscribe Now", class: "btn-blue"

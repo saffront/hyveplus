@@ -12,10 +12,16 @@
 
   h2 {
     @include opensans(regular, 2.5rem);
+    margin-bottom: 5rem;
   }
 
   h3 {
     @include opensans(regular, 1.8rem);
+    margin-bottom: 0;
+  }
+
+  img {
+
   }
 
 }
