@@ -1,2 +1,61 @@
 #middle-banner-company {
+  background-image: image-url('company/middle_banner.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 30vmax;
+  color: white;
+
+  h1 {
+    font-family: opensans-semibold;
+  }
+  
+  h2 {
+    font-family: opensans-semibold;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .col-sm-6 {
+      padding-left: 5rem;
+    }
+
+    h1 {
+      font-size: 2.0rem;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    
+    h2 {
+      font-size: 2.0rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+    
+    h2 {
+      font-size: 2.2rem;
+    }
+  }
 }
