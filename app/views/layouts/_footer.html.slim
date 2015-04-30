@@ -29,10 +29,10 @@ footer#footer.footer
         .row
           .col-xs-12.col-sm-12.col-md-12.col-lg-12
             = form_tag subscribe_early_adopters_path do
-            table
-              col width="300"
-              tr
-                td
-                  = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
-                td
-                  = submit_tag "Subscribe", class: 'btn-subscribe-footer'
+              table
+                col width="300"
+                tr
+                  td
+                    = email_field_tag :email, nil, placeholder: "Your email address", class: "form-control form-newsletter-footer"
+                  td
+                    = submit_tag "Subscribe", class: 'btn-subscribe-footer'

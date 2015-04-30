@@ -118,18 +118,14 @@
 .btn-subscribe-footer {
   @include btn-basic;
   @include avenir(heavy, 1.4rem);
-  /*font-family: avenir-roman;*/
-  /*font-size: 1.2rem;*/
   color: white;
   width: 13rem;
   padding: 0.15rem 0;
-  /*margin: 1.5rem 0 1.5rem 0.5rem;*/
   background-color: white;
   color: $blue;
-  //No floating elements allowed on left and right side of a specfied p element
   clear: both;
   float: right;
   &:hover, &:active, &:link, &:visited {
-    color: $orange;
+    color: $blue;
   }
 }

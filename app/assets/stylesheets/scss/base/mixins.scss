@@ -120,14 +120,14 @@
 }
 
 @mixin primary-navbar-desktop($width, $margin, $font-size) {
+  li {
+    font-size: $font-size;
+    width: $width*0.8;
+  }
+
   & > li:nth-child(3) {
     width: $width; 
     margin-left: $margin;
     margin-right: $margin;
-  }
-
-  li {
-    font-size: $font-size;
-    width: $width*0.8;
   }
 }
