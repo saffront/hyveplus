@@ -1,5 +1,4 @@
 class Api::V1::AccountsController < Api::ApiController
-
   def show
     render json: @user, serializer: UserSerializer
   end

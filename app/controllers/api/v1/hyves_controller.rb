@@ -1,5 +1,4 @@
 class Api::V1::HyvesController < Api::ApiController
-
   before_action :set_hyve, only: [:show, :update, :destroy]
 
   def index
