@@ -1,4 +1,6 @@
 class MailingsController < ApplicationController
+  skip_before_action :require_login
+
   def sub_adopters
     begin
       response = Mailings::MailChimpService.new(params[:email]).subscribed_to_early_adopters
