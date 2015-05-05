@@ -17,14 +17,14 @@ Rails.application.routes.draw do
   get '/tnc', to: 'pages#tnc', as: 'tnc'
 
   # Soma
-  get '/soma', to: 'pages#soma', as: 'soma'
+  get '/share', to: 'pages#share', as: 'share'
 
   post :contact_us, to: 'contacts#send_contact_form'
  
   # ==============================================================================================
   # Flywheel (Blog)
   # ==============================================================================================
-  get '/blog' => redirect("http://www.hyveplus.com/blog") 
+  get '/blog' => redirect("http://www.hyveplus.com/blog/") 
 
   # ==============================================================================================
   # Resources

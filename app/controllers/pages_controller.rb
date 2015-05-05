@@ -28,6 +28,6 @@ class PagesController < ApplicationController
   end
   
   # Others
-  def soma
+  def share
   end
 end
