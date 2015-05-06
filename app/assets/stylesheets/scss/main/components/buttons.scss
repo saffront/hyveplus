@@ -26,6 +26,23 @@
   }
 }
 
+.btn-technical-detail {
+  @include btn-basic;
+  width: 250px;
+  padding-top: 0.6rem; 
+  padding-bottom: 0.6rem; 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-color: $blue;
+  border-width: 0.1rem;
+  background-color: white;
+  color: $blue;
+  margin: 1rem;
+  &:hover, &:active, &:link, &:visited {
+    color: $blue;
+  }
+}
+
 //Press
 .btn-press-kit {
   @include btn-basic;

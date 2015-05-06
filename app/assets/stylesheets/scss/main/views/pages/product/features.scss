@@ -1,9 +1,5 @@
 #features-product {
-  margin-bottom: 12rem;
-  background-image: image-url('product/chains.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
+  text-align: center;
 
   h1 {
     @include opensans(semibold, 2.4rem);
@@ -11,18 +7,22 @@
     margin-bottom: 3rem;
   }
 
-  h2 {
-    color: $blue;
-    @include opensans(semibold, 1.8rem);
+  .row:nth-child(odd) {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
   }
-  
-  img {
-    max-width: 150px;
-    width: 8.5vmax;
+  .row:nth-child(even) {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
   }
+}
 
-  & > .row {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
+//Product banner
+@mixin product-banner {
+  height: 25vmax;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-origin: content-box;
 }
