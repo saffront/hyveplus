@@ -9,9 +9,9 @@ RSpec.describe PagesController, :type => :controller do
   end
 
   ###About###
-  describe "GET 'company'" do
+  describe "GET 'team'" do
     it "returns http success" do
-      get 'company'
+      get 'team'
       expect(response).to be_success
     end
   end

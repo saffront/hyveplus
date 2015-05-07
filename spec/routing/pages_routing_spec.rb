@@ -7,8 +7,8 @@ RSpec.describe PagesController, type: :routing do
       expect(get: "/").to route_to("pages#home")
     end
 
-    it "routes to GET #company" do
-      expect(get: "/company").to route_to("pages#company")
+    it "routes to GET #team" do
+      expect(get: "/team").to route_to("pages#team")
     end
 
     it "routes to GET #press" do

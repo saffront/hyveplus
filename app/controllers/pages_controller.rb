@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def company
+  def team
   end
 
   def product

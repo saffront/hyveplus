@@ -51,7 +51,7 @@ body.pages-home {
     }
 }
 
-body.pages-company, body.pages-product, body.pages-press {
+body.pages-team, body.pages-product, body.pages-press {
   #about-link-border.blue-border-btm {
     @include link-blue-border-btm(4vw, 4.4vw);
     }
@@ -74,20 +74,20 @@ body.pages-blog{
   }
 }
 
-body.pages-company {
-  #company {
+body.pages-team {
+  #team-link {
     color: $blue;
   }
 }
 
 body.pages-product {
-  #product {
+  #product-link {
     color: $blue;
   }
 }
 
 body.pages-press {
-  #press {
+  #press-link {
     color: $blue;
   }
 }

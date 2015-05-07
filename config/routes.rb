@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   # Header
-  get '/company', to: 'pages#company', as: 'company'
+  get '/team', to: 'pages#team', as: 'team'
   get '/press', to: 'pages#press', as: 'press'
   get '/product', to: 'pages#product', as: 'product'
   get '/kickstarter', to: 'pages#kickstarter', as: 'kickstarter'
