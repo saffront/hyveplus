@@ -1,5 +1,7 @@
 #features-product {
   text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 
   h1 {
     @include opensans(semibold, 2.4rem);
@@ -8,12 +10,12 @@
   }
 
   .row:nth-child(odd) {
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
   }
   .row:nth-child(even) {
-    padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
   }
 }
 
@@ -25,4 +27,8 @@
   background-position: center center;
   background-size: contain;
   background-origin: content-box;
+}
+
+.col-fixed-height {
+  min-height: 30rem;
 }

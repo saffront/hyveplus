@@ -1,7 +1,7 @@
 #buzz-banner.row
 .row
-  .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-2.col-md-8.col-lg-offset-4.col-lg-4
+  .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-2.col-md-8.col-lg-offset-4.col-lg-4.col-fixed-height
     h1 Buzz
-    p Easily trace your misplaced items using the HYVE app’s finder function, which guides you to your items location. Activate the tag’s unique ringer sound to assist you with finding those pesky keys hidden underneath your mail. 
-    p HYVE tags advertises RSSI (received signal strength indication) to smartphones that are scanning for it which gives an approximation of distance of tag from smartphone. Users can also buzz the HYVE tag by sending a hex code command to sound the alarm
-    = link_to "HOW DO WE DO IT", "#sting-technical", remote: true, class: "btn btn-technical-detail"
+    p#buzz-banner-info Easily trace your misplaced items using the HYVE app’s finder function, which guides you to your items location. Activate the tag’s unique ringer sound to assist you with finding those pesky keys hidden underneath your mail. 
+    p#buzz-banner-technical.hidden HYVE tags advertises RSSI (received signal strength indication) to smartphones that are scanning for it which gives an approximation of distance of tag from smartphone. Users can also buzz the HYVE tag by sending a hex code command to sound the alarm
+    = link_to "HOW WE DO IT", "#sting-technical", remote: true, class: "btn btn-technical", id: "buzz-technical-button"
