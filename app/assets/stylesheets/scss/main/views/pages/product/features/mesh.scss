@@ -1,4 +1,11 @@
 #mesh-banner.row {
   @include product-banner;
+  height: 35vmax;
   background-image: image-url('product/mesh.png');
+}
+
+#features-product.container-fluid {
+  .row:nth-child(10) > .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-2.col-md-8.col-lg-offset-4.col-lg-4 {
+    min-height: 28rem;
+  }
 }
