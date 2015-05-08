@@ -7,7 +7,7 @@
             .row.row-eq-height.vertical-align
               .col-xs-3.col-sm-3.col-md-3.col-lg-3.text-centered
                 - if hyve.image.blank?
-                  = image_tag "shared/default-hyve-image.png", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
+                  = image_tag "my_account/default.png", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
                 - else
                   = image_tag "#{hyve.image_url}", class: "my-hyve-image", id: "my-hyve-#{hyve.id}-image"
               .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left
@@ -23,7 +23,7 @@
               .row.row-eq-height
                 .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align
                   - if hyve.image.blank?
-                    = image_tag "shared/default-hyve-image.png", class: "my-hyve-image-large"
+                    = image_tag "my_account/default.png", class: "my-hyve-image-large"
                   - else
                     = image_tag "#{hyve.image}", class: "my-hyve-image-large"
                 .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left.vertical-align
