@@ -8,3 +8,15 @@
     line-height: 2.5rem;
   }
 }
+
+@media(max-width: 768px) {
+  #hyve-info {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    img {
+      height: 150px;
+      padding-bottom: 2rem;
+    }
+  }
+}
