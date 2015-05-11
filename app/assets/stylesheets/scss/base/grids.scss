@@ -1,53 +1,67 @@
-.left-align {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: flex-start;
-  -webkit-justify-content: flex-start;
-}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
-.center-align {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  -webkit-justify-content: center;
-}
+/* Small devices (tablets, 768px and up) */
+/*@media (min-width: @screen-sm-min) { ...  }*/
 
-.right-align {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: flex-end;
-  -webkit-justify-content: flex-end;
-}
+/* Medium devices (desktops, 992px and up) */
+/*@media (min-width: @screen-md-min) { ...  }*/
 
-.top-align {
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-start;
-  -webkit-align-items: flex-start;
-}
+/* Large devices (large desktops, 1200px and up) */
+/*@media (min-width: @screen-lg-min) { ...  }*/
 
-.vertical-align {
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items: center;
-}
+@media (min-width: 768px) {
+  .left-align {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+  }
 
-.bottom-align {
-  display: flex;
-  display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
-}
+  .center-align {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
 
-.row-eq-height {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
+  .right-align {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+  }
 
-.col-centered {
-  float: none;
-  margin: 0 auto;
+  .top-align {
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+  }
+
+  .vertical-align {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+  }
+
+  .bottom-align {
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+  }
+
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .col-centered {
+    float: none;
+    margin: 0 auto;
+  }
 }

@@ -1,6 +1,7 @@
 //Home
 .btn-blue {
   @include btn-basic;
+  height: 3.5rem;
   width: 17rem;
   background-color: $blue;
   color: white;
@@ -13,7 +14,7 @@
 
 .btn-feature {
   @include btn-basic;
-  width: 75%;
+  width: 180px;
   padding-top: 0.6rem; 
   padding-bottom: 0.6rem; 
   border-color: $blue;
@@ -143,5 +144,15 @@
   float: right;
   &:hover, &:active, &:link, &:visited {
     color: $blue;
+  }
+}
+
+// ==============================================================================================
+// Mobile ( < 768px)
+// ==============================================================================================
+
+@media(max-width: 768px) {
+  .btn-blue {
+    width: 28rem;
   }
 }
