@@ -5,3 +5,13 @@
     margin: 0;
   }
 }
+
+@media(max-width: 768px) {
+  #faq-info.container {
+    padding: 4rem 1rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+}

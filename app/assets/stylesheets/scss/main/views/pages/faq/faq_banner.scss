@@ -1,7 +1,7 @@
 #faq-banner.container-fluid {
   background-color: rgba(73,89,102,100); 
-  padding: 8rem;
   color: white;
+    padding: 8rem;
   
   h1 {
     @include opensans(semibold, 2.4rem);
@@ -11,5 +11,11 @@
   a {
     color: $blue;
     text-decoration: none;
+  }
+}
+
+@media(max-width: 768px) {
+  #faq-banner.container-fluid {
+    padding: 4rem 0;
   }
 }
