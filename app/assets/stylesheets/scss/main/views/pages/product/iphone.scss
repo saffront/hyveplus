@@ -8,3 +8,12 @@
     height: 50vh;
   }
 }
+
+@media(max-width: 768px) {
+  #product-iphone.container {
+    background-size: contain;
+    img {
+      width: 120px;
+    }
+  }
+}

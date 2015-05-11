@@ -8,3 +8,11 @@
     min-height: 23rem;
   }
 }
+
+@media(max-width: 768px) {
+  #features-product.container-fluid {
+    .row:nth-child(4) > .col-xs-12.col-sm-offset-2.col-sm-8.col-md-offset-2.col-md-8.col-lg-offset-4.col-lg-4 {
+      min-height: 33rem;
+    }
+  }
+}

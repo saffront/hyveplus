@@ -1,21 +1,25 @@
 #features-product {
   text-align: center;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 
   h1 {
     @include opensans(semibold, 2.4rem);
     color: $orange;
     margin-bottom: 3rem;
   }
+}
 
-  .row:nth-child(odd) {
+@media(min-width: 768px) {
+  #features-product {
     padding-top: 5rem;
-    padding-bottom: 2rem;
-  }
-  .row:nth-child(even) {
-    padding-top: 2rem;
     padding-bottom: 5rem;
+    .row:nth-child(odd) {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+    .row:nth-child(even) {
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+    }
   }
 }
 

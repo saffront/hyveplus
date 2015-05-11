@@ -3,8 +3,32 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 88vh;
+  
+  img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
   h1 {
     @include opensans(semibold, 3.6rem);
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media(max-width: 768px) {
+  #banner-product {
+    background-size: cover;
+    background-position: center center;
+    
+    img {
+      height: 120px;
+      margin-top: 8rem;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
   }
 }
