@@ -4,3 +4,11 @@
   background-repeat: no-repeat;
   height: 88vh;
 }
+
+@media(max-width: 768px) {
+  #banner-team{
+    background-size: cover;
+    height: 28vh;
+    background-position: center center;
+  }
+}

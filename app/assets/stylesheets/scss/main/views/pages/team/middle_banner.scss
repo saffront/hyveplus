@@ -15,17 +15,9 @@
     font-style: italic;
   }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 1.8rem;
-    }
-    
-    h2 {
-      font-size: 1.6rem;
-    }
-  }
-
   @media (min-width: 768px) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     .col-sm-6 {
       padding-left: 5rem;
     }
@@ -56,6 +48,27 @@
     
     h2 {
       font-size: 2.2rem;
+    }
+  }
+}
+
+// ==============================================================================================
+// Mobile ( < 768px)
+// ==============================================================================================
+
+@media (max-width: 768px) {
+  #middle-banner-team{
+    background-image: image-url('team/middle_banner_mobile.png');
+    width: 100vw;
+    margin-top: 2rem;
+    h1 {
+      font-size: 1.6rem;
+      text-shadow: 0.5px 0.5px black;
+    }
+    
+    h2 {
+      font-size: 1.4rem;
+      text-shadow: 0.5px 0.5px black;
     }
   }
 }
