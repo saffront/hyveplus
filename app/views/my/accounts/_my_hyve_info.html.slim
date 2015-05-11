@@ -15,7 +15,7 @@
               .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-right
                 h2
                   a aria-controls="collapse#{hyve.id}" aria-expanded="false" data-parent="" data-toggle="collapse" href="#collapse#{hyve.id}"
-                    = image_tag "accordion/down.png", class: "accordion-down-arrow", html: { "aria-hidden" => "true" }
+                    = image_tag "accordion/down.png", class: "accordion-down-arrow",id: "my-hyve-#{hyve.id}-arrow", html: { "aria-hidden" => "true" }
 
         .panel-collapse.collapse aria-labelledby="heading#{hyve.id}" role="tabpanel" id="collapse#{hyve.id}" 
           .panel-body

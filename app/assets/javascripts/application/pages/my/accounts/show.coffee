@@ -5,6 +5,7 @@ $(document).ready ->
     $("#edit-my-user-info").removeClass("hidden")
 
   $(".edit-my-hyve-info-btn").click (e) ->
+    console.log(e.target.id)
     array = (e.target.id).split("-") #e.g. e.target.id =  "edit-my-hyve-70-info-btn"
 
     array.pop()
