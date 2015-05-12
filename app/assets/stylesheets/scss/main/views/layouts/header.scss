@@ -1,14 +1,19 @@
 #main-navbar {
   border-width: 0;
   background-color: white;
-  height: 8.6rem;
 }
 
 #hyve-logo {
 }
 
-#primary {
-  height: 8.6rem;
+@media(min-width: 768px) {
+  #main-navbar {
+    height: 8.6rem;
+  }
+
+  #primary {
+    height: 8.6rem;
+  }
 }
 
 ul#primary-navbar {
