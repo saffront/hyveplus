@@ -5,9 +5,14 @@ window.onmousewheel =
 document.onmousewheel = ->
 
 $(->
-  parallax = document.querySelectorAll('.parallax')
-  speed = 0.65
+  isMobile = ( /Android|webOS|iPhone|iPad|iPod|Silk|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
 
+  if (isMobile)
+    parallax = nil
+  else
+    parallax = document.querySelectorAll('.parallax')
+
+  speed = 0.65
   window.onscroll = ->
     [].slice.call(parallax).forEach (el, i) ->
       windowYOffset = window.pageYOffset - $(el).position().top
