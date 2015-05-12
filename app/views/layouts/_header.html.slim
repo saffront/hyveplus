@@ -1,12 +1,12 @@
 #main-navbar.navbar.navbar-default.navbar-fixed-top
   #primary.container-fluid
     .navbar-header
-      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#bootstrap-navbar" data-toggle="collapse" type="button" 
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-    .collapse.navbar-collapse
+    #bootstrap-navbar.collapse.navbar-collapse
       ul#primary-navbar.nav.navbar-nav
         li
           = link_to "HOME", root_path

@@ -91,3 +91,10 @@ body.pages-press {
     color: $blue;
   }
 }
+
+@media(max-width: 768px) {
+  #bootstrap-navbar {
+    background-color: white; 
+    text-align: left;
+  }
+}
