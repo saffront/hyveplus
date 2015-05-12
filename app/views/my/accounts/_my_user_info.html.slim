@@ -6,6 +6,8 @@
       h4
         = @user.full_name.titleize
       p
+        = @user.username
+      p
         = @user.email
     .col-xs-3.col-sm-3.col-md-2.col-lg-2.text-centered
       = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-my-account-edit", id: "edit-my-account-info-btn", remote: true
