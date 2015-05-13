@@ -32,7 +32,7 @@ class Api::V1::UserSessionsController < Api::ApiController
     end
     set_authentication(@user)
 
-    if @user.save!
+    if @user.save
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
     else
