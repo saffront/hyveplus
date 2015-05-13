@@ -1,3 +1,9 @@
 #contact-form {
   padding: 7rem;
 }
+
+@media(max-width: 768px) {
+  #contact-form {
+    padding: 3rem 2rem 5rem;
+  }
+}
