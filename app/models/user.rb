@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
 
   def set_access_token(token, secret, provider)
     auth = self.authentications.find_by(provider: provider)
+    puts self
+    puts auth
     auth.update(token: token, secret: secret)
   end
 
