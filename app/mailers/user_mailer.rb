@@ -19,4 +19,10 @@ class UserMailer < ActionMailer::Base
     @message = message
     mail to: "hello@hyveplus.com", subject: "#{subject}", from: "hyve_contact_form@hyveplus.com"
   end 
+
+  def email_password(user, password)
+    @user = user
+    @password = password
+    mail to: user.email, subject: "[Important] Your Facebook account default password"
+  end
 end

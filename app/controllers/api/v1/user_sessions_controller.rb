@@ -33,6 +33,7 @@ class Api::V1::UserSessionsController < Api::ApiController
     set_authentication(@user)
 
     if @user.save
+      set_password_and_send_email(@user) if user_params[:provider] == "facebook"
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
     else
@@ -84,6 +85,12 @@ class Api::V1::UserSessionsController < Api::ApiController
     end
   end
 end
+
+  def set_password_and_send_email(user)
+    password = SecureRandom.hex
+    @user.update(password: password, password_confirmation: password)
+    PasswordEmailJob.new.async.perform(user, password)
+  end
 
 class NilParams
   attr_accessor :error

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     generate_random_uid
 
     if @user.save
-      EmailJob.new.async.perform(@user)
+      WelcomeEmailJob.new.async.perform(@user)
       auto_login(@user)
       redirect_to my_account_path
     else
