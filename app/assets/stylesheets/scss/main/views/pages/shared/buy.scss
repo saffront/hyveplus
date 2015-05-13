@@ -21,3 +21,11 @@
     margin-left: 0;
   }
 }
+
+@media(max-width: 768px) {
+  #hyve-buy {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+}
