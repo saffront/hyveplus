@@ -7,7 +7,7 @@
   position: absolute;
 }
 
-body.pages-tnc, body.accounts-show {
+body.pages-tnc, body.accounts-show, body.user_sessions-new, body.password_resets-new, body.users-new {
   #flash_messages {
     position: initial;
   }
