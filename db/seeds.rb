@@ -2,7 +2,7 @@ def generate_uid
   ((SecureRandom.random_number)*1234567890 + 1234567890).to_i 
 end
 
-@admin = User.create!(email: "admin@admin.com", username: "admin", first_name: "Admin", last_name: "Jr.", password: "password", password_confirmation: "password", role: "admin")
+@admin = User.create!(email: "admin@hyve.com", username: "admin", first_name: "Admin", last_name: "Jr.", password: "password", password_confirmation: "password", role: "admin")
 @uid = generate_uid
 @admin.authentications.build(provider: "email", uid: "#{@uid}").save!
 

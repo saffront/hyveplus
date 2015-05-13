@@ -16,6 +16,11 @@
   @include rounded-image(120px);
 }
 
+.my-account-avatar-default {
+  background-image: image-url("my_account/default.png");
+  @include rounded-image(120px);
+}
+
 @media(max-width: 768px) {
   #my-user-info {
     text-align: center;
