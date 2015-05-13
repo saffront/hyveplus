@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  #
+  #Sorcery
+  authenticates_with_sorcery! do |config|
+    config.authetications_class = Authentication
+  end
 
   #Callbacks
   after_initialize :set_default_password, if: :new_record?
@@ -23,15 +28,8 @@ class User < ActiveRecord::Base
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
 
-  #Sorcery
-  authenticates_with_sorcery! do |config|
-    config.authetications_class = Authentication
-  end
-
   def set_access_token(token, secret, provider)
     auth = self.authentications.find_by(provider: provider)
-    puts self
-    puts auth
     auth.update(token: token, secret: secret)
   end
 

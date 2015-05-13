@@ -9,7 +9,6 @@ class OauthController < ApplicationController
     provider = auth_params[:provider]
 
     if @user = login_from(provider)
-      puts @user
       set_access_token(@user)
       flash[:success] = "You're logged in from #{provider.titleize}!"
       redirect_to my_account_path

@@ -28,7 +28,7 @@ class Api::V1::UserSessionsController < Api::ApiController
     end
     set_authentication(@user)
 
-    if @user.save
+    if @user.save!
       @user.generate_api_token!
       render json: { user_session: UserSerializer.new(@user), api_token: @user.api_token }
     else
@@ -39,7 +39,7 @@ class Api::V1::UserSessionsController < Api::ApiController
   private
 
   def user_params
-    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :api_token, :uid, :provider)
+    params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :token, :api_token, :uid, :provider)
   end
   
   def find_user(user, auth={})
@@ -54,6 +54,7 @@ class Api::V1::UserSessionsController < Api::ApiController
 
   def set_authentication(user)
     @authentication = user.authentications.new do |auth|
+      auth.token = user_params[:token]
       set_provider(auth)
       set_uid(auth)
     end
