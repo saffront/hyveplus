@@ -1,6 +1,8 @@
 #main-navbar.navbar.navbar-default.navbar-fixed-top
   #primary.container-fluid
     .navbar-header
+      = link_to root_path, class: "navbar-header-hyve-logo-mobile"
+        = image_tag 'header/hyve_logo.png', id: 'hyve-logo-mobile', class: "navbar-header-hyve-logo-mobile"
       button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#bootstrap-navbar" data-toggle="collapse" type="button" 
         span.sr-only Toggle navigation
         span.icon-bar
@@ -9,7 +11,7 @@
     #bootstrap-navbar.collapse.navbar-collapse
       ul#primary-navbar.nav.navbar-nav
         li
-          = link_to "HOME", root_path
+          = link_to "HOME", root_path, id: "home-link"
           #home-link-border.blue-border-btm
         li#about-link.dropdown
           a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 
@@ -24,12 +26,13 @@
             li.divider
             li
               = link_to "PRESS", press_path, id: "press-link"
+            li.divider.mobile-only
           #about-link-border.blue-border-btm
-        li
+        li#navbar-hyve-logo
           = link_to root_path
             = image_tag 'header/hyve_logo.png', id: 'hyve-logo'
         li
-          = link_to "KICKSTARTER", kickstarter_path
+          = link_to "KICKSTARTER", kickstarter_path, id: "kickstarter-link"
           #kickstarter-link-border.blue-border-btm
         li
           = link_to "BLOG", blog_path

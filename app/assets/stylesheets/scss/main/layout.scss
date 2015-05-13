@@ -25,3 +25,8 @@ html {
   overflow-x: hidden;
 }
 
+@media(max-width: 768px) {
+  body {
+    margin-top: 7.6rem;
+  }
+}

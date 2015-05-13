@@ -31,11 +31,14 @@
 
 //Primary navbar
 #primary-navbar {
-  @media (max-width: 900px) {
-    @include primary-navbar-desktop(21vw, 3vw, 1.45rem);
+  @media (max-width: 768px) {
+    li {
+      font-size: 1.45rem;
+      width: 100vw;
+    }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 768px) {
     @include primary-navbar-desktop(19vw, 5vw, 1.6rem);
   }
 
@@ -45,24 +48,5 @@
 
   @media (min-width: 1400px) {
     @include primary-navbar-desktop(14vw, 6vw, 1.6rem);
-  }
-}
-
-//Product page-features (A bit messy)
-@media (max-width: 1200px) {
-  #features-mesh.row > .col-xs-12.col-sm-12.col-md-12.col-lg-offset-1.col-lg-3.text-centered.vertical-align.center-align {
-    min-height: initial;
-  }
-
-  #features-buzz.row > .col-xs-12.col-sm-12.col-md-12.col-lg-offset-1.col-lg-3.text-centered.vertical-align.center-align {
-    min-height: initial;
-  }
-
-  #features-sting.row > .col-xs-12.col-sm-12.col-md-12.col-lg-offset-1.col-lg-3.text-centered.vertical-align.center-align {
-    min-height: initial;
-  }
-
-  #features-swarm.row > .col-xs-12.col-sm-12.col-md-12.col-lg-offset-1.col-lg-3.text-centered.vertical-align.center-align {
-    min-height: initial;
   }
 }

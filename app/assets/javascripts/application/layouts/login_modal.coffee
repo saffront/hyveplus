@@ -27,9 +27,9 @@ $(document).ready ->
     $("#user-forgot-password").addClass("hidden")
     $(".header_title").text("Login")
 
-  $("#login-modal-trigger").click (e) ->
-    e.preventDefault()
-    $("#login-link-border").addClass("blue-border-btm")
+  #$("#login-modal-trigger").click (e) ->
+    #e.preventDefault()
+    #$("#login-link-border").addClass("blue-border-btm")
 
 #ready = ->
   #login_modal_display = $("#login-modal").css("display")

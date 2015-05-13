@@ -45,9 +45,9 @@ ul#primary-navbar {
   text-align: center;
 }
 
-#login-link-border.blue-border-btm {
-  @include link-blue-border-btm(3.7vw, 3.8vw);
-}
+/*#login-link-border.blue-border-btm {*/
+  /*@include link-blue-border-btm(3.7vw, 3.8vw);*/
+/*}*/
 
 //Apply page-specific blue-border-btm
 body.pages-home {
@@ -97,9 +97,79 @@ body.pages-press {
   }
 }
 
+@media(min-width: 768px) {
+  .navbar-header-hyve-logo-mobile {
+    display: none; 
+  }
+}
+
 @media(max-width: 768px) {
   #bootstrap-navbar {
     background-color: white; 
     text-align: left;
+  }
+
+  #main-navbar {
+    border-bottom: 1px solid #d6d6d6;
+  }
+
+  #hyve-logo-mobile {
+    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  #primary.container-fluid {
+    .navbar-header {
+      button.navbar-toggle {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  body.pages-home {
+    #home-link {
+      color: $blue;
+    }
+  }
+
+  body.pages-kickstarter {
+    #kickstarte-link {
+      color: $blue;
+    }
+  }
+
+  #navbar-hyve-logo {
+    display: none;
+  }
+
+  //No blue bottom border in mobile view
+  body.pages-home {
+    #home-link-border.blue-border-btm {
+      border: none;
+    }
+  }
+
+  body.pages-team, body.pages-product, body.pages-press {
+    #about-link-border.blue-border-btm {
+      border: none;
+    }
+  }
+
+  .blue-border-btm-hack {
+    border: none;
+  }
+
+  body.pages-kickstarter {
+    #kickstarter-link-border.blue-border-btm {
+      border: none;
+    }
+  }
+
+  body.pages-blog{
+    #blog-link-border.blue-border-btm {
+      border: none;
+    }
   }
 }
