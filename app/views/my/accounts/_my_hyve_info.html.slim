@@ -21,57 +21,60 @@
           .panel-body
             .container id="my-hyve-#{hyve.id}-info"
               .row.row-eq-height
-                .col-xs-3.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align
+                .col-xs-12.col-sm-3.col-md-3.col-lg-3.vertical-align.center-align.text-centered
                   - if hyve.image.blank?
                     = image_tag "my_account/default.png", class: "my-hyve-image-large"
                   - else
                     = image_tag "#{hyve.image}", class: "my-hyve-image-large"
-                .col-xs-7.col-sm-7.col-md-7.col-lg-7.text-left.vertical-align
-                    table#hyve-info-details
-                      col width="180"
-                      col width="30"
-                      col width="400"
-                      tr
-                        td colspan="2"
-                          h1 #{hyve.name}
-                      tr
-                        td
-                          label Distance
-                        td
-                          | :
-                        td
-                          = "#{hyve.distance} metres"
-                      tr
-                        td
-                          label Proximity 
-                        td
-                          | :
-                        td.orange
-                          - if hyve.proximity
-                            = hyve.proximity
-                          - else
-                            p.no-margin Unknown
-                      tr
-                        td
-                          label Registered Date
-                        td
-                          | :
-                        td
-                          = hyve.created_at
-                      tr
-                        td
-                          label Last Connected
-                        td
-                          | :
-                        td
-                          = hyve.updated_at
-                      tr
-                        td
-                          label UUID
-                        td
-                          | :
-                        td
-                          = hyve.uuid
+                .col-xs-12.col-sm-7.col-md-7.col-lg-7.text-left.vertical-align
+                  table#hyve-info-details
+                    col width="150"
+                    col width="30"
+                    col width="50"
+                    col width="350"
+                    tr
+                      td colspan="4"
+                        h1 #{hyve.name}
+                    tr
+                      td
+                        label Distance
+                      td
+                        | :
+                      td
+                        = hyve.distance
+                      td
+                        | metres
+                    tr
+                      td
+                        label Proximity 
+                      td
+                        | :
+                      td.orange colspan="2"
+                        - if hyve.proximity
+                          = hyve.proximity
+                        - else
+                          p.no-margin Unknown
+                    tr
+                      td
+                        label Registered Date
+                      td
+                        | :
+                      td colspan="2"
+                        = hyve.created_at
+                    tr
+                      td
+                        label Last Connected
+                      td
+                        | :
+                      td colspan="2"
+                        = hyve.updated_at
+                    tr
+                      td
+                        label UUID
+                      td
+                        | :
+                      td colspan="2"
+                        = hyve.uuid
                 .col-xs-2.col-sm-2.col-md-2.col-lg-2.text-center.bottom-align.right-align
                   = link_to "Edit", "#edit-my-hyve-info", class: "btn btn-my-account-edit edit-my-hyve-info-btn", id: "edit-my-hyve-#{hyve.id}-info-btn", remote: true
 

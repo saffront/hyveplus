@@ -1,15 +1,15 @@
 #my-user-info.container-fluid
   .row.row-eq-height.vertical-align
-    .col-xs-5.col-sm-5.col-md-offset-2.col-md-3.col-lg-offset-2.col-lg-3.my-account-avatar-container
+    .col-xs-12.col-sm-5.col-md-offset-2.col-md-3.col-lg-offset-2.col-lg-3.my-account-avatar-container
       .my-account-avatar style="background-image: url(#{@user.avatar})"
-    .col-xs-4.col-sm-4.col-md-3.col-lg-3.white
+    .col-xs-offset-2.col-xs-8.col-sm-offset-0.col-sm-4.col-md-offset-0.col-md-3.col-lg-offset-0.col-lg-3.white
       h4
         = @user.full_name.titleize
       p
         = @user.username
       p
         = @user.email
-    .col-xs-3.col-sm-3.col-md-2.col-lg-2.text-centered
+    .col-xs-offset-2.col-xs-8.col-sm-offset-0.col-sm-3.col-md-offset-0.col-md-2.col-lg-offset-0.col-lg-2.text-centered
       = link_to "Edit Profile", "#edit-my-account-info", class: "btn btn-my-account-edit", id: "edit-my-account-info-btn", remote: true
 
 //hidden

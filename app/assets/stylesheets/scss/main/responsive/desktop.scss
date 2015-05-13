@@ -13,7 +13,7 @@
 }
 
 //Login modal popup
-@media (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   @include login-modal-desktop(40vw);
 }
 

@@ -32,3 +32,33 @@
 .my-hyve-image {
   @include rounded-image(50px);
 }
+
+@media(min-width: 768px) and (max-width: 992px) {
+  #my-hyve-info.container {
+    padding: 6rem 0;
+  }
+}
+
+@media(max-width: 768px) {
+  #my-hyve-info.container {
+    padding: 4rem 1rem;
+  }
+
+  #hyves-accordion {
+    font-size: 1.2rem;
+    h1 {
+      font-size: 1.5rem;
+    }
+    .panel-heading {
+      .row.row-eq-height {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+      }
+    }
+  }
+  #hyve-info-details {
+    line-height: 1.2rem;
+  }
+}

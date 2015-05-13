@@ -56,7 +56,7 @@ class My::AccountsController < My::BaseController
   def create_nice_sentence(action)
     @split = action.gsub(/_/, " ").split
     @uppercase = @split.drop(2).collect { |s| s.capitalize }
-    @combine = @split[0] + " " + @split[1] + " " + @uppercase.join
+    @combine = "has " + @split[0] + " " + @split[1] + " " + @uppercase.join
   end
 
   def update(object, parameters, text)
@@ -69,7 +69,7 @@ class My::AccountsController < My::BaseController
   end
 
   def profile_params
-    params.require(:user).permit(:email, :first_name, :last_name, :avatar, :username, :subscription)
+    params.require(:user).permit(:email, :username, :first_name, :last_name, :avatar, :username, :subscription)
   end
 
   def password_params

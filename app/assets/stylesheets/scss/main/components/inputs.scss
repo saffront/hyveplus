@@ -29,6 +29,12 @@
   margin-bottom: 6px;
 }
 
+@media(max-width: 768px) {
+  .form-my-hyve {
+    font-size: 1.5rem;
+  }
+}
+
 //Contact
 .form-contact {
   @include form-input-grey;
