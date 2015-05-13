@@ -7,3 +7,9 @@
     margin: 2.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  #banner-kickstarter {
+    height: 400px;
+  }
+}

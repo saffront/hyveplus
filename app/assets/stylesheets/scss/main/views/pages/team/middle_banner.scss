@@ -59,7 +59,8 @@
 @media (max-width: 768px) {
   #middle-banner-team{
     background-image: image-url('team/middle_banner_mobile.png');
-    width: 100vw;
+    /*width: 100vw;*/
+    height: 170px;
     margin-top: 2rem;
     h1 {
       font-size: 1.6rem;
