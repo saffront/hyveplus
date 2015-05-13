@@ -86,7 +86,7 @@ Rails.application.config.sorcery.configure do |config|
 
   config.facebook.key = ENV["FACEBOOK_APP_KEY"]
   config.facebook.secret = ENV["FACEBOOK_APP_SECRET"]
-  config.facebook.user_info_mapping = { email: "email", username: "last_name", first_name: "first_name" }
+  config.facebook.user_info_mapping = { email: "email", username: "first_name", first_name: "first_name", last_name: "last_name" }
   config.facebook.scope = "public_profile, email"
 
   config.google.key = ENV["GOOGLE_API_KEY"]

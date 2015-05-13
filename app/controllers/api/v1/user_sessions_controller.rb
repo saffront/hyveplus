@@ -43,6 +43,8 @@ class Api::V1::UserSessionsController < Api::ApiController
   end
   
   def find_user(user, auth={})
+    p user.inspect
+    p request.headers['X-hyve-token'].inspect
     if user && auth
       auth.update(token: user_params[:token])
       user.generate_api_token!
