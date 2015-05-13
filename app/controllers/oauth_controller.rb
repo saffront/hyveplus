@@ -50,7 +50,9 @@ class OauthController < ApplicationController
   end
 
   def set_access_token(user)
+    p user.inspect
     auth = user.authentications.find_by(provider: params[:provider])
+    p auth.inspect
     auth.update(token: @access_token.token, provider: params[:provider])
   end
 end
