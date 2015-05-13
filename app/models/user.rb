@@ -28,11 +28,6 @@ class User < ActiveRecord::Base
   #Carrierwave
   mount_uploader :avatar, AvatarUploader
 
-  def set_access_token(token, secret, provider)
-    auth = self.authentications.find_by(provider: provider)
-    auth.update(token: token, secret: secret)
-  end
-
   #Decorator/Presenter
   def full_name
     self.first_name + " " + self.last_name

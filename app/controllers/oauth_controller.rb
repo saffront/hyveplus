@@ -50,12 +50,7 @@ class OauthController < ApplicationController
   end
 
   def set_access_token(user)
-    case params[:provider]
-    when "facebook"
-      user.set_access_token(@access_token.token, nil, params[:provider])
-    when "google"
-      user.set_access_token(@access_token.token, nil, params[:provider])
-    end
+    auth = user.authentications.find_by(provider: params[:provider])
+    auth.update(token: @access_token.token, provider: params[:provider])
   end
-  
 end

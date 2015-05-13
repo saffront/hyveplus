@@ -44,7 +44,7 @@ class Api::V1::UserSessionsController < Api::ApiController
   
   def find_user(user, auth={})
     if user && auth
-      auth.update(token: token)
+      auth.update(token: user_params[:token])
       user.generate_api_token!
       render json: { user_session: UserSerializer.new(user), api_token: user.api_token }
     else
