@@ -1,5 +1,5 @@
 ## Hyve
-[]Hyve Web App](http://hyveplus.com)
+[Hyve Web App](http://hyveplus.com)
 
 [![Circle CI](https://circleci.com/gh/vltlabs/hive.svg?style=svg&circle-token=38e7c56da2d19f76b78aecf5edb843aabea43de2)](https://circleci.com/gh/vltlabs/hive)
 
