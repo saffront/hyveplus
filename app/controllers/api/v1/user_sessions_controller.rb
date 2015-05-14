@@ -6,12 +6,9 @@ class Api::V1::UserSessionsController < Api::ApiController
     when "email"
       @user = login(user_params[:email], user_params[:password])
       find_user(@user)
-    when "google"
+    when "google", "facebook"
       @user = User.find_by(email: user_params[:email]) 
-      @auth = @user.try(:authentications).try(:find_by_uid, user_params[:uid])
-      find_user(@user, @auth)
-    when "facebook"
-      @user = User.find_by(email: user_params[:email]) 
+      #@auth = @user.try(:authentications).try(:find_by_uid, user_params[:uid])
       @auth = @user.try(:authentications).try(:find_by_provider, user_params[:provider])
       find_user(@user, @auth)
     else
