@@ -1,0 +1,15 @@
+body.user_sessions-new {
+  .facebook-notice.jumbotron {
+    display: inline-block;
+    padding: 4rem;
+    margin-top: 2rem;
+
+    i.fa.fa-facebook-official {
+      font-size: 30px;
+      color: rgba(59,89,152,100);
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
