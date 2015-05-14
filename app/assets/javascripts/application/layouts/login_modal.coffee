@@ -27,14 +27,6 @@ $(document).ready ->
     $("#user-forgot-password").addClass("hidden")
     $(".header_title").text("Login")
 
-  #$("#login-modal-trigger").click (e) ->
-    #e.preventDefault()
-    #$("#login-link-border").addClass("blue-border-btm")
-
-#ready = ->
-  #login_modal_display = $("#login-modal").css("display")
-  #console.log(login_modal_display)
-  #if login_modal_display == "none"
-    #$("#login-link-border").removeClass("blue-border-btm")
-
-#$(document).on("page:change", ready)
+  $("#login-modal-trigger").click (e) ->
+    e.preventDefault()
+    $("#login-link-border").addClass("blue-border-btm")

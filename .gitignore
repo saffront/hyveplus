@@ -29,6 +29,9 @@ bower.json
 # Ignore env file
 .env
 
+#Database.yml
+config/database.yml
+
 #Pivotal Tracker
 .pt
 

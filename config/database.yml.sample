@@ -6,14 +6,14 @@ default: &default
 
 development:
   <<: *default
-  database: hive_development
+  database: SOME_DATABASE_NAME
 
 test:
   <<: *default
-  database: hive_test
+  database: SOME_DATABASE_NAME
 
 production:
   <<: *default
-  database: hive_production
+  database: SOME_DATABASE_NAME
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
