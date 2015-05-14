@@ -83,6 +83,34 @@
   }
 }
 
+@media(min-width: 768px) and (max-width: 992px) {
+  #footer-links {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  #footer-copyright {
+    text-align: center;
+  }
+  #footer-social-media {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+}
+
+@media(min-width: 1200px) {
+  #footer-social-media {
+    p {
+      margin-left: 0.8rem;
+    }
+  }
+}
+
 // ==============================================================================================
 // Mobile ( < 768px)
 // ==============================================================================================
