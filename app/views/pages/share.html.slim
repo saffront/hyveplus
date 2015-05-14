@@ -1,10 +1,10 @@
-#banner-soma.container-fluid
+#banner-share.container-fluid
   .row
     .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-centered.text-centered
       = image_tag "shared/hyve_logo.png"
       h1 Hola, Rockstar!
   .row
-    .col-xs-10.col-sm-10.col-md-7.col-lg-5.col-centered.text-centered
+    .col-xs-12.col-sm-10.col-md-7.col-lg-5.col-centered.text-centered
       p We hope you're having an awesome day. You're here because we know you have influence. When you share something, people pay attention. So, please take a few seconds to spread the Hyve love. 
       p 
         | Thanks so much, 
@@ -13,17 +13,17 @@
     /.col-xs-5.col-sm-4.col-md-3.col-lg-2.col-centered.text-centered
       /= link_to "Watch Video", "http://www.youtube.com/watch?v=B0ky-VMi9fI", rel: "prettyPhoto", class: "btn-video"
 
-#info-soma.container
+#info-share.container
   .row
     .col-xs-12.col-sm-12.col-md-12.col-lg-12.col-centered.text-centered
       h1 Total Pledgers
-      = image_tag "share/progress.png"
+      = image_tag "share/progress.png", id: "share-progress-bar"
   .row.text-centered
-    .col-xs-offset-2.col-xs-4.col-sm-offset-3.col-sm-3.col-md-offset-4.col-md-2.col-lg-offset-4.col-lg-2.text-centered
+    .col-xs-12.col-sm-offset-3.col-sm-3.col-md-offset-4.col-md-2.col-lg-offset-4.col-lg-2.text-centered
       = link_to "http://facebook.com/hyveplus"
         = image_tag "shared/facebook.png"
       p Share Hyve product with your friends 
-    .col-xs-4.col-sm-3.col-md-2.col-lg-2.text-centered
+    .col-xs-12.col-sm-3.col-md-2.col-lg-2.text-centered
       = link_to "http://twitter.com/askhyve"
         = image_tag "shared/twitter.png"
       p Let your followers know about HYVE

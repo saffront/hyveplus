@@ -1,4 +1,4 @@
-#banner-soma {
+#banner-share {
   color: white;
   background-color: rgba(73,89,102,100); 
   padding-top: 6rem;
@@ -13,7 +13,7 @@
   }
 }
 
-#info-soma {
+#info-share {
   padding-top: 6rem;
   padding-bottom: 6rem;
   h1 {
@@ -28,5 +28,21 @@
 
   p {
     @include avenir(roman, 1.4rem);
+  }
+}
+
+@media(max-width: 768px) {
+  #banner-share {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  #info-share {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    #share-progress-bar {
+      width: 100%;
+      margin: 0;
+    }
   }
 }
