@@ -1,0 +1,19 @@
+#admin-users {
+  h1 {
+    @include opensans(semibold, 28px);
+  }
+  table {
+    thead {
+      font-size: 16px;
+      font-weight: bold;
+      th {
+        border: 1px solid black;
+        text-align: center;
+      }
+    }
+    td {
+      text-align: center;
+      border: 1px solid black;
+    }
+  }
+}

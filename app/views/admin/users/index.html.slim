@@ -1,16 +1,26 @@
-.container
+#admin-users.container
   h1 All Users
   table
+    col width="50"
+    col width="100"
+    col width="250"
+    col width="150"
+    col width="150"
+    col width="200"
+    col width="100"
+    col width="100"
+    col width="100"
+    col width="100"
     thead
       tr
-        th width="50" ID
-        th width="100" Provider
-        th width="250" Email
-        th width="150" First Name
-        th width="150" Last Name
-        th width="200" Username
-        th width="100" Role
-        th width="400" colspan="3" Action
+        th ID
+        th Provider
+        th Email
+        th First Name
+        th Last Name
+        th Username
+        th Role
+        th colspan="3" Action
     tbody
     - @users.each do |user|
       tr
@@ -23,6 +33,6 @@
         td = user.last_name
         td = user.username
         td = user.role
-        td = link_to "Show | ", admin_user_path(user)
-        td = link_to "Edit | ", edit_admin_user_path(user)
+        td = link_to "Show", admin_user_path(user)
+        td = link_to "Edit", edit_admin_user_path(user)
         td = link_to "Delete", admin_user_path(user), method: :delete, data: { confirm: "Are you would like to delete #{user.email}?" }
