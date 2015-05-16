@@ -97,8 +97,8 @@ Rails.application.config.sorcery.configure do |config|
     config.facebook.callback_url = "http://localhost:3000/oauth/callback?provider=facebook"
     config.google.callback_url = "http://localhost:3000/oauth/callback?provider=google"
   else Rails.env.production?
-    config.facebook.callback_url = "http://hyveplus.com/oauth/callback?provider=facebook"
-    config.google.callback_url = "http://hyveplus.com/oauth/callback?provider=google"
+    config.facebook.callback_url = "http://www.hyveplus.com/oauth/callback?provider=facebook"
+    config.google.callback_url = "http://www.hyveplus.com/oauth/callback?provider=google"
   end
 
   # For information about LinkedIn API:
