@@ -83,19 +83,18 @@ Rails.application.routes.draw do
       post :register, to: 'user_sessions#register'
     end
   end
-end
 
 
   # ==============================================================================================
   # API for Android mobile
   # ==============================================================================================
-  namespace :api do
-    namespace :v1 do
-      resource :account, only: [:show, :update]
-      resources :hyves, except: [:new, :edit]
-      resources :user_sessions, only: [:create, :destroy]
-      post :register, to: 'user_sessions#register'
-    end
-  end
+  #namespace :api do
+    #namespace :v1 do
+      #resource :account, only: [:show, :update]
+      #resources :hyves, except: [:new, :edit]
+      #resources :user_sessions, only: [:create, :destroy]
+      #post :register, to: 'user_sessions#register'
+    #end
+  #end
 end
 
