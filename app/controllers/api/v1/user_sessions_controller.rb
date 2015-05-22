@@ -8,9 +8,7 @@ class Api::V1::UserSessionsController < Api::ApiController
       find_user(@user)
     when "google", "facebook"
       @user = User.find_by(email: user_params[:email]) 
-      #@auth = @user.try(:authentications).try(:find_by_uid, user_params[:uid])
-      @auth = @user.try(:authentications).try(:find_by_provider, user_params[:provider])
-      find_user(@user, @auth)
+      find_user(@user)
     else
       @nil_params = NilParams.new 
       render json: @nil_params
@@ -44,9 +42,10 @@ class Api::V1::UserSessionsController < Api::ApiController
     params.require(:user_session).permit(:email, :password, :password_confirmation, :username, :avatar, :first_name, :last_name, :token, :api_token, :uid, :provider)
   end
   
-  def find_user(user, auth={})
-    if user && auth
-      auth.update(token: user_params[:token])
+  def find_user(user)
+    @auth = user.try(:authentications).try(:find_by_provider, user_params[:provider])
+    if user && @auth
+      @auth.update(token: user_params[:token])
       user.generate_api_token!
       render json: { user_session: UserSerializer.new(user), api_token: user.api_token }
     else
