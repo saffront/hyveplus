@@ -14,7 +14,7 @@
           = link_to "HOME", root_path, id: "home-link"
           #home-link-border.blue-border-btm
         li#about-link.dropdown
-          a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button"
+          a.dropdown-toggle aria-expanded="true" data-toggle="dropdown" href="#" role="button"
             | ABOUT
             span.caret
           ul.dropdown-menu role="menu" 
@@ -35,9 +35,9 @@
           = link_to "KICKSTARTER", kickstarter_path, id: "kickstarter-link"
           #kickstarter-link-border.blue-border-btm
         li
-          = link_to "BLOG", blog_path
-          #blog-link-border.blue-border-btm
+          /= link_to "BLOG", blog_path
+          /#blog-link-border.blue-border-btm
         /Login modal works best with larger screens
         /For small sreen size (< 992px), use /login page instead
-        /li
-          /= link_to "LOGIN", "#login-modal", id: 'login-modal-trigger'
+        li
+          = link_to "LOGIN", "#login-modal", id: 'login-modal-trigger'

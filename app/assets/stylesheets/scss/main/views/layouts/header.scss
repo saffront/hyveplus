@@ -50,9 +50,9 @@ ul#primary-navbar {
   text-align: center;
 }
 
-/*#login-link-border.blue-border-btm {*/
-  /*@include link-blue-border-btm(3.7vw, 3.8vw);*/
-/*}*/
+#login-link-border.blue-border-btm {
+@include link-blue-border-btm(3.7vw, 3.8vw);
+}
 
 //Apply page-specific blue-border-btm
 body.pages-home {
