@@ -2,7 +2,7 @@
   padding-top: 10rem;
   padding-bottom: 10rem;
   color: #E6E6E6;
-  background-color: black;
+  background-image: image-url('product/banner.png');
 
   h1 {
     @include opensans(semibold, 2.4rem);
