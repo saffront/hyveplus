@@ -4,26 +4,31 @@
   background-repeat: no-repeat;
   height: 88vh;
   color: black;
-  text-align: left;
   /*color: #E6E6E6;*/
 
   h1 {
     @include opensans(semibold, 5rem);
+    margin-right:400px;
   }
 
   h2 {
     @include opensans(regular, 2.5rem);
     margin-bottom: 5rem;
+    margin-right:40px;
+
   }
 
   h3 {
     @include opensans(regular, 1.8rem);
+    margin-right:400px;
+
   }
 }
 
 #subscribe_home {
   display: inline-flex;
   width: 50rem;
+  margin-right:400px;
 }
 
 // ==============================================================================================
