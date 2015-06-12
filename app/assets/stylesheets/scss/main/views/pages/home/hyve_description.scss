@@ -7,7 +7,7 @@
   h1 {
     @include opensans(semibold, 2.4rem);
     color: $orange;
-    margin-bottom: 3rem; 
+    margin-bottom: 1rem; 
   }
   p {
     @include avenir(light, 1.4rem);
