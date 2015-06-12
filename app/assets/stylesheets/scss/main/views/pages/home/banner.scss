@@ -8,13 +8,15 @@
 
   h1 {
     @include opensans(semibold, 5rem);
+    margin-bottom:20px;
     margin-right:400px;
   }
 
   h2 {
-    @include opensans(regular, 2.5rem);
-    margin-bottom: 5rem;
-    margin-right:40px;
+    @include opensans(regular, 4.5rem);
+    margin-bottom: 2rem;
+    margin-right:400px;
+    text-shadow: 1px 1px #e6e6e6;
 
   }
 
