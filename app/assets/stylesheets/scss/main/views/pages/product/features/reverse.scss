@@ -1,6 +1,6 @@
 #reverse-banner.row {
   @include product-banner;
-  // background-image: image-url('product/reverse.png');
+  background-image: image-url('shared/reverse.png');
 }
 
 #features-product.container-fluid {
