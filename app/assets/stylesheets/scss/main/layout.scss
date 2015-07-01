@@ -25,6 +25,10 @@ html {
   min-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @media(max-width: 768px) {
