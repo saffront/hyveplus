@@ -8,29 +8,20 @@
 
 ### Quick Start
 
-1. Clone the repo
-
-        $ git clone https://github.com/vltlabs/hive.git
-
-
-2. Copy necessary files
+1. Copy necessary files
 
         $ cp config/database.yml.sample config/database.yml
         $ cp .env.sample .env
 
 
-3. Setup database
+2. Setup database
 
         $ rake db:setup
 
 
-3a. Run them tests
+3. Run them tests
 
         bundle exec rspec
-
-4. Start the server
-
-        $ rails s
 
 
 ### Staging/Production Deployment
@@ -47,13 +38,3 @@
 4. Promote hyve-staging to hyve-production with heroku pipeline
 
         $ heroku pipeline:promote
-
-
-### Production Support
-1. Get added as a collaborator to hyve-staging and hyve-production on Heroku.
-2. Commands:
-
-        heroku run rails c -a supahands-production
-        heroku logs -t -a supahands-production
-
-
